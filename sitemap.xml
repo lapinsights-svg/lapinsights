@@ -2,23 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://lapinsights-svg.github.io/lapinsights/</loc>
+    <loc>https://lapinsights-svg.github.io/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://lapinsights-svg.github.io/lapinsights/actualites.html</loc>
+    <loc>https://lapinsights-svg.github.io/actualites.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lapinsights-svg.github.io/lapinsights/territoires.html</loc>
+    <loc>https://lapinsights-svg.github.io/territoires_idees.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lapinsights-svg.github.io/lapinsights/bibliotheque.html</loc>
+    <loc>https://lapinsights-svg.github.io/bibliotheque.html</loc>
     <priority>0.7</priority>
   </url>
 
-</urlset>
+  <url>
+    <loc>https://lapinsights-svg.github.io/poesie.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lapinsights-svg.github
