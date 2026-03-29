@@ -747,17 +747,14 @@ header {
 }
 /* Texte long de la page À propos */
 .apropos-texte {
-  max-width: 40rem;              /* colonne élégante */
-  margin: 3rem 0 5rem 0;         /* respiration verticale */
-  padding-left: 1rem;            /* léger retrait */
-  color: var(--lapin);           /* EXACTEMENT la couleur du titre Lapinsights */
-  font-size: 1.15rem;
-  line-height: 1.65;             /* aération */
-  font-weight: 300;              /* élégance */
+  max-width: 40rem;          /* colonne élégante */
+  margin: -1rem 0 5rem 0;    /* remonte légèrement le bloc + respiration en bas */
+  padding-left: 1rem;        /* léger retrait */
+  color: var(--lapin);        /* couleur du titre Lapinsights */
+  font-size: 1.15rem;         /* taille plus contenue */
+  line-height: 1.65;          /* aération maîtrisée */
+  font-weight: 300;           /* élégance */
 }
-
-
-
 /* Si tu veux encore plus d’air, tu peux monter à 1.3rem ou 1.35rem */
 
 
