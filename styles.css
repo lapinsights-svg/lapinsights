@@ -748,10 +748,15 @@ header {
 /* -----------------------------------------
    PAGE À PROPOS — STYLES SPÉCIFIQUES
    ----------------------------------------- */
-
 /* -----------------------------------------
    PAGE À PROPOS — STYLES SPÉCIFIQUES
    ----------------------------------------- */
+
+/* 0. Corriger la position du background global */
+body.silhouette.fond-terrier {
+  background-position: top center 10% !important;
+  color: #333333 !important; /* texte foncé */
+}
 
 /* 1. Réduire la hauteur du header */
 body.silhouette.fond-terrier header {
@@ -760,33 +765,29 @@ body.silhouette.fond-terrier header {
   margin-bottom: 0 !important;
 }
 
-/* Réduire l'espace autour du portrait */
 body.silhouette.fond-terrier header .portrait {
   margin-bottom: 0.2rem !important;
 }
 
-/* Réduire l'espace autour du titre Lapinsights */
 body.silhouette.fond-terrier header h1 {
   margin-top: 0 !important;
   margin-bottom: 0.2rem !important;
 }
 
-/* Réduire l'espace autour du sous-titre */
 body.silhouette.fond-terrier header h2 {
   margin-top: 0 !important;
   margin-bottom: 0.2rem !important;
 }
 
-/* Réduire l'espace autour du menu */
 body.silhouette.fond-terrier header nav {
   margin-top: 0 !important;
 }
 
-/* 2. Remonter le bloc À PROPOS + restaurer le liseré orange */
+/* 2. Bloc À PROPOS — position + style */
 body.silhouette.fond-terrier .page-header-block {
-  margin-top: 0.2rem !important;
+  margin-top: 0.2rem !important; /* ajuste entre 0rem et 1rem */
   background-color: #f2f2f2;
-  border-left: 6px solid #ff7f00;   /* liseré orange restauré */
+  border-left: 6px solid #ff7f00; /* liseré orange */
   padding: 20px;
   text-align: left;
 }
@@ -799,12 +800,7 @@ body.silhouette.fond-terrier .page-header-block p {
   color: #333333 !important;
 }
 
-/* 4. Couleur du texte du corps */
-body.silhouette.fond-terrier {
-  color: #333333 !important;
-}
-
-/* 5. Espace sous le contenu pour stabiliser le footer */
+/* 4. Stabiliser le footer */
 body.silhouette.fond-terrier main.contenu-page {
   padding-bottom: 3rem !important;
 }
