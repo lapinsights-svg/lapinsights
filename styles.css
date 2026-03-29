@@ -749,10 +749,6 @@ header {
    PAGE À PROPOS — STYLES SPÉCIFIQUES
    ----------------------------------------- */
 
-/* -----------------------------------------
-   PAGE À PROPOS — STYLES SPÉCIFIQUES
-   ----------------------------------------- */
-
 /* Effet double fond : accueil.png en voile */
 .fond-terrier::before {
   content: "";
@@ -807,7 +803,6 @@ body.silhouette.fond-terrier .page-header-block p {
   font-family: "Cormorant Garamond", serif !important;
   color: #333333 !important;
 }
-
 
 
 
