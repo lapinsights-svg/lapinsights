@@ -756,15 +756,16 @@ header {
   font-weight: 300;           /* élégance */
 }
 /* Si tu veux encore plus d’air, tu peux monter à 1.3rem ou 1.35rem */
+
 /* Animation du Lapin sur le titre de la page Index */
-/* Le titre garde sa couleur orangée */
+/* Titre : couleur orangée conservée */
 .titre-terrier a {
   color: var(--accent);
   text-decoration: none;
   position: relative;
 }
 
-/* Conteneur du titre + lapin + terrier */
+/* Conteneur titre + terrier + lapin */
 .titre-terrier {
   position: relative;
   display: inline-flex;
@@ -772,17 +773,7 @@ header {
   gap: 0.8rem;
 }
 
-/* Le lapin (🐰 regarde vers la droite) */
-.lapin {
-  position: absolute;
-  left: -2rem;               /* point de départ à gauche */
-  top: 0.1rem;
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: lapinMarche 6s ease-in-out infinite;
-}
-
-/* Le terrier */
+/* Terrier placé AVANT le titre */
 .terrier {
   width: 1.2rem;
   height: 1.2rem;
@@ -793,26 +784,34 @@ header {
   animation: terrierOuverture 6s ease-in-out infinite;
 }
 
-/* Animation du lapin */
+/* Lapin entier, marche vers la GAUCHE */
+.lapin {
+  position: absolute;
+  right: -2rem;              /* départ à droite */
+  top: 0.1rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: lapinMarche 6s ease-in-out infinite;
+}
+
+/* Animation du lapin : avance vers la gauche */
 @keyframes lapinMarche {
   0%   { opacity: 0; transform: translateX(0) translateY(0); }
   10%  { opacity: 1; }
-  40%  { opacity: 1; transform: translateX(18rem) translateY(-0.15rem); } /* marche */
-  50%  { opacity: 1; transform: translateX(20rem) translateY(-0.4rem); }  /* saut dans le terrier */
-  55%  { opacity: 0; transform: translateX(20.2rem) translateY(0); }      /* disparition */
+  40%  { opacity: 1; transform: translateX(-16rem) translateY(-0.15rem); } /* marche */
+  50%  { opacity: 1; transform: translateX(-18rem) translateY(-0.4rem); }  /* saut dans le terrier */
+  55%  { opacity: 0; transform: translateX(-18.2rem) translateY(0); }      /* disparition */
   100% { opacity: 0; transform: translateX(0); }
 }
 
-/* Animation du terrier */
+/* Terrier : ouverture / fermeture */
 @keyframes terrierOuverture {
   0%   { opacity: 0; transform: scale(0.2); }
-  35%  { opacity: 1; transform: scale(1); }   /* ouverture */
-  55%  { opacity: 1; transform: scale(1); }   /* le lapin entre */
-  75%  { opacity: 0; transform: scale(0.2); } /* fermeture */
+  35%  { opacity: 1; transform: scale(1); }
+  55%  { opacity: 1; transform: scale(1); }
+  75%  { opacity: 0; transform: scale(0.2); }
   100% { opacity: 0; transform: scale(0.2); }
 }
-
-
 
 
 
