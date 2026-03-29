@@ -749,52 +749,38 @@ header {
    PAGE À PROPOS — STYLES SPÉCIFIQUES
    ----------------------------------------- */
 
-/* Effet double fond */
-body.silhouette.fond-terrier::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("images/accueil.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: -1;
+/* Réduire l'espace autour du titre Lapinsights */
+body.silhouette.fond-terrier header h1 {
+  margin-bottom: 0.2rem !important;
 }
 
-body.silhouette.fond-terrier {
-  position: relative;
-  z-index: 0;
-}
-
-/* 1. Réduire la hauteur du header (cause principale du problème) */
-body.silhouette.fond-terrier header {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* 2. Neutraliser le margin-top du main */
-body.silhouette.fond-terrier main.contenu-page {
+/* Réduire l'espace autour du sous-titre */
+body.silhouette.fond-terrier header h2 {
   margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin-bottom: 0.2rem !important;
 }
 
-/* 3. Bloc titre À PROPOS */
+/* Réduire l'espace autour du portrait */
+body.silhouette.fond-terrier header .portrait {
+  margin-bottom: 0.2rem !important;
+}
+
+/* Réduire l'espace autour du menu */
+body.silhouette.fond-terrier header nav {
+  margin-top: 0 !important;
+}
+
+/* Neutraliser padding global du header */
+body.silhouette.fond-terrier header {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remonter le bloc À PROPOS */
 body.silhouette.fond-terrier .page-header-block {
-  margin-top: 0.25rem !important; /* ajuste entre 0rem et 1rem */
-  background-color: #f2f2f2;
-  border-left: 6px solid #ff7f00;
-  padding: 20px;
-  text-align: left;
+  margin-top: 0.2rem !important;
 }
-
-/* 4. Police + couleur du titre et sous-titre */
-body.silhouette.fond-terrier .page-header-block h2,
-body.silhouette.fond-terrier .page-header
-
-
 
 
 
