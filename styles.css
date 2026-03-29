@@ -770,29 +770,34 @@ header {
   z-index: 0;
 }
 
-/* Repositionner le titre À propos */
+/* 1. Remonter le bloc titre (plus fort que les styles globaux) */
+.fond-terrier .contenu-page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 .fond-terrier .page-header-block {
-  margin-top: 40px;
+  margin-top: 10px !important; /* remonte vraiment le bloc */
   text-align: left;
 }
 
-/* Harmoniser la police ET LA COULEUR avec "Lapinsights" */
+/* 2. Appliquer la couleur EXACTE du titre Lapinsights */
 .fond-terrier .page-header-block h2,
 .fond-terrier .page-header-block p,
-.fond-terrier .contenu-page,
-.fond-terrier .contenu-page p,
 .fond-terrier .apropos-texte p {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #ffffff; /* même couleur que ton titre Lapinsights */
+  color: inherit !important; /* hérite de la couleur du h1 Lapinsights */
 }
 
-/* Lisibilité douce sur fond double */
+/* 3. Forcer la couleur du body si nécessaire */
+.fond-terrier {
+  color: #ffffff !important; /* même couleur que Lapinsights */
+}
+
+/* 4. Lisibilité douce sur fond double */
 .fond-terrier .apropos-texte p {
   text-shadow: 0 0 8px rgba(0,0,0,0.35);
 }
-
 
 
 
