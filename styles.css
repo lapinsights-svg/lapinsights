@@ -767,7 +767,7 @@ body.silhouette.fond-terrier .menu-haut {
   margin-bottom: 0 !important;
 }
 
-/* 2. Remonter le bloc À PROPOS + restaurer le liseré */
+/* 2. Bloc À PROPOS — position + style */
 body.silhouette.fond-terrier .page-header-block {
   margin-top: 0.2rem !important;
   background-color: #f2f2f2;
@@ -793,6 +793,7 @@ body.silhouette.fond-terrier {
 body.silhouette.fond-terrier main.contenu-page {
   padding-bottom: 3rem !important;
 }
+
 
 
 
