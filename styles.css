@@ -772,7 +772,7 @@ header {
   gap: 0.8rem;
 }
 
-/* Le lapin (sans inversion, il regarde déjà à droite) */
+/* Le lapin (🐰 regarde vers la droite) */
 .lapin {
   position: absolute;
   left: -2rem;               /* point de départ à gauche */
@@ -797,9 +797,9 @@ header {
 @keyframes lapinMarche {
   0%   { opacity: 0; transform: translateX(0) translateY(0); }
   10%  { opacity: 1; }
-  40%  { opacity: 1; transform: translateX(16rem) translateY(-0.15rem); } /* marche */
-  50%  { opacity: 1; transform: translateX(18rem) translateY(-0.4rem); }  /* saut dans le terrier */
-  55%  { opacity: 0; transform: translateX(18.2rem) translateY(0); }      /* disparition */
+  40%  { opacity: 1; transform: translateX(18rem) translateY(-0.15rem); } /* marche */
+  50%  { opacity: 1; transform: translateX(20rem) translateY(-0.4rem); }  /* saut dans le terrier */
+  55%  { opacity: 0; transform: translateX(20.2rem) translateY(0); }      /* disparition */
   100% { opacity: 0; transform: translateX(0); }
 }
 
@@ -808,8 +808,9 @@ header {
   0%   { opacity: 0; transform: scale(0.2); }
   35%  { opacity: 1; transform: scale(1); }   /* ouverture */
   55%  { opacity: 1; transform: scale(1); }   /* le lapin entre */
-  75
-
+  75%  { opacity: 0; transform: scale(0.2); } /* fermeture */
+  100% { opacity: 0; transform: scale(0.2); }
+}
 
 
 
