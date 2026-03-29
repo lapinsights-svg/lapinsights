@@ -745,6 +745,17 @@ header {
   cursor: pointer;
   z-index: 10000;
 }
+.fond-terrier::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/accueil.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: -1;
+}
+
 
 
 
