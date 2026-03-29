@@ -751,7 +751,7 @@ header {
   margin: -1rem 0 5rem 0;    /* remonte légèrement le bloc + respiration en bas */
   padding-left: 1rem;        /* léger retrait */
   color: var(--lapin);        /* couleur du titre Lapinsights */
-  font-size: 1.15rem;         /* taille plus contenue */
+  font-size: 1.05rem;         /* taille plus contenue */
   line-height: 1.65;          /* aération maîtrisée */
   font-weight: 300;           /* élégance */
 }
