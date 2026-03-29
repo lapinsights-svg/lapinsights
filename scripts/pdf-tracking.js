@@ -1,24 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Trouver tous les boutons avec openPDF(...)
-  const buttons = document.querySelectorAll("button[onclick^='openPDF']");
 
+  // 1) Transformer les anciens boutons openPDF(...)
+  const buttons = document.querySelectorAll("button[onclick^='openPDF']");
   buttons.forEach(button => {
     const onclick = button.getAttribute("onclick");
-
-    // Extraire le chemin du PDF depuis openPDF('chemin.pdf')
     const match = onclick.match(/openPDF\(['"](.+?)['"]\)/);
     if (!match) return;
 
     const pdfPath = match[1];
 
-    // Créer un lien <a> qui remplace le bouton
     const link = document.createElement("a");
     link.href = pdfPath;
     link.target = "_blank";
     link.textContent = "Explorer le terrier";
-    link.className = "pdf-button"; // pour garder ton style
+    link.className = "pdf-button";
 
-    // Remplacer le bouton par le lien
     button.replaceWith(link);
   });
+
+  // 2) Modifier aussi les <a class="pdf-button"> déjà présents dans le HTML
+  const links = document.querySelectorAll("a.pdf-button");
+  links.forEach(link => {
+    link.textContent = "Explorer le terrier";
+  });
+
 });
