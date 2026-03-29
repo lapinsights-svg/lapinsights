@@ -752,22 +752,39 @@ header {
    PAGE À PROPOS — STYLES SPÉCIFIQUES
    ----------------------------------------- */
 
-/* 1. Réduire la hauteur des blocs du haut */
-body.silhouette.fond-terrier .header-left {
+/* 1. Réduire la hauteur du header */
+body.silhouette.fond-terrier header {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  align-items: flex-start !important; /* empêche le header de s'étirer */
+}
+
+/* 2. Réduire la hauteur du portrait */
+body.silhouette.fond-terrier .portrait-flottant {
+  height: 60px !important;   /* ajuste si besoin */
+  width: 60px !important;
   margin-bottom: 0.2rem !important;
 }
 
-body.silhouette.fond-terrier .logo-title {
+/* 3. Réduire l'espace autour du titre */
+body.silhouette.fond-terrier .logo-title h1 {
   margin-top: 0 !important;
   margin-bottom: 0.2rem !important;
 }
 
+/* 4. Réduire l'espace autour du sous-titre */
+body.silhouette.fond-terrier .logo-title p {
+  margin-top: 0 !important;
+  margin-bottom: 0.2rem !important;
+}
+
+/* 5. Réduire l'espace autour du menu */
 body.silhouette.fond-terrier .menu-haut {
   margin-top: 0 !important;
-  margin-bottom: 0 !important;
 }
 
-/* 2. Bloc À PROPOS — position + style */
+/* 6. Bloc À PROPOS — position + style */
 body.silhouette.fond-terrier .page-header-block {
   margin-top: 0.2rem !important;
   background-color: #f2f2f2;
@@ -776,7 +793,7 @@ body.silhouette.fond-terrier .page-header-block {
   text-align: left;
 }
 
-/* 3. Police + couleur du bloc */
+/* 7. Police + couleur du bloc */
 body.silhouette.fond-terrier .page-header-block h2,
 body.silhouette.fond-terrier .page-header-block p {
   margin: 0;
@@ -784,12 +801,12 @@ body.silhouette.fond-terrier .page-header-block p {
   color: #333333 !important;
 }
 
-/* 4. Couleur du texte du corps */
+/* 8. Couleur du texte du corps */
 body.silhouette.fond-terrier {
   color: #333333 !important;
 }
 
-/* 5. Espace sous le contenu pour stabiliser le footer */
+/* 9. Espace sous le contenu pour stabiliser le footer */
 body.silhouette.fond-terrier main.contenu-page {
   padding-bottom: 3rem !important;
 }
