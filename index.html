@@ -103,19 +103,16 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- 👉 Ajout du script qui transforme automatiquement les boutons PDF -->
 <script src="scripts/pdf-tracking.js"></script>
 
- <footer>
+    <footer>
 
-  <div class="newsletter-footer">
-    <h3>Les Signaux de Lapinsights</h3>
-    <p class="newsletter-desc">
-      Recevez une alerte douce à chaque nouveau PDF.
-    </p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/dig_it"
+    method="post"
+    class="newsletter-mini"
+  >
+    <label for="bd-email">Les Signaux de Lapinsights</label>
 
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/dig_it"
-      method="post"
-      class="embeddable-buttondown-form"
-    >
+    <div class="newsletter-mini-row">
       <input
         type="email"
         name="email"
@@ -123,11 +120,9 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         placeholder="Votre email"
         required
       />
-      <input type="submit" value="S’abonner" />
-    </form>
-
-    <p class="bd-credit">Propulsé par Buttondown</p>
-  </div>
+      <button type="submit">→</button>
+    </div>
+  </form>
 
   <div class="footer-signature">
     © Céleste R. — CC-BY-NC-ND
