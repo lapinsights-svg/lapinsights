@@ -538,44 +538,6 @@ header {
   opacity: 0.5;
   pointer-events: none;
 }
-/* MODAL PDF */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.modal-content iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 10000;
-}
 /* Texte long de la page À propos */
 .apropos-texte {
   max-width: 40rem;          /* colonne élégante */
