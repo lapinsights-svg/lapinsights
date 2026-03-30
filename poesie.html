@@ -109,14 +109,14 @@
     <!-- SCRIPT PDF -->
     <script>
       function openPDF(path) {
-        const modal = document.getElementById("pdf-modal");
+        const modal = document.getElementById("pdfmodal");
         const frame = document.getElementById("pdf-frame");
         frame.src = path;
         modal.classList.add("open");
       }
 
       function closePDF() {
-        const modal = document.getElementById("pdf-modal");
+        const modal = document.getElementById("pdfmodal");
         const frame = document.getElementById("pdf-frame");
         frame.src = "";
         modal.classList.remove("open");
