@@ -664,25 +664,32 @@ header {
 /* ================================
    BLOCS PDF — version ultra-légère
    ================================ */
+/* On déplace la colonne entière, pas chaque item */
+.liste-actus {
+  position: relative;
+  left: -25vw; /* ajuste selon ton œil */
+}
 
+/* Chaque PDF redevient normal dans le flux */
 .pdf-item {
   margin: 1.2rem 0;
   padding: 0;
   max-width: 760px;
   position: relative;
-  left: -25vw;
+  left: 0; /* IMPORTANT : on annule le décalage ici */
 }
 
+/* En-tête du PDF */
 .pdf-header {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  line-height: 1.5; /* espacement entre les lignes */
+  line-height: 1.5;
 }
 
 /* Date */
 .tag-date {
-  color: #d8c4a3; /* beige doré */
+  color: #d8c4a3;
   font-weight: 600;
   font-size: 0.95rem;
 }
