@@ -567,56 +567,51 @@ footer {
 .page-actus .liste-actus {
   margin-top: 3rem;         /* ⭐ descend toute la liste des PDF */
 }
-.pdf-modal {
+/* PDF MODAL  */
+/* Fond du modal : occupe toute la fenêtre */
+#pdfModal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(5, 6, 10, 0.75);
-  backdrop-filter: blur(12px);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 9999;
 }
 
-.pdf-modal.open {
-  display: flex;
+/* Quand le modal est ouvert */
+#pdfModal.open {
+  display: block;
 }
 
+/* Fenêtre interne : 97% de la largeur et hauteur */
 .pdf-modal-content {
-  position: relative;
-  width: 85%;
-  height: 85%;
-  background: rgba(20, 30, 45, 0.55);
-  border: 1px solid rgba(220, 230, 245, 0.35);
-  border-radius: 1rem;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-}
-
-.pdf-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(224, 179, 122, 0.85);
-  border: none;
-  color: #05060a;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97vw;
+  height: 97vh;
+  background: rgba(80, 90, 105, 0.35);
+  border: 1px solid rgba(220, 230, 245, 0.35);
+  backdrop-filter: blur(22px);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow:
+    0 0 60px rgba(0, 0, 0, 0.25),
+    0 0 120px rgba(180, 210, 255, 0.15);
 }
 
-.pdf-modal iframe {
+/* Le PDF occupe tout l’espace interne */
+#pdf-frame {
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 0.6rem;
 }
+
 /* Menu déroulant archives */
 .menu-archives {
   position: relative;
