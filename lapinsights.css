@@ -39,8 +39,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 0.5rem;   /* réduit l’espace au-dessus */
+  padding-bottom: 0.5rem; /* réduit l’espace en dessous */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
-  padding: 0.5rem 2rem 1rem 2rem; /* haut | droite | bas | gauche */
   gap: 2rem;
 }
 
