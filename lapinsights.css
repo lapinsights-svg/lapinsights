@@ -145,6 +145,16 @@ main {
 .page-actus main {
   padding-top: 1rem;
 }
+/* Centrer le bloc titre dans Actualités */
+.page-actus .page-header-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* MARGE HAUTE pour Poésie et Territoires d’idées */
+.page-poesie .page-header-block,
+.page-idees .page-header-block {
+  margin-top: 2rem;
+}
 
 /* INTRO BLOCK */
 .intro-block {
