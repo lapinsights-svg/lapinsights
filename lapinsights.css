@@ -39,18 +39,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem; /* ← replacé au bon endroit */
+  gap: 2rem;
 
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
 }
 
 .header-left {
