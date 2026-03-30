@@ -67,30 +67,14 @@
 
 <footer>© Céleste R. — CC-BY-NC-ND</footer>
 
-<script>
-  function openPDF(id) {
-    document.getElementById(id).style.display = "block";
-  }
-  function closePDF(id) {
-    document.getElementById(id).style.display = "none";
-  }
-</script>
+<!-- MODALE PDF -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <button class="pdf-close" onclick="closePDF()">✕</button>
+    <iframe id="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
 
-    <script>
-function openPDF(url, event) {
-  if (event) event.preventDefault();
-  const frame = document.getElementById("pdf-frame");
-  frame.src = url + "#toolbar=0&navpanes=0&scrollbar=0&view=FitH";
-  document.getElementById("pdfmodal").classList.add("open");
-}
-
-function closePDF() {
-  const modal = document.getElementById("pdfmodal");
-  const frame = document.getElementById("pdf-frame");
-  frame.src = "";
-  modal.classList.remove("open");
-}
-</script>
 
 <!-- Statcounter -->
 <script type="text/javascript">
