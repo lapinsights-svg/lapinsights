@@ -98,30 +98,32 @@
       passages intérieurs, tremblements, lumière, textes courts, inspiration.
     </div>
 
-    <!-- ⭐ MODAL PDF -->
-    <div id="pdf-modal" class="pdf-modal">
-      <div class="pdf-window">
-        <button class="pdf-close" onclick="closePDF()">✕</button>
-        <iframe id="pdf-frame" class="pdf-frame"></iframe>
-      </div>
-    </div>
+   <!-- MODALE PDF -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <button class="pdf-close" onclick="closePDF()">✕</button>
+    <iframe id="pdf-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
+<script>
+function openPDF(url, event) {
+  if (event) event.preventDefault(); // empêche l'ouverture dans un nouvel onglet
 
-    <!-- SCRIPT PDF -->
-    <script>
-      function openPDF(path) {
-        const modal = document.getElementById("pdfmodal");
-        const frame = document.getElementById("pdf-frame");
-        frame.src = path;
-        modal.classList.add("open");
-      }
+  const frame = document.getElementById("pdf-frame");
+  frame.src = url + "#toolbar=0&navpanes=0&scrollbar=0&view=FitH";
 
-      function closePDF() {
-        const modal = document.getElementById("pdfmodal");
-        const frame = document.getElementById("pdf-frame");
-        frame.src = "";
-        modal.classList.remove("open");
-      }
-    </script>
+  document.getElementById("pdfModal").classList.add("open");
+}
+
+function closePDF() {
+  const modal = document.getElementById("pdfModal");
+  const frame = document.getElementById("pdf-frame");
+
+  frame.src = ""; // vide le PDF
+  modal.classList.remove("open");
+}
+</script>
+
 
     <!-- Statcounter -->
     <script type="text/javascript">
