@@ -664,8 +664,7 @@ header {
    ================================ */
 /* On déplace la colonne entière, pas chaque item */
 .liste-actus {
-  position: relative;
-  left: -25vw; /* ajuste selon ton œil */
+ position: static;
 }
 
 /* Chaque PDF redevient normal dans le flux */
