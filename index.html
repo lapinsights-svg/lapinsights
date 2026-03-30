@@ -103,7 +103,37 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- 👉 Ajout du script qui transforme automatiquement les boutons PDF -->
 <script src="scripts/pdf-tracking.js"></script>
 
-    <footer>© Céleste R. — CC-BY-NC-ND</footer>
+ <footer>
+
+  <div class="newsletter-footer">
+    <h3>Les Signaux de Lapinsights</h3>
+    <p class="newsletter-desc">
+      Recevez une alerte douce à chaque nouveau PDF.
+    </p>
+
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/dig_it"
+      method="post"
+      class="embeddable-buttondown-form"
+    >
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="Votre email"
+        required
+      />
+      <input type="submit" value="S’abonner" />
+    </form>
+
+    <p class="bd-credit">Propulsé par Buttondown</p>
+  </div>
+
+  <div class="footer-signature">
+    © Céleste R. — CC-BY-NC-ND
+  </div>
+
+</footer>
 
   </body>
 </html>
