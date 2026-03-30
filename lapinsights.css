@@ -235,10 +235,9 @@ footer {
   color: rgba(5, 12, 25, 0.92);
 }
 
-/* PAGE HEADER BLOCK — version restaurée */
 .page-header-block {
-  margin-top: 0;
-  padding-top: 0.5rem;
+  margin-top: -0.8rem; /* remonte le bloc */
+  padding-top: 0.2rem; /* réduit l’espace interne */
   width: auto;
   max-width: 480px;
 
@@ -247,7 +246,7 @@ footer {
   align-items: center;
   text-align: center;
 
-  padding: 1.6rem 2rem;
+  padding: 1.2rem 2rem; /* padding global réduit */
   border-radius: 1.2rem;
 
   background: rgba(80, 90, 105, 0.35);
