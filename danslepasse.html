@@ -74,6 +74,24 @@
     <iframe id="pdf-frame" src="" frameborder="0"></iframe>
   </div>
 </div>
+<script>
+function openPDF(url, event) {
+  if (event) event.preventDefault(); // empêche l'ouverture dans un nouvel onglet
+
+  const frame = document.getElementById("pdf-frame");
+  frame.src = url + "#toolbar=0&navpanes=0&scrollbar=0&view=FitH";
+
+  document.getElementById("pdfModal").classList.add("open");
+}
+
+function closePDF() {
+  const modal = document.getElementById("pdfModal");
+  const frame = document.getElementById("pdf-frame");
+
+  frame.src = ""; // vide le PDF
+  modal.classList.remove("open");
+}
+</script>
 
 
 <!-- Statcounter -->
