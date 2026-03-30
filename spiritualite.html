@@ -119,6 +119,16 @@ function closePDF() {
 }
 </script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll(".open-pdf-button");
+  links.forEach(link => {
+    link.textContent = "Explorer le terrier";
+  });
+});
+</script>
+
+
 
     <!-- Statcounter -->
     <script type="text/javascript">
