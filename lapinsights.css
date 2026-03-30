@@ -668,7 +668,7 @@ header {
 
   /* décalage pour libérer la silhouette */
   position: relative;
-  left: -18vw; /* ajuste selon ton œil */
+  left: -25vw; /* ajuste selon ton œil */
 }
 
 .pdf-header {
