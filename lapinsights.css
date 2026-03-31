@@ -248,17 +248,17 @@ header {
   font-size: 1rem;
   color: var(--lapin);
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-}
-
-/* Ajustement page Actualités */
-.page-actus main {
-  padding-top: 0 !important; /* remonte le contenu sous le header */
-}
+  }
 
 .page-actus .page-header-block {
   margin: 0.5rem 0 2rem; /* marge haute correcte */
   text-align: center;
   align-items: center;
+}
+
+.page-actus,
+.page-idees {
+  background-position: center 15%;
 }
 
 /* Poésie & Idées */
