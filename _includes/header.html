@@ -1,0 +1,34 @@
+<header>
+  <div class="header-left">
+
+    <div class="portrait-flottant">
+      <img src="{{ '/images/celeste.png' | relative_url }}" alt="Portrait de Céleste">
+    </div>
+
+    <div class="logo-title">
+      <h1><a href="{{ '/' | relative_url }}">Lapinsights</a></h1>
+      <p>Territoire éditorial souverain</p>
+    </div>
+
+  </div>
+
+  <nav class="menu-haut">
+    <button onclick="window.location='{{ '/actualites' | relative_url }}'">Actualités</button>
+    <button onclick="window.location='{{ '/arts' | relative_url }}'">Arts</button>
+    <button onclick="window.location='{{ '/idees' | relative_url }}'">Territoires d’idées</button>
+    <button onclick="window.location='{{ '/spiritualite' | relative_url }}'">Spiritualité</button>
+    <div class="menu-archives disabled">
+  <button class="menu-button">Archives</button>
+  <div class="menu-archives-dropdown"></div>
+</div>
+
+    <div class="menu-archives disabled">
+      <button class="menu-button">Dans le passé</button>
+      <div class="menu-archives-dropdown">
+        <!-- Inactif pour l’instant -->
+      </div>
+    </div>
+
+    <button onclick="window.location='{{ '/contact' | relative_url }}'">Contact</button>
+  </nav>
+</header>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <main>
+    <div class="contenu-page page-accueil">
+      
+      <section class="intro-block">
+  <h2>Bienvenue sur Lapinsights.</h2>
+
+  <p>
+    Un territoire éditorial indépendant, envoyé avec soin.  
+    <br><br>
+    <a href="{{ '/apropos' | relative_url }}">En savoir plus</a>
+  </p>
+</section>
+
+
+      {{ content }}
+
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+</body>
+</html>

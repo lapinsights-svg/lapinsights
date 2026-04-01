@@ -1,0 +1,45 @@
+title: "Lapinsights"
+description: "Territoire éditorial souverain"
+baseurl: ""
+url: "https://lapinsights-svg.github.io"
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+
+# Collections éditoriales (PDF)
+collections:
+  actualites:
+    output: true
+  arts:
+    output: true
+  idees:
+    output: true
+  spiritualite:
+    output: true
+  passe:
+    output: true
+  archives:
+    output: true
+
+# Newsletter (Buttondown)
+newsletter_url: "https://buttondown.email/dig_it"
+
+# Réglages des posts (si tu en utilises)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Open Graph / Partage
+social_image: "/images/social-default.png"
+
+# Fichiers à inclure
+include:
+  - assets_css
+
+keep_files:
+  - assets_css
