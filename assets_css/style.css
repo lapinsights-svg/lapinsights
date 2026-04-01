@@ -71,25 +71,28 @@ header {
   width: 100%;
 
   display: flex;
-  flex-direction: row; /* RESTAURE la structure horizontale */
+  flex-direction: row; /* structure horizontale */
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
 
-  padding: 0.5rem 2rem; /* réduit pour éviter d'augmenter la hauteur */
+  padding: 0.5rem 2rem;
 
-  background: transparent;
-  backdrop-filter: none;
+  /* Empêche les textes de passer visuellement derrière */
+  background: rgba(5, 6, 10, 0.75); /* couleur du fond, légèrement opaque */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
+
 .header-left {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
-.header-spacer {
-  height: 1rem; /* ← l’espace réel entre le menu et le bloc gris */
-}
 
+.header-spacer {
+  height: 1rem; /* espace réel entre le menu et le bloc gris */
+}
 
 /* ================================
    BANDEAU DE RUBRIQUE FIXE
