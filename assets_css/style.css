@@ -514,8 +514,11 @@ footer {
   padding: 1rem 2rem;
   text-align: right;
   opacity: 0.8;
-  position: relative;
-  z-index: 10;
+  position: fixed;      /* ← changement essentiel */
+  left: 0;              /* ← pour qu’il prenne toute la largeur */
+  right: 0;             /* ← idem */
+  bottom: 1cm;          /* ← distance du bas de l’écran */
+  z-index: 100;         /* ← pour passer au-dessus du contenu */
   color: var(--texte);
 }
 
