@@ -1,25 +1,32 @@
 ---
 layout: default
-title: "Créations"
+title: Créations
+description: Poèmes, fragments, éclats — les passages intimes du territoire.
+rubrique: true
 ---
 
-<section class="rubrique-header">
-  <h2 class="rubrique-titre">CRÉATIONS</h2>
-  <p class="rubrique-soustitre">
-    Poèmes, fragments, éclats — les passages intimes du territoire.
-  </p>
+<section class="rubrique-header section-header">
+  <h2>{{ page.title }}</h2>
+  <p>{{ page.description }}</p>
+
+  <div class="share-rubrique">
+    <a href="#"
+       onclick="shareArticle('{{ page.title }}', '{{ page.url | absolute_url }}'); return false;">
+       partager cette rubrique
+    </a>
+  </div>
 </section>
 
-<section class="liste-articles">
-  {% assign sorted = site.creations | sort: 'date' | reverse %}
-  {% for item in sorted %}
-    <article class="article-ligne">
-      <div class="article-date">
-        {{ item.date | date: "%d/%m/%Y" }}
-      </div>
-      <div class="article-titre">
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-      </div>
-    </article>
+<div class="liste-pdf">
+  {% assign pdfs = site.creations | sort: "date" | reverse %}
+  {% for pdf in pdfs %}
+    <div class="pdf-item">
+      <span class="tag-date">{{ pdf.date | date: "%d/%m/%Y" }}</span>
+      <h3 class="pdf-titre">
+        <a href="#" onclick="openPDF('{{ pdf.pdf }}'); return false;">
+          {{ pdf.title }}
+        </a>
+      </h3>
+    </div>
   {% endfor %}
-</section>
+</div>
