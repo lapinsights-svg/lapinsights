@@ -818,13 +818,21 @@ main.contenu-scroll > *:first-child {
 
 @keyframes tripleHop {
   0%   { transform: translateY(0); }
-  15%  { transform: translateY(-6px); }   /* petit saut 1 */
-  30%  { transform: translateY(0); }
-  45%  { transform: translateY(-8px); }   /* petit saut 2 */
-  60%  { transform: translateY(0); }
-  80%  { transform: translateY(-20px); }  /* grand bond final (~2 cm) */
-  100% { transform: translateY(0); }
+
+  /* Petit saut 1 */
+  12%  { transform: translateY(-8px); }
+  24%  { transform: translateY(0); }
+
+  /* Petit saut 2 */
+  36%  { transform: translateY(-10px); }
+  48%  { transform: translateY(0); }
+
+  /* Grand saut final (6 cm ≈ 226px) */
+  65%  { transform: translateY(-226px); }   /* montée rapide */
+  75%  { transform: translateY(-226px); }   /* petit temps suspendu */
+  100% { transform: translateY(0); }        /* descente douce */
 }
+
 
 
 
