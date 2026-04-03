@@ -927,6 +927,14 @@ main.contenu-scroll > *:first-child {
   font-size: 0.9em;
   color: #2a3f7a !important;
 }
+/* Texte lisible dans toute la page mémoire */
+.memoire-terrier,
+.memoire-terrier p,
+.memoire-terrier span,
+.memoire-terrier strong {
+  color: #2a3f7a !important;
+}
+
 
 
 
