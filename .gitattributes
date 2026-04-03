@@ -1,1 +1,10 @@
 *.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.mp3 binary
+*.wav binary
+*.mp4 binary
+*.mov binary
