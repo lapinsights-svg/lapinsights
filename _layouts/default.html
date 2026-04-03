@@ -80,6 +80,7 @@ function shareArticle(title, url, network = null) {
   alert("Lien copié !");
 }
 </script>
+
 <button id="backToTop" title="Remonter le terrier">🐇↟</button>
 
 <script>
@@ -97,8 +98,8 @@ function shareArticle(title, url, network = null) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 </script>
-  <!-- Default Statcounter code for Lapinsights
-https://https://lapinsights-svg.github.io/ -->
+
+<!-- Statcounter -->
 <script type="text/javascript">
 var sc_project=13213092; 
 var sc_invisible=1; 
@@ -113,10 +114,55 @@ class="statcounter"
 src="https://c.statcounter.com/13213092/0/a6e8d30c/1/"
 alt="free web stats"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
+<!-- End Statcounter -->
 
-  <script>
+<!-- MODE FANTÔME : bouton affiché uniquement sur /memoire -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.location.pathname.includes("memoire")) {
+
+    const zone = document.querySelector(".contenu-page");
+
+    const bouton = document.createElement("button");
+    bouton.id = "toggleFantome";
+    bouton.style.marginBottom = "1em";
+
+    function majBouton() {
+      if (localStorage.getItem("lapinsights_ignore") === "true") {
+        bouton.textContent = "👻 Mode fantôme : ACTIVÉ";
+        bouton.style.background = "#333";
+        bouton.style.color = "white";
+      } else {
+        bouton.textContent = "👻 Activer le mode fantôme";
+        bouton.style.background = "";
+        bouton.style.color = "";
+      }
+    }
+
+    bouton.onclick = function() {
+      if (localStorage.getItem("lapinsights_ignore") === "true") {
+        localStorage.removeItem("lapinsights_ignore");
+      } else {
+        localStorage.setItem("lapinsights_ignore", "true");
+      }
+      majBouton();
+    };
+
+    majBouton();
+    zone.insertBefore(bouton, zone.children[2]); // juste sous les deux premiers boutons
+  }
+});
+</script>
+
+<!-- JOURNAL PRIVÉ AVEC MODE FANTÔME -->
+<script>
 (function() {
+
+  // MODE FANTÔME : ignorer les visites du propriétaire
+  if (localStorage.getItem("lapinsights_ignore") === "true") {
+    console.log("Visite ignorée (mode fantôme activé)");
+    return;
+  }
 
   // Charger le journal existant ou créer un nouveau
   let journal = JSON.parse(localStorage.getItem("lapinsights_journal") || "[]");
@@ -158,7 +204,6 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
 })();
 </script>
-
 
 </body>
 </html>
