@@ -8,3 +8,6 @@
 *.wav binary
 *.mp4 binary
 *.mov binary
+drafts/
+notes/
+temp/
