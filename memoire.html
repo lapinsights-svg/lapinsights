@@ -59,3 +59,69 @@ title: Mémoire du terrier
           <strong>${entry.page}</strong><br>
           <small>${new Date(entry.date).toLocaleString()}</small><br>
           <small>Durée : ${entry.duree}s</small><br>
+          <span style="background:#eee; padding:2px 6px; border-radius:4px;">${entry.rubrique}</span>
+        </div>
+      `;
+
+      container.appendChild(bloc);
+    });
+  }
+
+  afficherTimeline();
+
+  // Diagramme des rubriques
+  function afficherDiagramme() {
+    let ctx = document.getElementById("diagramme").getContext("2d");
+
+    let stats = {};
+    journal.forEach(e => {
+      stats[e.rubrique] = (stats[e.rubrique] || 0) + 1;
+    });
+
+    let labels = Object.keys(stats);
+    let valeurs = Object.values(stats);
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "Pages visitées",
+          data: valeurs,
+          backgroundColor: "rgba(100, 100, 255, 0.5)",
+          borderColor: "rgba(100, 100, 255, 1)",
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+
+  // Charger Chart.js depuis CDN
+  let script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+  script.onload = afficherDiagramme;
+  document.body.appendChild(script);
+
+  // Export local
+  document.getElementById("exporter").addEventListener("click", function() {
+    let blob = new Blob([JSON.stringify(journal, null, 2)], {type: "application/json"});
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "journal-lapinsights.json";
+    a.click();
+  });
+
+  // Effacer la mémoire
+  document.getElementById("effacer").addEventListener("click", function() {
+    if (confirm("Effacer toute la mémoire locale du terrier ?")) {
+      localStorage.removeItem("lapinsights_journal");
+      location.reload();
+    }
+  });
+
+})();
+</script>
