@@ -827,7 +827,6 @@ main.contenu-scroll > *:first-child {
   animation: petitHop 1.6s infinite ease-in-out;
 }
 
-
 /* ----------------------------------------------------
    CONTENEUR GLOBAL DE LA PAGE MÉMOIRE
 ---------------------------------------------------- */
@@ -871,15 +870,31 @@ main.contenu-scroll > *:first-child {
   margin-bottom: 2em;
 }
 
+/* Texte lisible dans toutes les cartes */
+.memoire-terrier .carte,
+.memoire-terrier .carte * {
+  color: #2a3f7a !important;
+}
+
+/* Titres dans les cartes */
+.memoire-terrier .carte h3 {
+  margin-top: 0;
+  color: #2a3f7a !important;
+}
+
 /* ----------------------------------------------------
    SYNTHÈSE
 ---------------------------------------------------- */
+.memoire-terrier .synthese {
+  background: #f2f6ff;
+  border: 1px solid #d6e2ff;
+}
+
 .memoire-terrier .synthese-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
   font-size: 1.1em;
-color: #2a3f7a !important; /* bleu profond lisible */
 }
 
 /* ----------------------------------------------------
@@ -910,7 +925,10 @@ color: #2a3f7a !important; /* bleu profond lisible */
   max-height: 300px;
   overflow: auto;
   font-size: 0.9em;
+  color: #2a3f7a !important;
 }
+
+
 
 
 
