@@ -843,6 +843,25 @@ main.contenu-scroll > *:first-child {
   color: #999;
   font-style: italic;
 }
+.memoire-terrier {
+  background: linear-gradient(to bottom, #eef4ff, #ffffff);
+  padding: 2em;
+  border-radius: 12px;
+}
+.memoire-terrier .carte {
+  background: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 2em;
+}
+.memoire-terrier .synthese-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  font-size: 1.1em;
+}
+
 
 
 
