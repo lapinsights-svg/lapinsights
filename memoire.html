@@ -16,6 +16,9 @@ title: Mémoire du terrier
   <h3>Diagramme des rubriques visitées</h3>
   <canvas id="diagramme" width="400" height="200"></canvas>
 
+  <h3>Chemins parcourus (graphe de navigation)</h3>
+  <canvas id="graphe" width="600" height="400"></canvas>
+
   <h3>Données brutes</h3>
   <pre id="journal" style="white-space: pre-wrap; background:#f7f7f7; padding:1em; border-radius:6px;"></pre>
 </div>
@@ -99,10 +102,72 @@ title: Mémoire du terrier
     });
   }
 
-  // Charger Chart.js depuis CDN
+  // Graphe des chemins parcourus
+  function afficherGraphe() {
+
+    // Construire les transitions
+    let transitions = {};
+
+    for (let i = 1; i < journal.length; i++) {
+      let from = journal[i - 1].page;
+      let to = journal[i].page;
+
+      let cle = from + "→" + to;
+      transitions[cle] = (transitions[cle] || 0) + 1;
+    }
+
+    // Extraire les nœuds
+    let nodes = {};
+    Object.keys(transitions).forEach(cle => {
+      let [from, to] = cle.split("→");
+      nodes[from] = true;
+      nodes[to] = true;
+    });
+
+    let nodeList = Object.keys(nodes).map((n, i) => ({
+      id: i,
+      label: n
+    }));
+
+    // Construire les liens
+    let links = Object.keys(transitions).map(cle => {
+      let [from, to] = cle.split("→");
+      return {
+        source: nodeList.find(n => n.label === from).id,
+        target: nodeList.find(n => n.label === to).id,
+        value: transitions[cle]
+      };
+    });
+
+    // Dessiner le graphe
+    new Chart(document.getElementById("graphe"), {
+      type: 'graph',
+      data: {
+        nodes: nodeList,
+        links: links
+      },
+      options: {
+        layout: {
+          improvedLayout: true
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  }
+
+  // Charger Chart.js puis le plugin graph
   let script = document.createElement("script");
   script.src = "https://cdn.jsdelivr.net/npm/chart.js";
-  script.onload = afficherDiagramme;
+  script.onload = function() {
+    afficherDiagramme();
+
+    let plugin = document.createElement("script");
+    plugin.src = "https://cdn.jsdelivr.net/npm/chartjs-chart-graph@3.9.0/build/index.umd.min.js";
+    plugin.onload = afficherGraphe;
+    document.body.appendChild(plugin);
+  };
   document.body.appendChild(script);
 
   // Export local
