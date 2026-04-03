@@ -2,7 +2,13 @@
 layout: default
 title: Mémoire du terrier
 ---
+
 <div class="contenu-page memoire-terrier">
+
+  <div class="bandeau-dashboard">
+    Tableau de bord du terrier
+  </div>
+
   <h2>Mémoire du terrier</h2>
   <p>Journal privé — stocké uniquement dans ton navigateur.</p>
 
@@ -11,18 +17,42 @@ title: Mémoire du terrier
   <button id="exporter">Exporter le journal</button>
   <button id="effacer">Effacer la mémoire locale</button>
   <button id="resetTimeline">Réinitialiser la timeline</button>
+  <button id="toggleMode">Mode compact</button>
 
-  <h3>Données brutes</h3>
-  <pre id="journal" style="white-space: pre-wrap; background:#f7f7f7; padding:1em; border-radius:6px; max-height:300px; overflow:auto;"></pre>
+  <!-- SYNTHÈSE -->
+  <div class="carte synthese">
+    <h3>Synthèse</h3>
+    <div class="synthese-grid">
+      <div><strong>Pages visitées :</strong> <span id="synth-pages">0</span></div>
+      <div><strong>Rubriques explorées :</strong> <span id="synth-rubriques">0</span></div>
+      <div><strong>Durée totale :</strong> <span id="synth-duree">0s</span></div>
+    </div>
+  </div>
 
-  <h3>Timeline des passages</h3>
-  <div id="timeline" style="border-left: 3px solid #333; padding-left: 1em;"></div>
+  <!-- DONNÉES BRUTES -->
+  <div class="carte">
+    <h3>Données brutes</h3>
+    <pre id="journal" style="white-space: pre-wrap; background:#f7f7f7; padding:1em; border-radius:6px; max-height:300px; overflow:auto;"></pre>
+  </div>
 
-  <h3>Diagramme des rubriques visitées</h3>
-  <canvas id="diagramme" width="400" height="200"></canvas>
+  <!-- TIMELINE -->
+  <div class="carte">
+    <h3>Timeline des passages</h3>
+    <div id="timeline"></div>
+  </div>
 
-  <h3>Chemins parcourus (graphe de navigation)</h3>
-  <canvas id="graphe" width="600" height="400"></canvas>
+  <!-- DIAGRAMME -->
+  <div class="carte">
+    <h3>Diagramme des rubriques visitées</h3>
+    <canvas id="diagramme" width="400" height="200"></canvas>
+  </div>
+
+  <!-- GRAPHE -->
+  <div class="carte">
+    <h3>Chemins parcourus (graphe de navigation)</h3>
+    <canvas id="graphe" width="600" height="400"></canvas>
+  </div>
+
 </div>
 
 <script>
@@ -34,13 +64,12 @@ title: Mémoire du terrier
   // Exclure la page mémoire elle-même
   journal = journal.filter(e => !e.page.startsWith("/memoire"));
 
-  // Tri chronologique inversé (du plus récent au plus ancien)
+  // Tri chronologique inversé
   journal.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Détection automatique des rubriques
   function rubriqueDepuisURL(path) {
     const segment = path.split("/")[1] || "";
-
     const mapping = {
       "": "Accueil",
       "index.html": "Accueil",
@@ -53,7 +82,6 @@ title: Mémoire du terrier
       "contact": "Contact",
       "archives": "Archives"
     };
-
     return mapping[segment] || "Autre";
   }
 
@@ -76,17 +104,31 @@ title: Mémoire du terrier
     return e;
   });
 
-  // Compteur en direct
+  // Compteur
   document.getElementById("compteur").textContent =
     "Nombre total de passages enregistrés : " + journal.length;
 
-  // Affichage brut
+  // Synthèse
+  document.getElementById("synth-pages").textContent = journal.length;
+
+  let rubriquesUniques = new Set(journal.map(e => e.rubrique));
+  document.getElementById("synth-rubriques").textContent = rubriquesUniques.size;
+
+  let dureeTotale = journal.reduce((acc, e) => acc + (e.duree || 0), 0);
+  document.getElementById("synth-duree").textContent = dureeTotale + "s";
+
+  // Données brutes
   document.getElementById("journal").textContent = JSON.stringify(journal, null, 2);
 
-  // Timeline visuelle
+  // Timeline
   function afficherTimeline() {
     let container = document.getElementById("timeline");
     container.innerHTML = "";
+
+    if (journal.length === 0) {
+      container.textContent = "Aucune visite enregistrée pour le moment.";
+      return;
+    }
 
     journal.forEach(entry => {
       let bloc = document.createElement("div");
@@ -111,16 +153,21 @@ title: Mémoire du terrier
           </span>
         </div>
       `;
-
       container.appendChild(bloc);
     });
   }
 
   afficherTimeline();
 
-  // Diagramme circulaire poétique
+  // Diagramme
   function afficherDiagramme() {
     let ctx = document.getElementById("diagramme").getContext("2d");
+
+    if (journal.length === 0) {
+      document.getElementById("diagramme").textContent =
+        "Le diagramme apparaîtra après vos premières visites.";
+      return;
+    }
 
     let stats = {};
     journal.forEach(e => {
@@ -143,17 +190,21 @@ title: Mémoire du terrier
     });
   }
 
-  // Graphe des chemins parcourus
+  // Graphe
   function afficherGraphe() {
-
     let transitions = {};
 
     for (let i = 1; i < journal.length; i++) {
       let from = journal[i - 1].page;
       let to = journal[i].page;
-
       let cle = from + "→" + to;
       transitions[cle] = (transitions[cle] || 0) + 1;
+    }
+
+    if (Object.keys(transitions).length === 0) {
+      document.getElementById("graphe").textContent =
+        "Le graphe se dessinera lorsque vous aurez parcouru plusieurs pages.";
+      return;
     }
 
     let nodes = {};
@@ -190,7 +241,7 @@ title: Mémoire du terrier
     });
   }
 
-  // Charger Chart.js puis le plugin graph
+  // Charger Chart.js
   let script = document.createElement("script");
   script.src = "https://cdn.jsdelivr.net/npm/chart.js";
   script.onload = function() {
@@ -203,7 +254,7 @@ title: Mémoire du terrier
   };
   document.body.appendChild(script);
 
-  // Export local
+  // Export
   document.getElementById("exporter").addEventListener("click", function() {
     let blob = new Blob([JSON.stringify(journal, null, 2)], {type: "application/json"});
     let url = URL.createObjectURL(blob);
@@ -213,7 +264,7 @@ title: Mémoire du terrier
     a.click();
   });
 
-  // Effacer la mémoire complète
+  // Effacer tout
   document.getElementById("effacer").addEventListener("click", function() {
     if (confirm("Effacer toute la mémoire locale du terrier ?")) {
       localStorage.removeItem("lapinsights_journal");
@@ -221,11 +272,17 @@ title: Mémoire du terrier
     }
   });
 
-  // Réinitialiser uniquement la timeline
+  // Réinitialiser timeline
   document.getElementById("resetTimeline").addEventListener("click", function() {
     if (confirm("Effacer uniquement la timeline ?")) {
       document.getElementById("timeline").innerHTML = "";
     }
+  });
+
+  // Mode compact
+  document.getElementById("toggleMode").addEventListener("click", () => {
+    let bloc = document.querySelector(".memoire-terrier");
+    bloc.classList.toggle("compact");
   });
 
 })();
