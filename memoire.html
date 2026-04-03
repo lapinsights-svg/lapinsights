@@ -13,6 +13,9 @@ title: Mémoire du terrier
   <button id="effacer">Effacer la mémoire locale</button>
   <button id="resetTimeline">Réinitialiser la timeline</button>
 
+  <h3>Données brutes</h3>
+  <pre id="journal" style="white-space: pre-wrap; background:#f7f7f7; padding:1em; border-radius:6px; max-height:300px; overflow:auto;"></pre>
+
   <h3>Timeline des passages</h3>
   <div id="timeline" style="border-left: 3px solid #333; padding-left: 1em;"></div>
 
@@ -21,9 +24,6 @@ title: Mémoire du terrier
 
   <h3>Chemins parcourus (graphe de navigation)</h3>
   <canvas id="graphe" width="600" height="400"></canvas>
-
-  <h3>Données brutes</h3>
-  <pre id="journal" style="white-space: pre-wrap; background:#f7f7f7; padding:1em; border-radius:6px;"></pre>
 </div>
 
 <script>
