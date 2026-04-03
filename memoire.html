@@ -51,7 +51,7 @@ title: Mémoire du terrier
 
   // Ajouter les tags aux entrées existantes
   journal = journal.map(e => {
-    e.rubrique = detecterRubrique(e.page);
+    e.rubrique = detecterRubriqueURL(e.page);
     return e;
   });
 
