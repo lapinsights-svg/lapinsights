@@ -30,14 +30,24 @@ title: Mémoire du terrier
   let journal = JSON.parse(localStorage.getItem("lapinsights_journal") || "[]");
 
   // Détection automatique des rubriques
-  function detecterRubrique(page) {
-    if (page.startsWith("/actualites")) return "Actualités";
-    if (page.startsWith("/creations")) return "Créations";
-    if (page.startsWith("/idees")) return "Idées";
-    if (page.startsWith("/spiritualite")) return "Spiritualité";
-    if (page.startsWith("/contact")) return "Contact";
-    return "Autre";
-  }
+function rubriqueDepuisURL(path) {
+  const segment = path.split("/")[1] || "";
+
+  const mapping = {
+    "": "Accueil",
+    "index.html": "Accueil",
+    "index.md": "Accueil",
+    "actualites": "Actualités",
+    "creations": "Créations",
+    "idees": "Territoires d’idées",
+    "passe": "Dans le passé",
+    "spiritualite": "Spiritualité",
+    "contact": "Contact",
+    "archives": "Archives"
+  };
+
+  return mapping[segment] || "Autre";
+}
 
   // Ajouter les tags aux entrées existantes
   journal = journal.map(e => {
