@@ -764,6 +764,7 @@ footer {
   opacity: 0.8;
   font-size: 0.95rem;
   margin-left: 0.2rem;         /* espace subtil après le tiret */
+  color: rgba(255, 255, 255, 0.55);   /* gris doux, 4 tons plus bas que blanc */
 }
 
 
