@@ -576,11 +576,22 @@ footer {
   color: #888;
 }
 
+/* Masquer le conteneur quand il est vide */
+#results-container:empty {
+  display: none;
+}
+
+/* Conteneur des résultats */
 #results-container {
-  margin-top: 0.4em;
+  position: absolute;
+  bottom: 2.2em; /* 🔹 Affiche les résultats AU-DESSUS du champ */
+  left: 0;
+
   list-style: none;
   padding-left: 0;
-  background: white;
+
+  background: rgba(255, 255, 255, 0.9); /* 🔹 Fond semi-transparent */
+  backdrop-filter: blur(6px);           /* 🔹 Effet verre dépoli */
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 180px;
@@ -588,10 +599,12 @@ footer {
   z-index: 200;
 }
 
+/* Items */
 #results-container li {
   padding: 4px 8px;
 }
 
+/* Liens */
 #results-container li a {
   text-decoration: none;
   color: #222;
