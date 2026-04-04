@@ -534,7 +534,7 @@ footer {
 .footer-flex {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;                  /* plus d’air entre les blocs */
   flex-wrap: nowrap;
 }
