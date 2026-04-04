@@ -1003,6 +1003,25 @@ main.contenu-scroll > *:first-child {
   color: #2a3f7a !important;
 }
 
+/* ================================
+   PDF intégré dans la page
+================================ */
+
+.pdf-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.pdf-container .pdf-frame {
+  width: 100%;
+  height: 90vh;
+  border: none;
+  display: block;
+}
+
+
 
 
 
