@@ -525,34 +525,41 @@ footer {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0.6cm;              /* plus léger et plus élégant que 1cm */
+  bottom: 0.6cm;
   z-index: 100;
   color: var(--texte);
 }
 
-/* Conteneur interne : bloc gauche (signature + recherche) + newsletter */
-.footer-flex {
+/* Conteneur interne : on passe en 2 colonnes, mais la gauche est neutralisée */
+.footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;        /* aligne verticalement les deux colonnes */
+  align-items: flex-start;
   gap: 2rem;
-  flex-wrap: nowrap;
 }
 
-/* Bloc gauche regroupé */
+/* Bloc gauche : NEUTRALISÉ */
 .footer-left {
+  width: 0;          /* ne prend plus de place */
+  padding: 0;
+  margin: 0;
+  overflow: hidden;  /* sécurité */
+}
+
+/* Bloc droit : newsletter + recherche + signature EMPILÉS */
+.footer-right {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;                /* espace entre signature et recherche */
-  padding-top: 0.5rem;
+  gap: 1.2rem;
+  align-items: flex-start;
 }
 
 /* Signature */
 .footer-signature {
   opacity: 0.7;
   font-size: 0.9rem;
-  text-align: left;
   line-height: 1.4;
+  text-align: left;
 }
 
 /* 🔍 Barre de recherche */
@@ -563,7 +570,7 @@ footer {
 }
 
 #search-input {
-  width: 130px;               /* petit et discret */
+  width: 130px;
   padding: 4px 8px;
   font-size: 0.8rem;
   border-radius: 4px;
@@ -576,22 +583,19 @@ footer {
   color: #888;
 }
 
-/* Masquer le conteneur quand il est vide */
+/* Résultats de recherche */
 #results-container:empty {
   display: none;
 }
 
-/* Conteneur des résultats */
 #results-container {
   position: absolute;
-  bottom: 2.2em; /* 🔹 Affiche les résultats AU-DESSUS du champ */
+  bottom: 2.2em;
   left: 0;
-
   list-style: none;
   padding-left: 0;
-
-  background: rgba(255, 255, 255, 0.9); /* 🔹 Fond semi-transparent */
-  backdrop-filter: blur(6px);           /* 🔹 Effet verre dépoli */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 180px;
@@ -599,12 +603,10 @@ footer {
   z-index: 200;
 }
 
-/* Items */
 #results-container li {
   padding: 4px 8px;
 }
 
-/* Liens */
 #results-container li a {
   text-decoration: none;
   color: #222;
@@ -614,13 +616,13 @@ footer {
   text-decoration: underline;
 }
 
-/* Newsletter à droite */
+/* Newsletter */
 .newsletter-mini {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   font-size: 0.85rem;
-  text-align: right;
+  text-align: left; /* important : plus de colonne droite alignée à droite */
 }
 
 .newsletter-mini-title {
@@ -628,13 +630,11 @@ footer {
   font-weight: 600;
 }
 
-/* Ligne du formulaire */
 .newsletter-mini-row {
   display: flex;
   gap: 0.4rem;
 }
 
-/* Champ email */
 .newsletter-mini input[type="email"] {
   padding: 0.4rem 0.6rem;
   border-radius: 0.4rem;
@@ -644,7 +644,6 @@ footer {
   width: 160px;
 }
 
-/* Bouton */
 .newsletter-mini button {
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
