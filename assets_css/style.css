@@ -761,12 +761,10 @@ footer {
 
 .pdf-resume {
   font-weight: 400;
-  opacity: 0.8;
   font-size: 0.95rem;
-  margin-left: 0.2rem;         /* espace subtil après le tiret */
-  color: rgba(255, 255, 255, 0.22);   /* 🔥 gris beaucoup plus foncé */
+  margin-left: 0.2rem;
+  color: rgba(255, 255, 255, 0.85); /* gris foncé, lisible */
 }
-
 
 .liste-pdf {
   max-width: 760px;       /* harmonisé avec .pdf-item */
@@ -874,7 +872,7 @@ main.contenu-scroll > *:first-child {
   display: none;
   position: fixed;
   bottom: 110px;
-  right: 500px;
+  right: 600px;
   z-index: 1000;
   background: none;
   border: none;
