@@ -154,6 +154,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+  <script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+<!-- barre de recherche dans le site -->
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'Aucun résultat',
+    limit: 20
+  })
+</script>
+
+  
   <script data-goatcounter="https://celeste52.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
