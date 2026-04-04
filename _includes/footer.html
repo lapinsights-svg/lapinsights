@@ -23,7 +23,7 @@
 
       <div class="footer-search">
         <input type="text" id="search-input" placeholder="Rechercher...">
-        <ul id="results-container"></ul>
+        <!-- ⚠️ SUPPRIMÉ : <ul id="results-container"></ul> -->
       </div>
 
       <div class="footer-signature">
@@ -35,17 +35,3 @@
   </div>
 
 </footer>
-
-<!-- Script Simple-Jekyll-Search -->
-<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
-
-<script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-    noResultsText: 'Aucun résultat',
-    limit: 20
-  })
-</script>
