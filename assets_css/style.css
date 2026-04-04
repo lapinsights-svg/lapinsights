@@ -764,9 +764,10 @@ footer {
 }
 
 .liste-pdf {
-  margin: 0 auto;        /* centre le bloc */
-  padding-left: 40px;    /* décalage doux vers la droite */
-  max-width: 760px;      /* même largeur que rubrique-header */
+  max-width: 720px;       /* largeur éditoriale élégante */
+  margin-left: 2.5rem;    /* douce marge à gauche */
+  margin-top: 2rem;
+  text-align: left;       /* empêche tout centrage hérité */
 }
 
 main.contenu-scroll > *:first-child {
