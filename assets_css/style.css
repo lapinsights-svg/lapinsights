@@ -844,6 +844,18 @@ main.contenu-scroll > *:first-child {
   animation: petitHop 1.6s infinite ease-in-out;
 }
 
+
+/* ----------------------------------------------------
+  couleur de la licence auteur
+---------------------------------------------------- */
+.site-footer .auteur,
+.footer-author,
+.licence,
+.copyright {
+  color: #4a4a4a;   /* gris profond, élégant */
+}
+
+
 /* ----------------------------------------------------
   barre de recherche
 ---------------------------------------------------- */
