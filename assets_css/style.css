@@ -853,13 +853,16 @@ main.contenu-scroll > *:first-child {
   align-items: center;
   justify-content: center;
   margin: 2em 0;
-  margin-top: 0.5em;   /* marge haute réduite */
+  margin-top: 1em;   /* marge haute réduite */
 }
 
 .search-zone input {
   width: 100%;
   max-width: 200px;
   text-align: center;
+  background-color: #94bbe3;   /* couleur du fond */
+  color: #000000;              /* texte noir */
+  border: 1px solid #94bbe3;   /* bordure assortie, discrète */
 }
 
 .search-zone ul {
