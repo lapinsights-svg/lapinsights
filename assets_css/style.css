@@ -848,28 +848,59 @@ main.contenu-scroll > *:first-child {
   barre de recherche
 ---------------------------------------------------- */
 .search-zone {
+  position: relative;          /* référence pour le positionnement absolu */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 2em 0;
-  margin-top: 1em;   /* marge haute réduite */
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 .search-zone input {
   width: 100%;
-  max-width: 200px;
-  text-align: center;
-  background-color: #94bbe3;   /* couleur du fond */
-  color: #000000;              /* texte noir */
-  border: 1px solid #94bbe3;   /* bordure assortie, discrète */
+  max-width: 250px;           /* ta largeur choisie */
+  margin: 0 auto;
+  display: block;
+  background-color: #94bbe3;
+  color: #000;
+  border: 1px solid #94bbe3;
 }
 
+/* La liste des résultats ne pousse plus le reste : elle flotte sous la barre */
 .search-zone ul {
+  position: absolute;
+  top: 100%;                  /* juste sous l’input */
+  left: 50%;
+  transform: translateX(-50%);
   list-style: none;
-  padding: 0;
-  margin-top: 1em;
-  text-align: center;
+  padding: 0.5em 0;
+  margin: 0.3em 0 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  min-width: 250px;
+  max-width: 320px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 200;
+}
+
+/* Quand il n’y a pas de résultats, on cache le bloc */
+.search-zone ul:empty {
+  display: none;
+}
+
+.search-zone ul li {
+  padding: 0.2em 0.8em;
+}
+
+.search-zone ul li a {
+  text-decoration: none;
+  color: #222;
+}
+
+.search-zone ul li a:hover {
+  text-decoration: underline;
 }
 
 /* ----------------------------------------------------
