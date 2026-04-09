@@ -827,7 +827,7 @@ textarea {
 #backToTop {
   position: fixed;
   bottom: 30px;          /* position temporaire pour le retrouver */
-  right: 900px;          /* position temporaire pour le retrouver */
+  right: 400px;          /* position temporaire pour le retrouver */
   font-size: 1.7rem;     /* taille réduite */
   background: none !important;
   border: none !important;
