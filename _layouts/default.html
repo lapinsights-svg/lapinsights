@@ -14,37 +14,31 @@
 
   {% include footer.html %}
 
-<!-- Bouton retour haut -->
-<button id="backToTop" title="Remonter le terrier">🐇↟</button>
+  <!-- Bouton retour haut -->
+  <button id="backToTop" title="Remonter le terrier">🐇↟</button>
 
-<script>
-  const btn = document.getElementById("backToTop");
+  <script>
+    const btn = document.getElementById("backToTop");
 
-  // Apparition / disparition
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      btn.classList.add("visible");
-    } else {
-      btn.classList.remove("visible");
-    }
-  });
-
-  // Remonter en douceur (fonctionne dans tous les cas)
-  btn.addEventListener("click", () => {
-    // remonte html
-    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-
-    // remonte body
-    document.body.scrollTo({ top: 0, behavior: "smooth" });
-
-    // remonte tous les conteneurs scrollables éventuels
-    document.querySelectorAll("*").forEach(el => {
-      if (el.scrollTop > 0) {
-        el.scrollTo({ top: 0, behavior: "smooth" });
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        btn.classList.add("visible");
+      } else {
+        btn.classList.remove("visible");
       }
     });
-  });
-</script>
+
+    btn.addEventListener("click", () => {
+      document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      document.body.scrollTo({ top: 0, behavior: "smooth" });
+
+      document.querySelectorAll("*").forEach(el => {
+        if (el.scrollTop > 0) {
+          el.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
 
   <!-- Partage d’articles -->
   <script>
