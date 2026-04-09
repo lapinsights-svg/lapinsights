@@ -5,7 +5,6 @@ collection: articles
 resume: "Analyse des mécanismes psychologiques, rhétoriques et idéologiques du Travail de Byron Katie."
 ---
 
-<!-- IMAGE À INSÉRER -->
 ![Byron](/images/spiritualite/Byron.png)
 
 
