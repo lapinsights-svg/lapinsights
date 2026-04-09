@@ -942,6 +942,30 @@ body {
   opacity: 0.5;
 }
 
+/* lien partage d'articles */
+.share-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.share-block p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.share-link {
+  margin-right: 1rem;
+  color: #c45a00; /* ton orangé signature */
+  text-decoration: none;
+}
+
+.share-link:hover {
+  text-decoration: underline;
+}
+
+
 
 
 
