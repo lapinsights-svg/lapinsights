@@ -1,0 +1,77 @@
+<header>
+  <div class="header-left">
+
+    <div class="portrait-flottant">
+      <img src="{{ '/images/celeste.png' | relative_url }}" alt="Portrait">
+    </div>
+
+    <div class="logo-title">
+      <h1>
+        <a class="site-title" href="{{ '/' | relative_url }}">LAPINSIGHTS</a>
+      </h1>
+      <p>Terrier des mondes, éclats et correspondances</p>
+    </div>
+
+  </div>
+
+  <nav class="menu-haut">
+
+    <button onclick="window.location='{{ '/actualites/' | relative_url }}'">Actualités</button>
+    <button onclick="window.location='{{ '/creations/' | relative_url }}'">Créations</button>
+    <button onclick="window.location='{{ '/idees/' | relative_url }}'">Territoires d’idées</button>
+    <button onclick="window.location='{{ '/spiritualite/' | relative_url }}'">Spiritualité</button>
+
+    <!-- ARCHIVES — dropdown -->
+    <div class="menu-archives">
+      <button class="menu-button">Archives</button>
+
+      <div class="menu-archives-dropdown">
+        {% assign sorted_archives = site.archives | sort: "date" | reverse %}
+        {% assign seen_archives = "" %}
+        {% for article in sorted_archives %}
+          {% assign year = article.date | date: "%Y" %}
+          {% assign month = article.date | date: "%B" %}
+          {% assign id = article.date | date: "%Y-%m" %}
+          {% assign label = month | capitalize | append: " " | append: year %}
+          {% unless seen_archives contains id %}
+            <a href="/archives/#{{ id }}">{{ label }}</a>
+            {% assign seen_archives = seen_archives | append: id | append: "," %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="menu-passe disabled">
+      <button class="menu-button">Dans le passé</button>
+      <div class="menu-passe-dropdown"></div>
+    </div>
+
+    <button onclick="window.location='{{ '/contact/' | relative_url }}'">Contact</button>
+
+  </nav>
+</header>
+
+{% if page.url == "/" %}
+  <div class="search-bar-wrapper">
+    <input type="text" id="search-input" placeholder="Rechercher..." />
+  </div>
+{% endif %}
+
+{% if page.url == "/archives/" %}
+  <div class="archives-select-wrapper">
+    <div class="archives-select">
+      <select id="archives-jump" onchange="if (this.value) { location = this.value; }">
+        <option value="">Choisir une période…</option>
+
+        {% assign sorted = site.archives | sort: "date" | reverse %}
+        {% for article in sorted %}
+          {% assign year = article.date | date: "%Y" %}
+          {% assign month = article.date | date: "%B" %}
+          {% assign id = article.date | date: "%Y-%m" %}
+          <option value="#{{ id }}">{{ month | capitalize }} {{ year }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+{% endif %}
+

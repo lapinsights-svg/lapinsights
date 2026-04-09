@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <main class="contenu-scroll">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+<!-- Bouton retour haut -->
+<button id="backToTop" title="Remonter le terrier">🐇↟</button>
+
+<script>
+  const btn = document.getElementById("backToTop");
+
+  // Apparition / disparition
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  });
+
+  // Remonter en douceur (fonctionne dans tous les cas)
+  btn.addEventListener("click", () => {
+    // remonte html
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+
+    // remonte body
+    document.body.scrollTo({ top: 0, behavior: "smooth" });
+
+    // remonte tous les conteneurs scrollables éventuels
+    document.querySelectorAll("*").forEach(el => {
+      if (el.scrollTop > 0) {
+        el.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  });
+</script>
+
+  <!-- Partage d’articles -->
+  <script>
+    function shareArticle(title, url, network = null) {
+      if (network === "facebook") {
+        window.open(
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url),
+          "_blank", "noopener"
+        );
+        return;
+      }
+
+      if (network === "twitter") {
+        window.open(
+          "https://twitter.com/intent/tweet?text=" + encodeURIComponent(title) +
+          "&url=" + encodeURIComponent(url),
+          "_blank", "noopener"
+        );
+        return;
+      }
+
+      if (network === "whatsapp") {
+        window.open(
+          "https://api.whatsapp.com/send?text=" +
+          encodeURIComponent(title + " " + url),
+          "_blank", "noopener"
+        );
+        return;
+      }
+
+      if (network === "email") {
+        window.location.href =
+          "mailto:?subject=" + encodeURIComponent(title) +
+          "&body=" + encodeURIComponent(url);
+        return;
+      }
+
+      if (navigator.share) {
+        navigator.share({ title: title, url: url });
+        return;
+      }
+
+      navigator.clipboard.writeText(url);
+      alert("Lien copié !");
+    }
+  </script>
+
+  <!-- Mode fantôme -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.location.pathname.includes("memoire")) {
+
+        const zone = document.querySelector(".contenu-page");
+        const bouton = document.createElement("button");
+        bouton.id = "toggleFantome";
+        bouton.style.marginBottom = "1em";
+
+        function majBouton() {
+          if (localStorage.getItem("lapinsights_ignore") === "true") {
+            bouton.textContent = "👻 Mode fantôme : ACTIVÉ";
+            bouton.style.background = "#333";
+            bouton.style.color = "white";
+          } else {
+            bouton.textContent = "👻 Activer le mode fantôme";
+            bouton.style.background = "";
+            bouton.style.color = "";
+          }
+        }
+
+        bouton.onclick = function() {
+          if (localStorage.getItem("lapinsights_ignore") === "true") {
+            localStorage.removeItem("lapinsights_ignore");
+          } else {
+            localStorage.setItem("lapinsights_ignore", "true");
+          }
+          majBouton();
+        };
+
+        majBouton();
+        zone.insertBefore(bouton, zone.children[2]);
+      }
+    });
+  </script>
+
+  <!-- Statcounter -->
+  <script>
+    var sc_project = 13213092;
+    var sc_invisible = 1;
+    var sc_security = "a6e8d30c";
+  </script>
+  <script async src="https://www.statcounter.com/counter/counter.js"></script>
+  <noscript>
+    <div class="statcounter">
+      <a href="https://statcounter.com/" target="_blank">
+        <img class="statcounter"
+             src="https://c.statcounter.com/13213092/0/a6e8d30c/1/"
+             alt="free web stats"
+             referrerPolicy="no-referrer-when-downgrade">
+      </a>
+    </div>
+  </noscript>
+
+  <!-- GoatCounter -->
+  <script data-goatcounter="https://celeste52.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

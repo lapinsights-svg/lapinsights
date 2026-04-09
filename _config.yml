@@ -1,0 +1,98 @@
+title: "Lapinsights"
+description: "Territoire éditorial souverain"
+baseurl: ""
+url: "https://lapinsights-svg.github.io"
+
+markdown: kramdown
+
+excerpt_separator: "<!--NOEXCERPT-->"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections éditoriales
+collections:
+  actualites:
+    output: true
+    permalink: /actualites/:title/
+  creations:
+    output: true
+    permalink: /creations/:title/
+  idees:
+    output: true
+    permalink: /idees/:title/
+  spiritualite:
+    output: true
+    permalink: /spiritualite/:title/
+  passe:
+    output: true
+    permalink: /passe/:title/
+  archives:
+    output: true
+    permalink: /archives/:title/
+
+# Layouts par défaut pour les items de chaque collection
+defaults:
+  - scope:
+      path: ""
+      type: actualites
+    values:
+      layout: article
+
+  - scope:
+      path: ""
+      type: creations
+    values:
+      layout: article
+
+  - scope:
+      path: ""
+      type: idees
+    values:
+      layout: article
+
+  - scope:
+      path: ""
+      type: spiritualite
+    values:
+      layout: article
+
+  - scope:
+      path: ""
+      type: passe
+    values:
+      layout: article
+
+  - scope:
+      path: ""
+      type: archives
+    values:
+      layout: article
+
+  # Si un jour tu utilises _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+
+
+
+# Newsletter (Buttondown)
+newsletter_url: "https://buttondown.email/dig_it"
+
+# Open Graph / Partage
+social_image: "/images/social-default.png"
+
+# Fichiers à inclure
+include:
+  - assets_css
+  - robots.txt
+  - search.json
+  - images
+
+
+keep_files:
+  - assets_css

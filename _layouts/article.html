@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% assign page.excerpt = "" %}
+
+<main class="section-content article-wrapper article-page">
+
+  <div class="article-header-line">
+
+    <div class="article-header-top">
+      {% if page.date %}
+        <span class="article-date">{{ page.date | date: "%d.%m.%Y" }}</span>
+      {% endif %}
+
+      {% if page.title %}
+        <span class="article-title">{{ page.title }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.resume %}
+      <span class="article-teaser">{{ page.resume }}</span>
+    {% endif %}
+
+  </div>
+
+  <article class="article-content">
+    <div class="article-body">
+      {{ content }}
+    </div>
+  </article>
+
+</main>
