@@ -51,7 +51,7 @@ Peter Reid was born on 6 January 1768. He was the son of John Reid and Elizabeth
 He died in May 1795 at age 27.
 
 Mais comment se fait-il que le fils de Byron Katie porte le nom de Robinson ?  
-Parce qu'il porte le nom de son père, Bob Robinson, un nom juif, qui a eu une liaison avec Byron Katie.  
+Parce qu'il porte le nom de son père, Bob Robinson - un nom juif - qui a eu une liaison avec Byron Katie.  
 Ross Robinson est un producteur de disques.
 
 Il semble que Byron Katie ait une personne dans sa famille qui vit aussi du même business spirituel avec *Le Travail* et qui s'appelle Tammy Reid.  
