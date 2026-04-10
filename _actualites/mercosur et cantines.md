@@ -1,7 +1,7 @@
 ---
 title: "Les départements peuvent-ils refuser le Mercosur dans les cantines ?"
 date: 2026-01-27
-category: actualites
+categories: actualites
 resume: "Analyse juridique : jusqu’où un département peut-il aller pour exclure la viande du Mercosur des cantines scolaires sans violer le droit européen ?"
 ---
 
