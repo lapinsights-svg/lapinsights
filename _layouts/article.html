@@ -27,17 +27,25 @@ layout: default
       {{ content }}
 
       <!-- BLOC : À LIRE AUSSI -->
-      {% assign current_category = page.categories | first %}
-      {% assign related_posts = site.posts | where_exp: "item", "item.categories contains current_category and item.url != page.url" %}
+    {% assign current_category = page.categories | first %}
 
-      {% if related_posts.size > 0 %}
-        <div class="related-article">
-          <h3>À lire aussi</h3>
+{% assign related_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.url != page.url and post.categories contains current_category %}
+    {% assign related_posts = related_posts | push: post %}
+  {% endif %}
+{% endfor %}
 
-          {% assign suggestion = related_posts | sort: "date" | last %}
-          <a href="{{ suggestion.url }}">{{ suggestion.title }}</a>
-        </div>
-      {% endif %}
+{% if related_posts.size > 0 %}
+  <div class="related-article">
+    <h3>À lire aussi</h3>
+
+    {% assign sorted = related_posts | sort: "date" %}
+    {% assign suggestion = sorted | last %}
+
+    <a href="{{ suggestion.url }}">{{ suggestion.title }}</a>
+  </div>
+{% endif %}
       <!-- FIN DU BLOC -->
 
       <div class="share-block">
