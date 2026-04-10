@@ -1,7 +1,7 @@
 ---
 title: "L’Europe qui grelotte"
 date: 2026-03-16
-category: actualites
+categories: actualites
 resume: "Pourquoi l’Europe ne peut pas protéger uniformément ses citoyens face à la crise énergétique."
 ---
 
