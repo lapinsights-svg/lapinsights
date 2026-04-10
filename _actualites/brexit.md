@@ -1,7 +1,7 @@
 ---
 title: "BREXIT : le biais des sondages"
 date: 2026-01-28
-category: actualites
+categories: actualites
 resume: "Pourquoi les sondages sur le Brexit donnent une illusion de polarisation."
 ---
 
