@@ -1,8 +1,7 @@
 ---
 title: "Réforme du chômage et aidants proches en Belgique"
 date: 2026-02-27
-rubrique: "Société"
-collection: "articles"
+category: actualites
 resume: "Analyse de la réforme du chômage en Belgique et de ses conséquences pour plus d’un million d’aidants proches."
 ---
 
