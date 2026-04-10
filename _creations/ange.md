@@ -61,7 +61,7 @@ quelque chose veille.
 Quelque chose écoute.  
 Quelque chose apprend  
 à laisser passer la douleur  
-comme on laisse s’éloigner un ange  
+comme on laisse s’éloigner une chaleur  
 qui ne peut demeurer.
 
 Ô Ange,  
