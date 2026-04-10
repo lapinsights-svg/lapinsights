@@ -1,8 +1,7 @@
 ---
 title: "Manifestation des policiers français"
 date: 2026-01-30
-rubrique: "Société"
-collection: "articles"
+category: actualites
 resume: "Analyse des causes structurelles de la crise au sein de la police française et des pistes de réforme inspirées d’autres modèles européens."
 ---
 
