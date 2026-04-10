@@ -1,8 +1,7 @@
 ---
 title: "Le théâtre de la politique française : Entre affrontements chorégraphiés et électeurs oubliés"
 date: 2026-03-05
-rubrique: "Société"
-collection: "articles"
+category: idees
 resume: "Analyse du jeu politique français, de ses polémiques mises en scène et de l’écart croissant avec les préoccupations réelles des citoyens."
 ---
 
