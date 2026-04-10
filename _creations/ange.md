@@ -119,3 +119,5 @@ dans ce lieu où le corps
 apprend à relâcher,
 et où l’amour
 devient lumière à travers l’ombre.
+
+© Céleste R. — CC BY-NC-ND
