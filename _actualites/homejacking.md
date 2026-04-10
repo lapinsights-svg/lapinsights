@@ -1,7 +1,7 @@
 ---
 title: "Un violent Home-Jacking ?"
 date: 2026-02-06
-category: actualites
+categories: actualites
 resume: "Analyse critique d’un récit médiatique incohérent autour d’un prétendu home-jacking visant un membre du Conseil d’État."
 ---
 
