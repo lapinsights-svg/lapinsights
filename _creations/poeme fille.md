@@ -1,8 +1,7 @@
 ---
 title: "Poème pour ma fille"
 date: 2026-03-19
-rubrique: "Poésie"
-collection: "textes"
+category: creations
 resume: "Un poème sensoriel et intime sur la manière dont une enfant ressent le monde."
 ---
 
