@@ -2,6 +2,7 @@
 title: "Iran et désinformation de guerre"
 date: 2026-03-05
 resume: "fausses images, fausses vidéos"
+category: actualites
 ---
 
 # IRAN : une guerre de désinformation
