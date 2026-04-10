@@ -1,8 +1,7 @@
 ---
 title: "Menace du PDG de Pfizer sur la France"
 date: 2026-01-25
-rubrique: "Société"
-collection: "articles"
+category: actualites
 resume: "Analyse des déclarations du PDG de Pfizer évoquant la possibilité de cesser d’approvisionner la France si les prix des médicaments ne sont pas relevés."
 ---
 
