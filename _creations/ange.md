@@ -3,6 +3,7 @@ title: "Là où le souffle tremble"
 date: 2026-04-10
 layout: article
 resume: "Elle avance entre ombre et lumière, guidée par un ange intérieur"
+category: creations
 ---
 
 ![lumiere](/images/creations/lumiere.png)
