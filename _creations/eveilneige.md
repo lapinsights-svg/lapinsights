@@ -3,7 +3,7 @@ title: "L'éveil dans la neige"
 date: 2026-04-04
 tags: [spiritualité, création, conscience]
 resume: "Une marche dans la neige où la vie invisible se révèle."
-category: creations
+categories: creations
 layout: article
 ---
 
