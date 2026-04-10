@@ -1,5 +1,5 @@
 ---
-title: "LLà où le souffle tremble"
+title: "Là où le souffle tremble"
 date: 2026-04-10
 resume: "Elle avance entre ombre et lumière, guidée par un ange intérieur"
 ---
