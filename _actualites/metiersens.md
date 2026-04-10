@@ -5,9 +5,12 @@ category: actualites
 date: 2026-04-11 12:00:00
 ---
 
+![metiersens](/images/actualites/metiersens.png)
+
+
+
 # ⟡ Restaurer le sens  
 *Ce que Mme Rist voit, ce qu’elle ne voit pas, et ce qu’il faudrait enfin dire*  
-*Lapinsights — Avril 2026*
 
 ---
 
