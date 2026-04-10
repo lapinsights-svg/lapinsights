@@ -1,7 +1,7 @@
 ---
 title: "Une rupture du principe de laïcité"
 date: 2026-02-17
-category: idees
+categories: idees
 resume: "Réflexion sur l’évolution de la laïcité française, de la loi de 1905 aux tensions contemporaines entre liberté, visibilité et contrôle."
 ---
 
