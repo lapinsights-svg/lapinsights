@@ -1,8 +1,7 @@
 ---
 title: "La charte et le mur : Ce que révèle le projet Révoludroit de Valérie Bugault"
 date: 2026-03-08
-rubrique: "Société"
-collection: "articles"
+category: idees
 resume: "Exploration du projet Révoludroit de Valérie Bugault, entre refondation institutionnelle, effondrement systémique et reconstruction civique."
 ---
 
