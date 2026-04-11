@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Restaurer le sens : ce que l'on voit, ce que l'on tait"
+title: "Restaurer le sens"
 categories: actualites
 date: 2026-04-11
 ---
