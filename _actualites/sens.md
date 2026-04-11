@@ -7,7 +7,7 @@ date: 2026-04-11
 
 ![metiersens](/images/actualites/metiersens.png)
 
-## 1. Le constat partagé : un système qui se fissure
+## 1. Le constat partagé : un système qui se fissure.
 
 Cette semaine, dans l'hémicycle, Mme Rist a prononcé une phrase juste :
 
