@@ -2,6 +2,7 @@
 layout: article
 title: "Restaurer le sens"
 categories: actualites
+resume: "les métiers du lien en crise"
 date: 2026-04-11
 ---
 
