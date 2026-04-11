@@ -32,9 +32,7 @@ Mais elle ne dit pas **ce qui s’est brisé**.
 
 ## 2. Ce qu’elle ne dit pas : l’infantilisation, la dépossession, la casse du pouvoir d’agir
 
-La crise n’est pas technique.  
-Elle n’est pas budgétaire.  
-Elle n’est pas organisationnelle.
+La crise n’est pas technique.  Elle n’est pas budgétaire.  Elle n’est pas organisationnelle.
 
 Elle est **existentielle**.
 
@@ -50,11 +48,9 @@ Elle ne dit pas que :
 - on les **remplace** par des outils numériques qui ne comprennent rien au vivant ;  
 - on les **use** jusqu’à la corde en leur demandant de “tenir encore un peu”.
 
-Elle ne dit pas que la souffrance ne vient pas du travail lui‑même,  
-mais du **travail empêché**.
+Elle ne dit pas que la souffrance ne vient pas du travail lui‑même, mais du **travail empêché**.
 
-Elle ne dit pas que la perte de sens n’est pas un concept abstrait,  
-mais une **douleur quotidienne**.
+Elle ne dit pas que la perte de sens n’est pas un concept abstrait, mais une **douleur quotidienne**.
 
 Et pourtant, les témoignages existent, nombreux, précis, bouleversants.
 
@@ -132,8 +128,7 @@ Il a fait l’inverse :
 - multiplié les contrôles,  
 - transformé les professionnels en opérateurs de saisie.
 
-Le numérique n’est pas une réponse.  
-C’est un outil.  
+Le numérique n’est pas une réponse. C’est un outil.  
 Et un outil ne peut pas réparer une crise existentielle.
 
 Il ne redonne pas du sens : il ajoute des cases.  
@@ -163,7 +158,7 @@ Elle est **philosophique**.
 
 ---
 
-## 7. Ce qu’il faudrait faire : un vrai plan d’action pour restaurer le sens
+## 7. Un vrai plan d’action pour restaurer le sens
 
 Voici ce qu’un gouvernement qui comprendrait réellement les métiers du lien devrait annoncer.
 
@@ -208,8 +203,8 @@ Ils ne demandent pas des réformes techniques.
 Ils demandent qu’on leur rende ce qui fait la beauté de leur métier :  
 le **sens**, la **présence**, la **relation**, la **confiance**, la **liberté d’agir**.
 
-Ce que Mme Rist voit est réel.  
-Ce qu’elle ne voit pas est essentiel.  
+Ce que Mme Rist voit est réel. 
+Mais,ce qu’elle ne voit pas est essentiel.  
 Et ce qu’il faudrait faire est simple :  
 **remettre le vivant au centre.**
 
