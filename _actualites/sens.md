@@ -19,8 +19,7 @@ L’intervention complète est visible ici :
 
 Elle a raison.  
 Les métiers du soin, du social, de l’éducation, de l’accompagnement se fissurent.  
-Les vocations s’éteignent.  
-Les professionnels s’épuisent.
+Les vocations s’éteignent. Les professionnels s’épuisent.
 
 Elle parle d’attractivité, de formation, de réorganisation, de numérique.  
 Elle parle de flux, de pilotage, de continuité du service.
@@ -195,6 +194,7 @@ Voici ce qu’un gouvernement qui comprendrait réellement les métiers du lien 
 - écouter les signaux faibles.
 
 ---
+
 
 Les métiers du lien ne sont pas en crise parce qu’ils coûtent trop cher.  
 Ils sont en crise parce qu’on leur a retiré leur **dignité professionnelle**.
