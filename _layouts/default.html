@@ -10,13 +10,18 @@
 
   <main class="contenu-scroll">
 
-    {% if page.date and page.date > site.time %}
-      {% assign hide_future = true %}
-    {% endif %}
+  {% if page.date %}
+  {% assign page_ts = page.date | date: "%s" %}
+  {% assign now_ts = site.time | date: "%s" %}
 
-    {% unless hide_future %}
-      {{ content }}
-    {% endunless %}
+  {% if page_ts > now_ts %}
+    {% assign hide_future = true %}
+  {% endif %}
+{% endif %}
+
+{% unless hide_future %}
+  {{ content }}
+{% endunless %}
 
   </main>
 
