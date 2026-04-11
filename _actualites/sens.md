@@ -158,7 +158,7 @@ Elle est **philosophique**.
 
 ---
 
-## 7. Un vrai plan d’action pour restaurer le sens
+## 7. Ce qu'il faudrait faire : un vrai plan d’action pour restaurer le sens
 
 Voici ce qu’un gouvernement qui comprendrait réellement les métiers du lien devrait annoncer.
 
