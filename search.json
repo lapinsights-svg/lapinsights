@@ -3,11 +3,18 @@ layout: null
 ---
 
 [
-  {% for page in site.pages %}
+  {% assign all = site.pages | concat: site.posts %}
+  {% for collection in site.collections %}
+    {% assign all = all | concat: collection.docs %}
+  {% endfor %}
+
+  {% assign all = all | where_exp: "item", "item.search_exclude != true" %}
+
+  {% for item in all %}
     {
-      "title": "{{ page.title | escape }}",
-      "url": "{{ page.url | relative_url }}",
-      "content": {{ page.content | strip_html | jsonify }}
+      "title": {{ item.title | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | jsonify }}
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
