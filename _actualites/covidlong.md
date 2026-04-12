@@ -18,7 +18,7 @@ associer toute pratique non médicalisée à une dérive sectaire, sans nuance n
 
 ---
 
-## 1. Le COVID long n’est pas un terrain vierge : c’est un terrain infectieux et immunitaire complexe
+## 1. Le COVID long est un terrain infectieux et immunitaire complexe
 
 La majorité des personnes atteintes de COVID long présentent des tableaux compatibles avec :
 
