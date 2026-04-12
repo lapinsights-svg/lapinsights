@@ -1035,6 +1035,10 @@ body {
   opacity: 0.6;
   font-size: 0.85em;
 }
+#search-results:empty {
+  display: none;
+}
+
 
 
 
