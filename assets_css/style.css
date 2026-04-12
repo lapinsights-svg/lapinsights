@@ -167,6 +167,11 @@ header {
   text-shadow: 0 0 6px rgba(120, 150, 200, 0.45);
   transform: translateY(-1px);
 }
+button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 /* ----------------------------------------------------
    ARCHIVES — DROPDOWN AU SURVOL
