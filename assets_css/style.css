@@ -977,35 +977,65 @@ body {
 }
 
 /* barre de recherche */
-#search-results {
-  max-width: 600px;        /* même largeur que ton contenu */
-  margin: 1.5em auto 0;    /* centré, avec respiration */
-  padding: 0;
-  font-size: 0.9em;
-  line-height: 1.4;
+/* Conteneur de la barre de recherche */
+.search-bar-wrapper {
+  position: relative;        /* Permet de positionner les résultats par rapport à elle */
+  width: 260px;              /* Ajuste selon ta largeur souhaitée */
+  margin-left: auto;         /* Pousse vers la droite */
+  margin-right: 2rem;        /* Espace avec le bord droit */
 }
 
+/* Style du champ de recherche */
+#search-input {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Résultats de recherche */
+#search-results {
+  position: absolute;        /* Se place sous la barre, sans déplacer le reste */
+  top: 110%;                 /* Juste en dessous du champ */
+  right: 0;                  /* Aligné à droite */
+  width: 100%;               /* Même largeur que la barre */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5em 0.8em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 999;              /* Passe devant le reste */
+  max-height: 300px;         /* Pour éviter les listes infinies */
+  overflow-y: auto;          /* Scroll interne si trop long */
+}
+
+/* Chaque résultat */
 #search-results div {
-  margin-bottom: 1em;
-  padding-bottom: 0.8em;
-  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid #eee;
+}
+
+#search-results div:last-child {
+  border-bottom: none;
 }
 
 #search-results a {
   text-decoration: none;
-  color: inherit;
+  color: #333;
 }
 
 #search-results strong {
-  font-weight: 600;
   display: block;
   margin-bottom: 0.2em;
+  font-weight: 600;
 }
 
 #search-results span {
   opacity: 0.6;
   font-size: 0.85em;
 }
+
 
 
 
