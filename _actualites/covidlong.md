@@ -70,7 +70,7 @@ Il protège un cadre de pensée.
 
 ---
 
-## 4. Les témoignages de rémission existent — mais ils dérangent la narration dominante
+## 4. Les témoignages de rémission existent, mais ils dérangent la narration dominante
 
 Des milliers de personnes partagent aujourd’hui leurs expériences, leurs recherches, leurs améliorations, parfois leurs guérisons.  
 Ces espaces d’entraide — groupes, forums, communautés — sont souvent les seuls lieux où les malades trouvent :
