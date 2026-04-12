@@ -8,7 +8,6 @@ resume: "Pour un débat honnête autour du COVID long et des pratiques compléme
 *En réponse à l’article de Marianne :  
 [« Oubliés, les malades du Covid long, cibles des dérives sectaires : “On m’a proposé de me guérir par le froid” »](https://www.marianne.net/societe/sante/oublies-les-malades-du-covid-long-cibles-des-derives-sectaires-on-m-a-propose-de-me-guerir-par-le-froid)*
 
----
 
 Comment se fait-il que la reconnaissance du Covid long arrive souvent accompagnée d’un autre réflexe : 
 associer toute pratique non médicalisée à une dérive sectaire, sans nuance ni analyse ?
