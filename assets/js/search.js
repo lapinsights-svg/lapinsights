@@ -43,12 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           item.innerHTML = `
-            <a href="${page.url}" style="text-decoration:none; color:#333;">
-              <strong>${page.title}</strong>
-              ${snippet ? `<br><span style="font-size:0.85em; opacity:0.7;">${snippet}</span>` : ""}
-            </a>
-          `;
-
+  <a href="${page.url}" style="text-decoration:none; color:#333;">
+    <strong>${page.title}</strong>
+  </a>
+`;
+          
           resultsBox.appendChild(item);
         });
       });
