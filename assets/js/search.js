@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const resultsBox = document.createElement("div");
   resultsBox.id = "search-results";
-  resultsBox.style.marginTop = "1em";
-  resultsBox.style.padding = "0.5em 0";
-  resultsBox.style.borderTop = "1px solid #ddd";
   input.parentNode.appendChild(resultsBox);
 
   fetch("/search.json")
@@ -18,21 +15,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (query.length < 2) return;
 
-        const results = data.filter(page =>
-          page.title && page.title.toLowerCase().includes(query) ||
-          page.content && page.content.toLowerCase().includes(query)
-        );
+        // Filtrer les pages pertinentes
+        const results = data.filter(page => {
+          // Exclure les pages d’archives ou autres
+          if (!page.title || !page.url) return false;
+          if (page.title.toLowerCase() === "archives") return false;
+          if (page.url.startsWith("/archives")) return false;
 
+          const title = page.title.toLowerCase();
+          const content = (page.content || "").toLowerCase();
+
+          return title.includes(query) || content.includes(query);
+        });
+
+        // Affichage simple : uniquement le titre + mini extrait
         results.slice(0, 10).forEach(page => {
           const item = document.createElement("div");
-          item.style.marginBottom = "0.5em";
+
+          const content = page.content || "";
+          const index = content.toLowerCase().indexOf(query);
+          let snippet = "";
+
+          if (index !== -1) {
+            const start = Math.max(0, index - 30);
+            const end = Math.min(content.length, index + query.length + 30);
+            snippet = content.substring(start, end) + "…";
+          }
 
           item.innerHTML = `
             <a href="${page.url}" style="text-decoration:none; color:#333;">
-              <strong>${page.title || "(Sans titre)"}</strong><br>
-              <span style="font-size:0.9em; opacity:0.7;">
-                ${page.content.substring(0, 120)}…
-              </span>
+              <strong>${page.title}</strong>
+              ${snippet ? `<br><span style="font-size:0.85em; opacity:0.7;">${snippet}</span>` : ""}
             </a>
           `;
 
