@@ -1040,6 +1040,49 @@ body {
 }
 background: rgba(245, 236, 225, 0.88); /* beige clair semi-opaque */
 
+/* Modal sur page d'accueil*/
+
+/* Fond sombre couvrant toute la page */
+.modal {
+  display: none; /* caché par défaut */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85); /* voile sombre */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteneur du modal */
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  background: transparent;
+}
+
+/* Vidéo */
+.modal-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Bouton X pour fermer */
+.close-modal {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+
 
 
 
