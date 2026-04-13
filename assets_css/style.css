@@ -1067,12 +1067,13 @@ body {
  object-fit: contain;
 }
 body.presentation-terrier {
-  background-image: url('/assets/images/fond-terrier.png');
+  background-image: url('/images/fond-terrier-basalte.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
 
 
 
