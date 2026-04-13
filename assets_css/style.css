@@ -1050,7 +1050,7 @@ body {
 
 /* Conteneur de la vidéo */
 .page-video-terrier .video-wrapper {
-  max-width: 960px;   /* largeur agrandie de 20% */
+  max-width: 1060px;   /* largeur agrandie de 20% */
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
