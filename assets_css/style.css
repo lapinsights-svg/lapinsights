@@ -1040,6 +1040,18 @@ body {
   display: none;
 }
 
+/* page vidéo accueil  */
+.page-video-terrier .video-wrapper {
+  max-width: 800px;   /* largeur maximale */
+  margin: 0 auto;     /* centré */
+  padding: 2rem 1rem; /* respiration */
+}
+
+.page-video-terrier video {
+  width: 100%;        /* s’adapte au conteneur */
+  height: auto;       /* garde les proportions */
+  border-radius: 8px; /* optionnel, douceur */
+}
 
 
 
