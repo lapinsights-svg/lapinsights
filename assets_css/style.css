@@ -1042,9 +1042,9 @@ background: rgba(245, 236, 225, 0.88); /* beige clair semi-opaque */
 
 /* Modal sur page d'accueil*/
 
-/* Fond sombre couvrant toute la page */
+/* --- MODAL : invisible au chargement --- */
 .modal {
-  display: none; /* caché par défaut */
+  display: none; /* ESSENTIEL : empêche l'affichage automatique */
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -1056,7 +1056,7 @@ background: rgba(245, 236, 225, 0.88); /* beige clair semi-opaque */
   align-items: center;
 }
 
-/* Conteneur du modal */
+/* --- Conteneur du modal --- */
 .modal-content {
   position: relative;
   width: 90%;
@@ -1064,14 +1064,14 @@ background: rgba(245, 236, 225, 0.88); /* beige clair semi-opaque */
   background: transparent;
 }
 
-/* Vidéo */
+/* --- Vidéo responsive --- */
 .modal-content video {
   width: 100%;
   height: auto;
   border-radius: 6px;
 }
 
-/* Bouton X pour fermer */
+/* --- Bouton X pour fermer --- */
 .close-modal {
   position: absolute;
   top: -20px;
