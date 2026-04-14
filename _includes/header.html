@@ -49,30 +49,10 @@
 
     <button onclick="window.location='{{ '/contact/' | relative_url }}'">Contact</button>
 
+    <!-- 🔍 Champ de recherche desktop -->
+    <form class="search-form" action="/search/">
+      <input type="search" name="q" placeholder="Rechercher…">
+    </form>
+
   </nav>
 </header>
-
-{% if page.url == "/" %}
-  <div class="search-bar-wrapper">
-    <input type="text" id="search-input" placeholder="Rechercher..." />
-  </div>
-{% endif %}
-
-{% if page.url == "/archives/" %}
-  <div class="archives-select-wrapper">
-    <div class="archives-select">
-      <select id="archives-jump" onchange="if (this.value) { location = this.value; }">
-        <option value="">Choisir une période…</option>
-
-        {% assign sorted = site.archives | sort: "date" | reverse %}
-        {% for article in sorted %}
-          {% assign year = article.date | date: "%Y" %}
-          {% assign month = article.date | date: "%B" %}
-          {% assign id = article.date | date: "%Y-%m" %}
-          <option value="#{{ id }}">{{ month | capitalize }} {{ year }}</option>
-        {% endfor %}
-      </select>
-    </div>
-  </div>
-{% endif %}
-
