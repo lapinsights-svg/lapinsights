@@ -139,43 +139,49 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
   }
 
   .header-left {
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.4rem;
   }
 
   .portrait-flottant img {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
+    box-shadow:
+      0 0 10px rgba(0, 0, 0, 0.35),
+      0 0 14px rgba(224, 179, 122, 0.18);
   }
 
   .logo-title h1 {
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
   }
 
   .logo-title p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
   }
 
-  /* Menu vertical */
+  /* Menu vertical compact */
   .menu-haut {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 0.6rem;
+    gap: 0.4rem;
   }
 
   .menu-haut button,
   .menu-archives .menu-button {
-    width: 90%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 260px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
 
   /* Dropdown archives centré */
