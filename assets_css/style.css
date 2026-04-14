@@ -1214,6 +1214,23 @@ header.header-hidden {
     max-width: 100vw;
   }
 
+  /* Conteneur du titre + portrait */
+  .mobile-header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Portrait miniature */
+  .portrait-mobile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+
   .mobile-header h1 {
     font-size: 0.95rem;
     margin: 0;
@@ -1228,71 +1245,49 @@ header.header-hidden {
   }
 
   .menu-mobile a {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 0.35rem 0.65rem;
+    background: #f4efe7;
+    color: #1d2a49;
+    border-radius: 8px;
+    border: 1px solid #e3ded4;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    transition: all 0.2s ease;
+  }
 
-  background: #f4efe7;           /* beige doux, éditorial */
-  color: #1d2a49;                /* bleu profond, élégant */
-  border-radius: 8px;            /* arrondi doux */
-  border: 1px solid #e3ded4;     /* contour subtil */
-  
-  text-decoration: none;         /* enlève le look “lien HTML” */
-  display: inline-block;
+  .menu-mobile a:hover {
+    background: #e9e3d8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  }
 
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06); /* ombre très légère */
-  transition: all 0.2s ease;
-}
+  /* Boutons désactivés */
+  .menu-mobile a.disabled {
+    background: #d9d4cc;
+    color: #8a847b;
+    border: 1px solid #c8c2b9;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.9;
+    filter: grayscale(40%);
+  }
 
-.menu-mobile a:hover {
-  background: #e9e3d8;           /* beige un peu plus chaud */
-  transform: translateY(-1px);   /* micro-élévation */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
-}
+  .menu-mobile a.disabled:hover {
+    background: #d9d4cc;
+    transform: none;
+    box-shadow: none;
+  }
 
-.menu-mobile a:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-}
-   
   /* Ajuster la vidéo sous le nouveau header */
   body.presentation-terrier main.contenu-scroll {
     margin-top: 120px;
   }
-   
-.menu-mobile a.disabled {
-  background: #d9d4cc;          /* beige-gris plus sombre */
-  color: #8a847b;               /* gris minéral plus marqué */
-  border: 1px solid #c8c2b9;    /* contour plus visible */
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.9;                 /* presque opaque, mais moins lumineuse */
-  filter: grayscale(40%);       /* effet “désactivé” très clair */
 }
 
-.menu-mobile a.disabled:hover {
-  background: #d9d4cc;
-  transform: none;
-  box-shadow: none;
-}
-   /* Conteneur du titre + portrait */
-.mobile-header-top {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Portrait miniature */
-.portrait-mobile {
-  width: 32px;          /* taille minuscule */
-  height: 32px;
-  border-radius: 50%;   /* forme ronde */
-  object-fit: cover;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  flex-shrink: 0;
-}
-}
 /* ————————————————————————————————
    VERSION DESKTOP : masquer le header mobile
 ——————————————————————————————— */
@@ -1301,7 +1296,6 @@ header.header-hidden {
     display: none !important;
   }
 }
-
 
 
 
