@@ -1201,6 +1201,11 @@ header.header-hidden {
 ——————————————————————————————— */
 @media (max-width: 768px) {
 
+  /* Empêcher le zoom automatique du navigateur mobile */
+  html {
+    -webkit-text-size-adjust: none;
+  }
+
   /* Header mobile compact */
   header {
     padding: 0.3rem 0.8rem;
@@ -1217,7 +1222,6 @@ header.header-hidden {
     line-height: 1.1;
     margin: 0;
   }
-
   /* Menu mobile : une seule ligne, pas de zoom */
   .menu-haut {
     display: flex;
