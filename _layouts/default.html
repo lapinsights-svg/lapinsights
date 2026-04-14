@@ -135,27 +135,29 @@
       }
     });
   </script>
-<!-- Header flottant : disparaît en descendant, réapparaît en remontant -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
 
-  let lastScroll = 0;
-  const header = document.querySelector("header");
+  <!-- Header flottant -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
 
-  window.addEventListener("scroll", () => {
-    const current = window.scrollY;
+    let lastScroll = 0;
+    const header = document.querySelector("header");
 
-    if (current > lastScroll && current > 80) {
-      header.classList.add("header-hidden");
-    } else {
-      header.classList.remove("header-hidden");
-    }
+    window.addEventListener("scroll", () => {
+      const current = window.scrollY;
 
-    lastScroll = current;
+      if (current > lastScroll && current > 80) {
+        header.classList.add("header-hidden");
+      } else {
+        header.classList.remove("header-hidden");
+      }
+
+      lastScroll = current;
+    });
+
   });
+  </script>
 
-});
-</script>
   <!-- Statcounter -->
   <script>
     var sc_project = 13213092;
@@ -164,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </script>
   <script async src="https://www.statcounter.com/counter/counter.js"></script>
   <noscript>
-    <div class="statcounter">
+    <div class="statcounter"></div>
   </noscript>
 
 </body>
