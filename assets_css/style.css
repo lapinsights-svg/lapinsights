@@ -1296,6 +1296,15 @@ header.header-hidden {
 .mobile-title-link:visited {
   color: inherit;
 }
+/* Page du Terrier : marge-top pour descendre la vidéo */
+body.presentation-terrier main.contenu-scroll {
+  margin-top: 100px !important;
+}
+
+/* Toutes les autres pages : aucune marge-top */
+body:not(.presentation-terrier) main.contenu-scroll {
+  margin-top: 0 !important;
+}
 
 /* ————————————————————————————————
    VERSION DESKTOP : masquer le header mobile
