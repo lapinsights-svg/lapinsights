@@ -1192,16 +1192,22 @@ header.header-hidden {
 /* ————————————————————————————————
    VERSION MOBILE
 ——————————————————————————————— */
+
+/* Par défaut : le header mobile est masqué */
+.mobile-header {
+  display: none;
+}
+
 @media (max-width: 768px) {
 
   /* Masquer le header desktop UNIQUEMENT */
   header.site-header {
-    display: none;
+    display: none !important;
   }
 
   /* Afficher le header mobile */
   .mobile-header {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 0.4rem;
     padding: 0.6rem 1rem;
@@ -1240,7 +1246,7 @@ header.header-hidden {
 ——————————————————————————————— */
 @media (min-width: 769px) {
   .mobile-header {
-    display: none;
+    display: none !important;
   }
 }
 
