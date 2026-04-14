@@ -1320,7 +1320,7 @@ header.header-hidden {
   background: transparent;
   border: 1px solid var(--lapin);
   border-radius: 12px;
-  color: var(--lapin);
+  color: var(--lapin) !important; 
   font-weight: 600;
   text-decoration: none;
   text-align: center;
