@@ -1121,8 +1121,9 @@ body {
 #search-results:empty {
   display: none;
 }
-
-/* Page vidéo du terrier */
+/* ————————————————————————————————
+   PAGE VIDÉO DU TERRIER
+——————————————————————————————— */
 .page-video-terrier {
   display: flex;
   justify-content: center;
@@ -1168,17 +1169,40 @@ body.presentation-terrier {
   background-repeat: no-repeat;
 }
 
-/* Version mobile : vidéo plus haute + espace sous le header fixed */
+/* ————————————————————————————————
+   ESPACE GLOBAL SOUS LE HEADER FIXED
+   (pour éviter que le header recouvre tout)
+——————————————————————————————— */
+
+/* Desktop */
+main.contenu-scroll {
+  margin-top: 120px; /* ajuste si ton header est plus haut */
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  main.contenu-scroll {
+    margin-top: 140px; /* header mobile plus haut */
+  }
+}
+
+/* ————————————————————————————————
+   HEADER MASQUÉ — valable desktop + mobile
+——————————————————————————————— */
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* ————————————————————————————————
+   VERSION MOBILE — vidéo + header
+——————————————————————————————— */
+@media (max-width: 768px) {
+
   .page-video-terrier .video-wrapper::before {
     padding-bottom: 55%;
   }
 
-  .page-video-terrier {
-    margin-top: 100px;
-  }
-
-  /* Header mobile : comportement de masquage */
+  /* Le header mobile reste fixed mais peut se cacher */
   header {
     transform: translateY(0);
   }
@@ -1186,16 +1210,16 @@ body.presentation-terrier {
   header.header-hidden {
     transform: translateY(-100%);
   }
-} /* ← ACCOLADE FERMANTE OBLIGATOIRE */
-
-/* Version desktop : espace sous le header fixed */
-@media (min-width: 769px) {
-  .page-video-terrier {
-    margin-top: 125px;
-  }
 }
 
-
+/* ————————————————————————————————
+   VERSION DESKTOP — espace vidéo
+——————————————————————————————— */
+@media (min-width: 769px) {
+  .page-video-terrier {
+    margin-top: 0; /* l’espace est géré par main.contenu-scroll */
+  }
+}
 
 
 
