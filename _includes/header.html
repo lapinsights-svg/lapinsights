@@ -1,66 +1,22 @@
-<header class="site-header">
-  <div class="header-left">
-
-    <div class="portrait-flottant">
-      <img src="{{ '/images/celeste.png' | relative_url }}" alt="Portrait">
-    </div>
-
-    <div class="logo-title">
-      <h1>
-        <a class="site-title" href="{{ '/' | relative_url }}">LAPINSIGHTS</a>
-      </h1>
-      <p>Terrier des mondes, éclats et correspondances</p>
-    </div>
-
+<div class="header-left">
+  <div class="portrait-flottant">
+    <img src="/images/celeste.png" alt="Portrait">
   </div>
 
-  <nav class="menu-haut">
-
-    <button onclick="window.location='{{ '/actualites/' | relative_url }}'">Actualités</button>
-    <button onclick="window.location='{{ '/creations/' | relative_url }}'">Créations</button>
-    <button onclick="window.location='{{ '/idees/' | relative_url }}'">Territoires d’idées</button>
-    <button onclick="window.location='{{ '/spiritualite/' | relative_url }}'">Spirimental</button>
-    <button class="disabled" disabled>Vibrations</button>
-
-    <!-- ARCHIVES — dropdown -->
-    <div class="menu-archives">
-      <button class="menu-button">Archives</button>
-
-      <div class="menu-archives-dropdown">
-        {% assign sorted_archives = site.archives | sort: "date" | reverse %}
-        {% assign seen_archives = "" %}
-        {% for article in sorted_archives %}
-          {% assign year = article.date | date: "%Y" %}
-          {% assign month = article.date | date: "%B" %}
-          {% assign id = article.date | date: "%Y-%m" %}
-          {% assign label = month | capitalize | append: " " | append: year %}
-          {% unless seen_archives contains id %}
-           <a href="{{ '/archives/#' | append: id | relative_url }}">{{ label }}</a>
-            {% assign seen_archives = seen_archives | append: id | append: "," %}
-          {% endunless %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="menu-passe disabled">
-      <button class="menu-button">Dans le passé</button>
-      <div class="menu-passe-dropdown"></div>
-    </div>
-
-    <button onclick="window.location='{{ '/contact/' | relative_url }}'">Contact</button>
-
-  </nav>
-</header>
-
-<!-- 🔍 Barre de recherche SOUS le header (desktop uniquement) -->
-{% if page.path contains "index" %}
- <div class="search_bar-wrapper">
-    <input type="text" id="search-input" placeholder="Rechercher..." />
+  <div class="logo-title">
+    <h1><a href="/">LAPINSIGHTS</a></h1>
+    <p>Poétique — Lucide — Terrien</p>
   </div>
-{% endif %}
+</div>
 
-<div style="color:red; font-size:20px;">HEADER.HTML CHARGÉ</div>
+<nav class="header-nav">
+  <a href="/actualites">Actualités</a>
+  <a href="/creations">Créations</a>
+  <a href="/idees/">Territoires d’idées</a>
+  <a href="/contact">Contact</a>
+</nav>
 
-
-
-
+<!-- Barre de recherche -->
+<div class="search-bar-wrapper">
+  <input id="search-input" type="text" placeholder="Rechercher…">
+</div>
