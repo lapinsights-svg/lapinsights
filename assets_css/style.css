@@ -1206,13 +1206,50 @@ header.header-hidden {
 ——————————————————————————————— */
 @media (max-width: 768px) {
 
-  /* Empêcher le zoom automatique du navigateur mobile (Chrome, Firefox, Safari) */
+  /* Empêcher le zoom automatique du navigateur mobile */
   html, body {
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
+    overflow-x: hidden; /* empêche le zoom dû au débordement */
   }
 
-  /* Empêcher le zoom dû au débordement du menu */
+  /* Header mobile compact + anti-débordement */
+  header {
+    padding: 0.3rem 0.8rem;
+    height: auto;
+    max-width: 100vw;      /* empêche le header de dépasser l'écran */
+    overflow: hidden;      /* empêche le zoom forcé */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  header img {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+    line-height: 1.1;
+    margin: 0;
+    white-space: nowrap;       /* empêche le retour à la ligne */
+    overflow: hidden;          /* empêche le débordement */
+    text-overflow: ellipsis;   /* coupe proprement si trop long */
+    max-width: 55vw;           /* limite la largeur du titre */
+  }
+
+  header p {
+    font-size: 0.75rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 55vw;
+  }
+
+  /* Menu mobile : scroll horizontal contrôlé */
   .menu-haut {
     display: flex;
     flex-wrap: nowrap;
@@ -1220,31 +1257,13 @@ header.header-hidden {
     white-space: nowrap;
     max-width: 100%;
     gap: 0.4rem;
+    padding-bottom: 0.2rem; /* évite que le menu touche le bas */
   }
 
-  /* Empêcher les éléments du menu de s'étirer (cause principale du zoom) */
   .menu-haut * {
-    flex-shrink: 0;
+    flex-shrink: 0; /* empêche l'étirement */
   }
 
-  /* Header mobile compact */
-  header {
-    padding: 0.3rem 0.8rem;
-    height: auto;
-  }
-
-  header img {
-    width: 38px;
-    height: 38px;
-  }
-
-  header h1 {
-    font-size: 1.1rem;
-    line-height: 1.1;
-    margin: 0;
-  }
-
-  /* Menu mobile : une seule ligne, pas de zoom */
   .menu-haut a,
   .menu-haut button {
     font-size: 0.8rem;
@@ -1258,7 +1277,7 @@ header.header-hidden {
 
   /* Descendre la vidéo plus bas */
   body.presentation-terrier main.contenu-scroll {
-    margin-top: 80px; /* espace augmenté pour respirer */
+    margin-top: 80px;
   }
 }
 
