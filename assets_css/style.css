@@ -1220,7 +1220,16 @@ header.header-hidden {
     margin-top: 0; /* l’espace est géré par main.contenu-scroll */
   }
 }
+/* Espace sous le header fixed — uniquement pour les pages qui en ont besoin */
+body:not(.accueil) main.contenu-scroll {
+  margin-top: 120px;
+}
 
+@media (max-width: 768px) {
+  body:not(.accueil) main.contenu-scroll {
+    margin-top: 140px;
+  }
+}
 
 
 
