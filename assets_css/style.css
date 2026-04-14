@@ -1133,7 +1133,7 @@ body {
 .page-video-terrier .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px; /* largeur idéale, légèrement réduite pour plus de lisibilité */
+  max-width: 900px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
@@ -1143,7 +1143,7 @@ body {
 .page-video-terrier .video-wrapper::before {
   content: "";
   display: block;
-  padding-bottom: 56.25%; /* ratio 16:9 */
+  padding-bottom: 56.25%;
 }
 
 /* Vidéo */
@@ -1153,7 +1153,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ou contain si tu préfères */
+  object-fit: cover;
   border-radius: 8px;
   display: block;
 }
@@ -1170,17 +1170,14 @@ body.presentation-terrier {
 /* Version mobile : vidéo plus haute + espace sous le header fixed */
 @media (max-width: 768px) {
   .page-video-terrier .video-wrapper::before {
-    padding-bottom: 55%; /* hauteur plus confortable */
+    padding-bottom: 55%;
   }
 
-/* Version desktop : espace sous le header fixed */
-@media (min-width: 769px) {
   .page-video-terrier {
-    margin-top: 125px; /* ajuste selon la hauteur de ton header desktop */
+    margin-top: 100px;
   }
-}
-/* Header mobile : comportement de masquage */
-@media (max-width: 768px) {
+
+  /* Header mobile : comportement de masquage */
   header {
     transform: translateY(0);
   }
@@ -1188,8 +1185,14 @@ body.presentation-terrier {
   header.header-hidden {
     transform: translateY(-100%);
   }
-}
+} /* ← ACCOLADE QUI MANQUAIT */
 
+/* Version desktop : espace sous le header fixed */
+@media (min-width: 769px) {
+  .page-video-terrier {
+    margin-top: 125px;
+  }
+}
 
 
 
