@@ -148,15 +148,6 @@ header.header-hidden {
   margin: 0.2rem 0 0;
 }
 
-/* ----------------------------------------------------
-   ESPACE SOUS LE HEADER — VERSION DESKTOP
----------------------------------------------------- */
-
-@media (min-width: 769px) {
-  main.contenu-scroll {
-    margin-top: 20px; /* hauteur réelle du header */
-  }
-
 /* ————————————————————————————————
    VERSION MOBILE — COMPACTE + HEADER FLOTTANT
 ——————————————————————————————— */
@@ -742,7 +733,7 @@ textarea {
   max-width: 600px;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
-  margin-top: 120px;
+  margin-top: 80px;
 
   padding: 2rem 2.2rem;
 
