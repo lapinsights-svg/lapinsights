@@ -59,10 +59,8 @@ main {
 /* ----------------------------------------------------
    HEADER
 ---------------------------------------------------- */
-/* ————————————————————————————————
-   HEADER — VERSION DESKTOP
-——————————————————————————————— */
 
+/* HEADER — VERSION DESKTOP */
 header {
   position: sticky;
   top: 0;
@@ -83,7 +81,7 @@ header {
 
   overflow: visible;
 
-  transition: transform 0.25s ease; /* nécessaire pour le header flottant */
+  transition: transform 0.25s ease;
 }
 
 /* Header masqué (scroll down) */
