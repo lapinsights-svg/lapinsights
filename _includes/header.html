@@ -53,9 +53,10 @@
 </header>
 
 <!-- 🔍 Barre de recherche SOUS le header (desktop uniquement) -->
-{% if page.url == "/" or page.url contains "index" %}
+{% if page.path contains "index" %}
   <div class="search-bar-wrapper">
     <input type="text" id="search-input" placeholder="Rechercher..." />
   </div>
 {% endif %}
+
 
