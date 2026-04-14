@@ -1315,9 +1315,9 @@ header.header-hidden {
 }
 .pastille-terrier {
   display: inline-block;
-  margin: 1.5rem auto 0 auto; /* centrage + respiration */
-  padding: 0.5rem 1.2rem;
-  background: #fff; /* ou transparent si tu préfères */
+  padding: 0.55rem 1.2rem;
+  margin: 1.4rem auto 0 auto;
+  background: transparent;
   border: 1px solid var(--lapin);
   border-radius: 12px;
   color: var(--lapin);
@@ -1329,18 +1329,20 @@ header.header-hidden {
   transition: all 0.2s ease;
 }
 
-/* Effet hover léger */
-.pastille-terrier:hover {
-  background: var(--lapin);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
+/* Centrage garanti même dans un bloc non centré */
 .pastille-terrier {
   display: block;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Effet hover (désactivé sur GSM mais utile sur desktop) */
+.pastille-terrier:hover {
+  background: var(--lapin);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 
