@@ -10,6 +10,12 @@
   <header class="site-header">
     {% include header.html %}
   </header>
+  
+{% if page.url == "/" %}
+  <div class="search-bar-wrapper">
+    <input type="text" id="search-input" placeholder="Rechercher..." />
+  </div>
+{% endif %}
 
   <!-- Header mobile -->
   <header class="mobile-header">
