@@ -1206,12 +1206,13 @@ header.header-hidden {
 ——————————————————————————————— */
 @media (max-width: 768px) {
 
+  /* Empêcher le zoom automatique du navigateur mobile (Chrome, Firefox, Safari) */
   html, body {
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    overflow-x: hidden;
   }
 
+  /* Empêcher le zoom dû au débordement du menu */
   .menu-haut {
     display: flex;
     flex-wrap: nowrap;
@@ -1221,24 +1222,20 @@ header.header-hidden {
     gap: 0.4rem;
   }
 
+  /* Empêcher les éléments du menu de s'étirer (cause principale du zoom) */
   .menu-haut * {
     flex-shrink: 0;
   }
 
-  /* Header mobile compact, sans couper le contenu */
+  /* Header mobile compact */
   header {
     padding: 0.3rem 0.8rem;
     height: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    max-width: 100vw;
   }
 
   header img {
     width: 38px;
     height: 38px;
-    flex-shrink: 0;
   }
 
   header h1 {
@@ -1247,21 +1244,23 @@ header.header-hidden {
     margin: 0;
   }
 
+  /* Menu mobile : une seule ligne, pas de zoom */
   .menu-haut a,
   .menu-haut button {
     font-size: 0.8rem;
     padding: 0.25rem 0.45rem;
   }
 
+  /* Vidéo : ratio légèrement ajusté */
   .page-video-terrier .video-wrapper::before {
     padding-bottom: 56%;
   }
 
+  /* Descendre la vidéo plus bas */
   body.presentation-terrier main.contenu-scroll {
-    margin-top: 140px;
+    margin-top: 200px; /* ta valeur d'origine */
   }
 }
-
 
 
 
