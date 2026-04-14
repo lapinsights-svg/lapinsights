@@ -59,17 +59,21 @@ main {
 /* ----------------------------------------------------
    HEADER
 ---------------------------------------------------- */
+/* ----------------------------------------------------
+   HEADER — VERSION DESKTOP (corrigé)
+---------------------------------------------------- */
 
-/* HEADER — VERSION DESKTOP */
 header {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 3000;
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 2rem;
 
   padding: 0.5rem 2rem;
@@ -81,6 +85,7 @@ header {
 
   overflow: visible;
 
+  /* Transition pour le header masqué */
   transition: transform 0.25s ease;
 }
 
@@ -141,6 +146,16 @@ header.header-hidden {
   opacity: 0.75;
   color: rgba(70, 75, 85, 0.9);
   margin: 0.2rem 0 0;
+}
+
+/* ----------------------------------------------------
+   ESPACE SOUS LE HEADER — VERSION DESKTOP
+---------------------------------------------------- */
+
+@media (min-width: 769px) {
+  main.contenu-scroll {
+    margin-top: 150px; /* hauteur réelle du header */
+  }
 }
 
 /* ————————————————————————————————
