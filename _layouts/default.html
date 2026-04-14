@@ -137,22 +137,26 @@
   </script>
 
   <!-- Header flottant : disparaît en descendant, réapparaît en remontant -->
-  <script>
-    let lastScroll = 0;
-    const header = document.querySelector("header");
+<script>
+document.addEventListener("DOMContentLoaded", function() {
 
-    window.addEventListener("scroll", () => {
-      const current = window.scrollY;
+  let lastScroll = 0;
+  const header = document.querySelector("header");
 
-      if (current > lastScroll && current > 80) {
-        header.classList.add("header-hidden");
-      } else {
-        header.classList.remove("header-hidden");
-      }
+  window.addEventListener("scroll", () => {
+    const current = window.scrollY;
 
-      lastScroll = current;
-    });
-  </script>
+    if (current > lastScroll && current > 80) {
+      header.classList.add("header-hidden");
+    } else {
+      header.classList.remove("header-hidden");
+    }
+
+    lastScroll = current;
+  });
+
+});
+</script>
 
   <!-- Statcounter -->
   <script>
