@@ -1276,6 +1276,22 @@ header.header-hidden {
   transform: none;
   box-shadow: none;
 }
+   /* Conteneur du titre + portrait */
+.mobile-header-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Portrait miniature */
+.portrait-mobile {
+  width: 32px;          /* taille minuscule */
+  height: 32px;
+  border-radius: 50%;   /* forme ronde */
+  object-fit: cover;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
 }
 /* ————————————————————————————————
    VERSION DESKTOP : masquer le header mobile
