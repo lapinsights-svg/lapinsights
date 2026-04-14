@@ -1174,14 +1174,14 @@ body.presentation-terrier {
   }
 
   .page-video-terrier {
-    margin-top: 90px; /* évite que la vidéo passe sous le header mobile */
+    margin-top: 60px; /* évite que la vidéo passe sous le header mobile */
   }
 }
 
 /* Version desktop : espace sous le header fixed */
 @media (min-width: 769px) {
   .page-video-terrier {
-    margin-top: 120px; /* ajuste selon la hauteur de ton header desktop */
+    margin-top: 125px; /* ajuste selon la hauteur de ton header desktop */
   }
 }
 
