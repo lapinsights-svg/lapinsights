@@ -1170,7 +1170,7 @@ body.presentation-terrier {
 /* Version mobile : vidéo plus haute pour meilleure lisibilité */
 @media (max-width: 768px) {
   .page-video-terrier .video-wrapper::before {
-    padding-bottom: 65%; /* augmente la hauteur pour un meilleur confort visuel */
+    padding-bottom: 55%; /* augmente la hauteur pour un meilleur confort visuel */
   }
 }
 /* Version desktop : espace sous le header fixed */
