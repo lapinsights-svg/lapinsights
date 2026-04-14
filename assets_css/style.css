@@ -733,7 +733,7 @@ textarea {
   max-width: 600px;
   margin-right: 2.5rem;
   margin-left: 2.5rem;
-  margin-top: 50px;
+  margin-top: 30px;
 
   padding: 2rem 2.2rem;
 
@@ -1258,7 +1258,7 @@ header.header-hidden {
 
   /* Descendre la vidéo plus bas */
   body.presentation-terrier main.contenu-scroll {
-    margin-top: 200px; /* espace augmenté pour respirer */
+    margin-top: 80px; /* espace augmenté pour respirer */
   }
 }
 
