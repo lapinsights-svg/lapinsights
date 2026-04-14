@@ -1260,6 +1260,21 @@ header.header-hidden {
   body.presentation-terrier main.contenu-scroll {
     margin-top: 120px;
   }
+   
+   .menu-mobile a.disabled {
+  background: #e6e2db;          /* beige plus mat */
+  color: #9a958c;               /* gris minéral */
+  border: 1px solid #d8d3cb;    /* contour doux */
+  cursor: not-allowed;          /* indique que ce n'est pas cliquable */
+  pointer-events: none;         /* empêche tout clic */
+  opacity: 0.7;                 /* léger effet désactivé */
+}
+
+.menu-mobile a.disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background: #e6e2db;
+}
 }
 
 /* ————————————————————————————————
