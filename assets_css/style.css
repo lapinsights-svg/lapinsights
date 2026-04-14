@@ -1176,7 +1176,6 @@ body.presentation-terrier {
 
   .page-video-terrier {
     margin-top: 100px;
-    z-index: 1;
   }
 
   /* Header mobile : comportement de masquage */
@@ -1187,7 +1186,7 @@ body.presentation-terrier {
   header.header-hidden {
     transform: translateY(-100%);
   }
-} /* ← ACCOLADE QUI MANQUAIT */
+} /* ← ACCOLADE FERMANTE OBLIGATOIRE */
 
 /* Version desktop : espace sous le header fixed */
 @media (min-width: 769px) {
