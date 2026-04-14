@@ -62,7 +62,7 @@ main {
 
 /* HEADER — VERSION DESKTOP */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 3000;
   width: 100%;
