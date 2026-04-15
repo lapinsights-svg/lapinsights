@@ -57,7 +57,10 @@
 
   </main>
 
-  {% include footer.html %}
+  <!-- Footer masqué pour la Salle des Échos -->
+  {% unless page.class == "salle-echos" %}
+    {% include footer.html %}
+  {% endunless %}
 
   <button id="backToTop" title="Remonter le terrier">🐇↟</button>
 
