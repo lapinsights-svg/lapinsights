@@ -55,21 +55,17 @@ main {
   padding-right: 2rem;
   text-align: left;
 }
-
 /* ----------------------------------------------------
-   HEADER
----------------------------------------------------- */
-/* ----------------------------------------------------
-   HEADER DESKTOP — VERSION FIXE ET PROPRE
+   HEADER — DESKTOP (fixe)
 ---------------------------------------------------- */
 
 .site-header {
-  position: fixed;          /* fixé en haut */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;             /* hauteur explicite */
-  z-index: 999;             /* au-dessus du contenu */
+  height: 90px;
+  z-index: 999;
 
   display: flex;
   justify-content: space-between;
@@ -82,10 +78,9 @@ main {
   backdrop-filter: blur(6px);
 
   color: var(--fond);
-
   overflow: visible;
 
-  transition: transform 0.25s ease; /* pour le mode masqué */
+  transition: transform 0.25s ease;
 }
 
 /* Header masqué (scroll down) */
@@ -93,13 +88,10 @@ header.header-hidden {
   transform: translateY(-100%);
 }
 
-/* ----------------------------------------------------
-   ESPACE SOUS LE HEADER POUR NE PAS CACHER LE CONTENU
----------------------------------------------------- */
-
+/* Espace sous le header */
 body.flex,
 .contenu-scroll {
-  padding-top: 90px; /* même valeur que la hauteur du header */
+  padding-top: 90px;
 }
 
 /* ----------------------------------------------------
@@ -113,7 +105,6 @@ body.flex,
   flex-shrink: 0;
 }
 
-/* Portrait flottant */
 .portrait-flottant {
   position: relative;
   animation: haloRespire 6s ease-in-out infinite,
@@ -160,108 +151,13 @@ body.flex,
 }
 
 /* ----------------------------------------------------
-   BARRE DE RECHERCHE (corrigée)
----------------------------------------------------- */
-
-.search-bar-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 260px;
-  margin-left: auto;
-}
-
-#search-input {
-  width: 260px;
-  padding: 0.6rem 1rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(200, 220, 255, 0.25);
-  background: rgba(80, 100, 130, 0.28);
-  backdrop-filter: blur(14px);
-  color: var(--lapin);
-}
-
-/* ————————————————————————————————
-   VERSION MOBILE — COMPACTE + HEADER FLOTTANT
-——————————————————————————————— */
-@media (max-width: 768px) {
-
-  /* Le header devient FIXED uniquement sur mobile */
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3000;
-
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0.6rem 1rem;
-    gap: 0.8rem;
-  }
-
-  /* Cache le header quand on scrolle */
-  header.header-hidden {
-    transform: translateY(-100%);
-  }
-
-  /* Portrait centré */
-  .header-left {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .portrait-flottant img {
-    width: 60px;
-    height: 60px;
-  }
-
-  /* Titre centré */
-  .logo-title h1 {
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-  }
-
-  .logo-title p {
-    display: none;
-  }
-
-  /* MENU SUR DEUX LIGNES HORIZONTALES */
-  .menu-haut {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .menu-haut button,
-  .menu-archives .menu-button {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
-
-  /* Dropdown archives centré */
-  .menu-archives-dropdown {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-} /* ← ACCOLADE FINALE ESSENTIELLE */
-
-
-/* ----------------------------------------------------
    MENU HAUT
 ---------------------------------------------------- */
+
 .menu-haut {
   display: flex;
   align-items: center;
   gap: 1rem;
-
   position: relative;
   z-index: 20;
   overflow: visible;
@@ -287,6 +183,7 @@ body.flex,
   text-shadow: 0 0 6px rgba(120, 150, 200, 0.45);
   transform: translateY(-1px);
 }
+
 button.disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -294,8 +191,9 @@ button.disabled {
 }
 
 /* ----------------------------------------------------
-   ARCHIVES — DROPDOWN AU SURVOL
+   ARCHIVES — DROPDOWN
 ---------------------------------------------------- */
+
 .menu-archives {
   position: relative;
   overflow: visible;
@@ -306,23 +204,17 @@ button.disabled {
   border: none;
   color: var(--lapin);
   font-family: inherit;
-
-  /* même style que les autres boutons */
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 500;
-
   cursor: pointer;
 }
 
-/* Dropdown */
 .menu-archives-dropdown {
   position: absolute;
-   top: 100%;
+  top: 100%;
   right: 0;
-  z-index: 5000;
-
   display: none;
 
   background: rgba(80, 100, 130, 0.28);
@@ -332,11 +224,9 @@ button.disabled {
 
   padding: 0.6rem 0;
   list-style: none;
-
   z-index: 5000;
 }
 
-/* Liens du dropdown */
 .menu-archives-dropdown a {
   display: block;
   padding: 0.5rem 1rem;
@@ -348,16 +238,75 @@ button.disabled {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Ouverture au survol */
 .menu-archives:hover .menu-archives-dropdown {
   display: block;
 }
 
-/* “Dans le passé” reste inactif */
-.menu-archives.disabled:hover .menu-archives-dropdown {
-  display: none;
-}
+/* ----------------------------------------------------
+   VERSION MOBILE
+---------------------------------------------------- */
 
+@media (max-width: 768px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    gap: 0.8rem;
+  }
+
+  header.header-hidden {
+    transform: translateY(-100%);
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .portrait-flottant img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-title h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-title p {
+    display: none;
+  }
+
+  .menu-haut {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .menu-haut button,
+  .menu-archives .menu-button {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .menu-archives-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 /* ----------------------------------------------------
    BANDEAU DE RUBRIQUE
 ---------------------------------------------------- */
@@ -396,14 +345,6 @@ button.disabled {
   line-height: 1.45;
   color: var(--lapin);
   opacity: 0.9;
-}
-.menu-passe {
-  position: relative;
-  overflow: visible;
-}
-
-.menu-passe-dropdown {
-  display: none;
 }
 
 /* ----------------------------------------------------
@@ -448,17 +389,16 @@ button.disabled {
   opacity: 0.85;
   margin-top: 0.3rem;
 }
-
 /* ----------------------------------------------------
    PAGE ARTICLE
 ---------------------------------------------------- */
 .article-wrapper {
   max-width: 760px;
   margin: 2rem auto 4rem;
-  padding: 2rem; /* respiration interne */
-  background: rgba(245, 236, 225, 0.88); /* opacité douce */
-  backdrop-filter: blur(6px); /* flou subtil derrière */
-  border-radius: 0.6rem; /* optionnel mais élégant */
+  padding: 2rem;
+  background: rgba(245, 236, 225, 0.88);
+  backdrop-filter: blur(6px);
+  border-radius: 0.6rem;
 }
 
 .article-content {
@@ -499,6 +439,7 @@ button.disabled {
   margin: 1.5rem 0;
   border-radius: 0.4rem;
 }
+
 .article-title {
   font-size: 16px;
 }
@@ -509,12 +450,9 @@ button.disabled {
 .contact-wrapper {
   max-width: 760px;
   margin: 2rem auto 4rem;
-
   margin-right: 3rem;
   margin-left: 1rem;
-
   padding: 0 2rem;
-
   color: var(--lapin);
   font-family: inherit;
 }
@@ -537,7 +475,6 @@ button.disabled {
   border-radius: 1rem;
 
   padding: 2rem 2.2rem;
-
   margin-right: 1.5rem;
 }
 
@@ -561,14 +498,12 @@ button.disabled {
   font-size: 1rem;
 
   outline: none;
-  transition: border-color 0.2s ease,
-              background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .form-contact input::placeholder,
 .form-contact textarea::placeholder {
   color: rgba(255, 255, 255, 0.45);
-  font-family: inherit;
 }
 
 .form-contact input:focus,
@@ -596,7 +531,6 @@ button.disabled {
 .form-contact button:hover {
   background: #e8c79a;
 }
-
 /* ----------------------------------------------------
    FOOTER
 ---------------------------------------------------- */
@@ -660,11 +594,7 @@ footer.footer-fixed {
   padding: 0.4rem 0.6rem;
   border-radius: 0.3rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
-
-  /* 🔶 Nouvelle opacité : plus lisible, plus douce */
   background: rgba(255, 255, 255, 0.55);
-
-  /* Tu peux monter jusqu’à 0.70 ou 0.80 si tu veux encore plus opaque */
   color: var(--texte);
   width: 220px;
 }
@@ -683,6 +613,7 @@ footer.footer-fixed {
 .newsletter-mini button:hover {
   opacity: 0.85;
 }
+
 /* ----------------------------------------------------
    ANIMATIONS
 ---------------------------------------------------- */
@@ -720,57 +651,6 @@ textarea {
               border-color 0.2s ease,
               opacity 0.2s ease;
 }
-
-/* ----------------------------------------------------
-   BARRE DE RECHERCHE — SOUS LE HEADER
----------------------------------------------------- */
-.search_bar-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.8rem 2rem 0.5rem;
-  background: transparent;
-  position: relative;
-  z-index: 1;
-}
-
-.search_bar-wrapper input {
-  width: 260px;
-  padding: 0.6rem 0.9rem;
-
-  background: #E0B37A;
-  color: #111;
-  font-family: inherit;
-  font-size: 0.95rem;
-
-  border: none;
-  border-radius: 0.4rem;
-
-  outline: none;
-  transition: background 0.2s ease;
-}
-
-.search_bar-wrapper input::placeholder {
-  color: rgba(0, 0, 0, 0.55);
-  font-family: inherit;
-}
-
-.search_bar-wrapper input:focus {
-  background: #e8c79a;
-}
-/* Assurer que la barre de recherche passe au-dessus du header mobile */
-.search_bar-wrapper {
-  position: relative;
-  z-index: 10;
-}
-
-/* Masquer la barre de recherche de la page d'accueil sur GSM */
-@media (max-width: 768px) {
-  .search_bar-wrapper {
-    display: none !important;
-  }
-}
-
 /* ----------------------------------------------------
    BLOC D’INTRO — PAGE D’ACCUEIL
 ---------------------------------------------------- */
@@ -832,48 +712,9 @@ textarea {
   100% { transform: translateY(0); }
 }
 
-
-.search_bar-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* pousse la barre à droite */
-  margin-top: 0.5rem; /* espace sous le header */
-  padding-right: 2rem; /* espace du bord droit */
-}
-
-#search-input {
-  width: 260px;
-  padding: 0.6rem 1rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(200, 220, 255, 0.25);
-  background: rgba(80, 100, 130, 0.28);
-  backdrop-filter: blur(14px);
-  color: var(--lapin);
-}
-/* Positionnement du select Archives sous le header */
-.archives-select-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* pousse à droite */
-  margin-top: 0.5rem; /* espace sous le header */
-  padding-right: 2rem; /* espace du bord droit */
-}
-
-/* Style du select identique à la barre de recherche */
-.archives-select select {
-  width: 260px;
-  padding: 0.6rem 1rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(200, 220, 255, 0.25);
-  background: rgba(80, 100, 130, 0.28);
-  backdrop-filter: blur(14px);
-  color: var(--lapin);
-}
-
-/* On masque le label */
-.archives-select label {
-  display: none;
-}
+/* ----------------------------------------------------
+   ARCHIVES — LISTE
+---------------------------------------------------- */
 
 /* Couleur + taille uniquement pour le corps de la rubrique Archives */
 .section-content.archives-liste .archive-annee,
@@ -882,14 +723,14 @@ textarea {
 .section-content.archives-liste .article-item,
 .section-content.archives-liste .article-item *,
 .section-content.archives-liste .tag-date {
-  color: #010a12 !important;   /* ocre terne */
+  color: #010a12 !important;
   font-size: 14px !important;
 }
 
 /* Rétablir la couleur orangée EXACTE des autres rubriques */
 .rubrique-header h2,
 .rubrique-header p {
-  color: var(--accent) !important;   /* ta couleur orangée du thème */
+  color: var(--accent) !important;
   font-size: inherit !important;
 }
 
@@ -911,11 +752,14 @@ textarea {
   padding-right: 2rem;
   box-sizing: border-box;
 }
-/* LIGNE D’ARTICLE DANS LA PAGE LISTE */
+
+/* ----------------------------------------------------
+   LIGNE D’ARTICLE DANS LA PAGE LISTE
+---------------------------------------------------- */
 .article-line {
   display: grid;
-  grid-template-columns: 7rem 1fr; /* colonne date | colonne titre */
-  grid-template-rows: auto auto;   /* ligne 1 : date + titre / ligne 2 : sous-titre */
+  grid-template-columns: 7rem 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "date title"
     ".    teaser";
@@ -946,7 +790,7 @@ textarea {
   text-decoration: none;
 }
 
-/* Sous-titre : automatiquement aligné sous le titre */
+/* Sous-titre */
 .article-line .article-teaser {
   grid-area: teaser;
   color: var(--lapin);
@@ -955,20 +799,67 @@ textarea {
   max-width: 100ch;
 }
 
+/* Images dans les articles */
 .article-body img {
-  max-width: 500px;   /* largeur maximale éditoriale */
-  width: 100%;        /* responsive */
-  height: auto;       /* proportions respectées */
+  max-width: 500px;
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 2em auto;   /* centrage + respiration */
+  margin: 2em auto;
 }
 
-/* Lapin scroll-to-top : style minimal et sans halo */
+/* ----------------------------------------------------
+   PAGE ARTICLE — HEADER TOP
+---------------------------------------------------- */
+.article-page .article-header-top {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  grid-template-areas: "date title";
+  column-gap: 0.5rem;
+  align-items: baseline;
+}
+
+.article-page .article-date {
+  grid-area: date;
+  white-space: nowrap;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.article-page .article-title {
+  grid-area: title;
+  font-weight: 600;
+  color: var(--lapin);
+}
+
+.article-page .article-teaser {
+  display: block;
+  margin-left: 7.6rem;
+  max-width: 65ch;
+  white-space: normal !important;
+  font-style: italic;
+  opacity: 0.8;
+  line-height: 1.4;
+  color: var(--lapin);
+}
+
+/* Dates dans toutes les rubriques */
+.section-content .article-line .article-date {
+  color: var(--accent) !important;
+}
+
+.article-body > *:first-child {
+  margin-top: 3rem;
+}
+/* ----------------------------------------------------
+   LAPIN SCROLL-TO-TOP
+---------------------------------------------------- */
 #backToTop {
   position: fixed;
-  bottom: 30px;          /* position temporaire pour le retrouver */
-  right: 350px;          /* position temporaire pour le retrouver */
-  font-size: 1.7rem;     /* taille réduite */
+  bottom: 30px;
+  right: 350px;
+
+  font-size: 1.7rem;
   background: none !important;
   border: none !important;
   box-shadow: none !important;
@@ -976,35 +867,28 @@ textarea {
   filter: none !important;
   cursor: pointer;
 
-  /* invisible par défaut */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 
-  /* saut */
   animation: lapin-saut 0.8s infinite ease-in-out;
 
-  /* AU-DESSUS de tout, y compris du footer */
   z-index: 999999999 !important;
 
-  /* supprime halo bleu mobile */
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Quand visible */
 #backToTop.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Animation du saut */
 @keyframes lapin-saut {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
-/* Suppression du carré bleu */
 #backToTop:focus,
 #backToTop:focus-visible,
 #backToTop::-moz-focus-inner {
@@ -1013,79 +897,39 @@ textarea {
   border: none !important;
 }
 
-/* UNIQUEMENT pour les pages article */
-.article-page .article-header-top {
-  display: grid;
-  grid-template-columns: 7rem 1fr;   /* date | titre */
-  grid-template-areas: "date title";
-  column-gap: 0.5rem;
-  align-items: baseline;
-}
-
-/* Date */
-.article-page .article-date {
-  grid-area: date;
-  white-space: nowrap;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-/* Titre */
-.article-page .article-title {
-  grid-area: title;
-  font-weight: 600;
-  color: var(--lapin);
-}
-
-/* Sous‑titre : aligné sous le titre */
-.article-page .article-teaser {
-  display: block;
-  margin-left: 7.6rem;          /* ⭐ alignement parfait sous le titre */
-  max-width: 65ch;            /* ⭐ retour à la ligne naturel */
-  white-space: normal !important;
-  font-style: italic;
-  opacity: 0.8;
-  line-height: 1.4;
-  color: var(--lapin);
-}
-/* Dates dans toutes les rubriques (Spiritualité, Créations, etc.) */
-.section-content .article-line .article-date {
-  color: var(--accent) !important;
-}
-.article-body > *:first-child {
-  margin-top: 3rem; /* ajuste selon ton esthétique */
-}
-
-/* Désactivation visuelle et fonctionnelle de la page Archives */
-/* Empêche le clic sur le lien Archives sans modifier son contenu */
+/* ----------------------------------------------------
+   DÉSACTIVATION VISUELLE ET FONCTIONNELLE DE LA PAGE ARCHIVES
+---------------------------------------------------- */
 a[href="/archives"],
 a[href="/archives/"],
 a[href$="/archives"],
 a[href$="/archives/"] {
   pointer-events: none !important;
   cursor: default !important;
-  opacity: 0.5; /* optionnel */
+  opacity: 0.5;
 }
 
 .menu-archives-dropdown a {
   display: none !important;
 }
+
 .menu-archives .menu-button {
   pointer-events: none !important;
   opacity: 0.5;
   cursor: default;
 }
+
 header .menu-archives-dropdown a {
   display: none !important;
 }
-body {
-  outline: 5px solid red !important;
-}
+
 .menu-passe {
   opacity: 0.5;
 }
 
-/* lien partage d'articles */
+/* ----------------------------------------------------
+   PARTAGE D’ARTICLES
+---------------------------------------------------- */
 .share-block {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -1100,7 +944,7 @@ body {
 
 .share-link {
   margin-right: 1rem;
-  color: #c45a00; /* ton orangé signature */
+  color: #c45a00;
   text-decoration: none;
 }
 
@@ -1109,113 +953,37 @@ body {
 }
 
 /* ----------------------------------------------------
-   BARRE DE RECHERCHE — SOUS LE HEADER (DESKTOP)
+   PASTILLE TERRIER
 ---------------------------------------------------- */
-
-/* Conteneur global : occupe toute la largeur, aligne la barre à droite */
-.search_bar-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.8rem 2rem 0.5rem;
-  position: relative;          /* Permet de positionner les résultats */
-  z-index: 10;                 /* Passe au-dessus du contenu */
-}
-
-/* Champ de recherche */
-#search-input {
-  width: 260px;
-  padding: 0.6em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #E0B37A;
-  color: #111;
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: background 0.2s ease;
-}
-
-#search-input::placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-#search-input:focus {
-  background: #e8c79a;
-}
-
-/* ----------------------------------------------------
-   RÉSULTATS DE RECHERCHE — SOUS LA BARRE
----------------------------------------------------- */
-
-#search-results {
-  position: absolute;
-  top: calc(100% + 0.4rem);    /* Juste sous la barre */
-  right: 2rem;                 /* Aligné avec la barre */
-  width: 260px;                /* Même largeur que le champ */
-  background: rgba(245, 236, 225, 0.88);
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5em 0.8em;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  z-index: 999;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-/* Chaque résultat */
-#search-results div {
-  margin-bottom: 0.8em;
-  padding-bottom: 0.6em;
-  border-bottom: 1px solid #eee;
-}
-
-#search-results div:last-child {
-  border-bottom: none;
-}
-
-#search-results a {
-  text-decoration: none;
-  color: #333;
-}
-
-#search-results strong {
+.pastille-terrier {
   display: block;
-  margin-bottom: 0.2em;
+  width: fit-content;
+  padding: 0.55rem 1.2rem;
+  margin: 1.4rem auto 0 auto;
+
+  background: transparent;
+  border: 1px solid var(--lapin);
+  border-radius: 12px;
+
+  color: var(--lapin) !important;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+
+  transition: all 0.2s ease;
 }
 
-#search-results span {
-  opacity: 0.6;
-  font-size: 0.85em;
+.pastille-terrier:hover {
+  background: var(--lapin);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-
 /* ----------------------------------------------------
-   INVISIBLE SI AUCUN RÉSULTAT
----------------------------------------------------- */
-
-#search-results:empty {
-  display: none !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  height: 0 !important;
-}
-
-/* ----------------------------------------------------
-   MASQUAGE COMPLET SUR GSM
----------------------------------------------------- */
-
-@media (max-width: 768px) {
-  .search_bar-wrapper,
-  #search-results {
-    display: none !important;
-  }
-}
-
-/* ————————————————————————————————
    PAGE VIDÉO DU TERRIER
-——————————————————————————————— */
+---------------------------------------------------- */
 .page-video-terrier {
   display: flex;
   justify-content: center;
@@ -1249,7 +1017,7 @@ body {
   display: block;
 }
 
-/* Fond */
+/* Fond spécifique Terrier */
 body.presentation-terrier {
   background-image: url('/images/fond-terrier-basalte.png');
   background-size: cover;
@@ -1258,9 +1026,9 @@ body.presentation-terrier {
   background-repeat: no-repeat;
 }
 
-/* ————————————————————————————————
+/* ----------------------------------------------------
    ESPACE GLOBAL SOUS LE HEADER FIXED
-——————————————————————————————— */
+---------------------------------------------------- */
 main.contenu-scroll {
   margin-top: 0;
 }
@@ -1269,16 +1037,16 @@ body:not(.accueil) main.contenu-scroll {
   margin-top: 120px;
 }
 
-/* ————————————————————————————————
+/* ----------------------------------------------------
    HEADER MASQUÉ — desktop + mobile
-——————————————————————————————— */
+---------------------------------------------------- */
 header.header-hidden {
   transform: translateY(-100%);
 }
 
-/* ————————————————————————————————
+/* ----------------------------------------------------
    VERSION MOBILE
-——————————————————————————————— */
+---------------------------------------------------- */
 
 /* Par défaut : le header mobile est masqué */
 .mobile-header {
@@ -1287,7 +1055,7 @@ header.header-hidden {
 
 @media (max-width: 768px) {
 
-  /* Masquer le header desktop UNIQUEMENT */
+  /* Masquer le header desktop */
   header.site-header {
     display: none !important;
   }
@@ -1389,49 +1157,13 @@ header.header-hidden {
   .mobile-title-link:visited {
     color: inherit;
   }
+}
 
-} /* ← FIN de la media query mobile */
-
-/* ————————————————————————————————
+/* ----------------------------------------------------
    VERSION DESKTOP : masquer le header mobile
-——————————————————————————————— */
+---------------------------------------------------- */
 @media (min-width: 769px) {
   .mobile-header {
     display: none !important;
   }
 }
-.pastille-terrier {
-  display: inline-block;
-  padding: 0.55rem 1.2rem;
-  margin: 1.4rem auto 0 auto;
-  background: transparent;
-  border: 1px solid var(--lapin);
-  border-radius: 12px;
-  color: var(--lapin) !important; 
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
-  transition: all 0.2s ease;
-}
-
-/* Centrage garanti même dans un bloc non centré */
-.pastille-terrier {
-  display: block;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Effet hover (désactivé sur GSM mais utile sur desktop) */
-.pastille-terrier:hover {
-  background: var(--lapin);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-
-
-
