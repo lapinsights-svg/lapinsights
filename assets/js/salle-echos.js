@@ -1,11 +1,11 @@
 /* ----------------------------------------------------
-   SALLE DES ÉCHOS — CONSTELLATION + SONS + RECHERCHE
+   ÉCHOS — CONSTELLATION + SONS + RECHERCHE
 ---------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   // ----------------------------------------------------
-  // 1. Récupération des contenus depuis Jekyll (5 collections)
+  // 1. Récupération des contenus depuis Jekyll
   // ----------------------------------------------------
 
   const echos = [
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------------------------------
 
   const constellation = document.getElementById("constellation-echos");
-  const barreResonances = document.querySelector(".recherches-echos");
+  const barreFiltres = document.querySelector(".barre-filtres");
   const messageEchos = document.getElementById("message-echos");
 
   // ----------------------------------------------------
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. État initial
   // ----------------------------------------------------
 
-  cacher(".recherches-echos");
+  cacher(".barre-filtres");
   viderConstellation();
   messageEchos.classList.add("hidden");
 
@@ -69,15 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectAnnee = document.getElementById("annee");
     const selectMois = document.getElementById("mois");
 
-    console.log("annee =", selectAnnee);
-    console.log("mois =", selectMois);
-
-    // Extraire toutes les années disponibles
     const annees = [...new Set(
       echos.map(e => new Date(e.date).getFullYear())
     )].sort((a, b) => b - a);
 
-    // Remplir Année
     selectAnnee.innerHTML = '<option value="">—</option>';
     annees.forEach(annee => {
       const opt = document.createElement("option");
@@ -86,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
       selectAnnee.appendChild(opt);
     });
 
-    // Quand l'année change → remplir les mois
     selectAnnee.addEventListener("change", () => {
       const anneeChoisie = selectAnnee.value;
 
@@ -117,23 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 6. FILTRAGE TEMPOREL
   // ----------------------------------------------------
 
-  function estEligibleTroisMois(dateStr) {
-    const dateArticle = new Date(dateStr);
-    const maintenant = new Date();
-    const diffMs = maintenant - dateArticle;
-    const diffMois = diffMs / (1000 * 60 * 60 * 24 * 30);
-    return diffMois >= 3;
-  }
-
   function filtrerParDate(annee, mois) {
     return echos.filter(echo => {
-      // if (!estEligibleTroisMois(echo.date)) return false;
-
       const d = new Date(echo.date);
-      const echoAnnee = d.getFullYear();
-      const echoMois = d.getMonth() + 1;
-
-      return echoAnnee == annee && echoMois == mois;
+      return d.getFullYear() == annee && (d.getMonth() + 1) == mois;
     });
   }
 
@@ -142,11 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------------------------------
 
   function onChangeAnneeOuMois(callback) {
-    const annee = document.getElementById("annee");
-    const mois = document.getElementById("mois");
-
-    annee.addEventListener("change", callback);
-    mois.addEventListener("change", callback);
+    document.getElementById("annee").addEventListener("change", callback);
+    document.getElementById("mois").addEventListener("change", callback);
   }
 
   onChangeAnneeOuMois(() => {
@@ -155,9 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!anneeChoisie || !moisChoisi) {
       viderConstellation();
-      cacher(".recherches-echos");
+      cacher(".barre-filtres");
       messageEchos.classList.add("hidden");
-      messageEchos.classList.remove("visible");
       return;
     }
 
@@ -170,14 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
         constellation.classList.add("visible");
       }, 10);
 
-      montrer(".recherches-echos");
-
+      montrer(".barre-filtres");
       messageEchos.classList.add("hidden");
-      messageEchos.classList.remove("visible");
 
     } else {
       viderConstellation();
-      cacher(".recherches-echos");
+      cacher(".barre-filtres");
 
       messageEchos.classList.remove("hidden");
       setTimeout(() => {
@@ -187,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ----------------------------------------------------
-  // 8. Affichage de la constellation (temporaire)
+  // 8. Affichage de la constellation
   // ----------------------------------------------------
 
   function afficherConstellation(liste) {
@@ -259,15 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 11. Connexion aux champs de recherche
   // ----------------------------------------------------
 
-  const champResonance = document.querySelector(".champ-resonance");
-  const champAppel = document.querySelector(".champ-appel");
+  document.querySelector(".champ-resonance")
+    .addEventListener("input", e => filtrerEchos(e.target.value));
 
-  champResonance.addEventListener("input", e => {
-    filtrerEchos(e.target.value);
-  });
-
-  champAppel.addEventListener("input", e => {
-    filtrerEchos(e.target.value);
-  });
+  document.querySelector(".champ-appel")
+    .addEventListener("input", e => filtrerEchos(e.target.value));
 
 });
