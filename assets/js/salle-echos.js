@@ -26,6 +26,7 @@ const echos = [
 // 2. Conteneurs
 const constellation = document.getElementById("constellation-echos");
 const barreResonances = document.querySelector(".recherches-echos");
+const messageEchos = document.getElementById("message-echos");
 
 // 3. Fonctions utilitaires
 function cacher(selector) {
@@ -38,11 +39,13 @@ function montrer(selector) {
 
 function viderConstellation() {
   constellation.innerHTML = "";
+  constellation.classList.remove("visible");
 }
 
 // 4. État initial
 cacher(".recherches-echos");
 viderConstellation();
+messageEchos.classList.add("hidden");
 
 // ----------------------------------------------------
 // 5. FILTRAGE TEMPOREL
@@ -66,7 +69,7 @@ function filtrerParDate(annee, mois) {
 
     const d = new Date(echo.date);
     const echoAnnee = d.getFullYear();
-    const echoMois = d.getMonth() + 1; // 0 → janvier
+    const echoMois = d.getMonth() + 1;
 
     return echoAnnee == annee && echoMois == mois;
   });
@@ -92,6 +95,8 @@ onChangeAnneeOuMois(() => {
   if (!anneeChoisie || !moisChoisi) {
     viderConstellation();
     cacher(".recherches-echos");
+    messageEchos.classList.add("hidden");
+    messageEchos.classList.remove("visible");
     return;
   }
 
@@ -99,10 +104,25 @@ onChangeAnneeOuMois(() => {
 
   if (articlesFiltres.length > 0) {
     afficherConstellation(articlesFiltres);
+
+    // Fondu d’apparition
+    setTimeout(() => {
+      constellation.classList.add("visible");
+    }, 10);
+
     montrer(".recherches-echos");
+
+    messageEchos.classList.add("hidden");
+    messageEchos.classList.remove("visible");
+
   } else {
     viderConstellation();
     cacher(".recherches-echos");
+
+    messageEchos.classList.remove("hidden");
+    setTimeout(() => {
+      messageEchos.classList.add("visible");
+    }, 10);
   }
 });
 
