@@ -65,7 +65,7 @@ function estEligibleTroisMois(dateStr) {
 // Filtre par année + mois + règle des 3 mois
 function filtrerParDate(annee, mois) {
   return echos.filter(echo => {
-    if (!estEligibleTroisMois(echo.date)) return false;
+   // if (!estEligibleTroisMois(echo.date)) return false;
 
     const d = new Date(echo.date);
     const echoAnnee = d.getFullYear();
