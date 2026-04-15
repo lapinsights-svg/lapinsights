@@ -1194,7 +1194,7 @@ header.header-hidden {
 #constellation-echos {
   position: relative;
   width: 100%;
-  height: 600px; /* Ajustable selon ton design */
+  height: 800px; /* Ajustable selon ton design */
   background-color: #000; /* Noir céleste */
   overflow: hidden;
 }
