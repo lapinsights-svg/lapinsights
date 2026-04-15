@@ -531,13 +531,18 @@ button.disabled {
 .form-contact button:hover {
   background: #e8c79a;
 }
+
 /* ----------------------------------------------------
-   FOOTER
+   FOOTER — FIXE, TOUJOURS VISIBLE
 ---------------------------------------------------- */
 footer.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
+
   padding: 1.2rem 2.8rem;
-  margin-top: 1rem;
+  margin-top: 0;
 
   background: transparent;
   border-top: none;
@@ -545,11 +550,14 @@ footer.footer-fixed {
 
   display: flex;
   justify-content: flex-end;
+  z-index: 3000; /* reste au-dessus du contenu */
 }
 
+/* Contenu interne du footer */
 .footer-content {
   width: 100%;
   max-width: 1100px;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -573,6 +581,13 @@ footer.footer-fixed {
   margin-top: 0;
   color: var(--texte);
   text-align: right;
+}
+
+/* ----------------------------------------------------
+   ESPACE POUR NE PAS QUE LE CONTENU PASSE SOUS LE FOOTER
+---------------------------------------------------- */
+main.contenu-scroll {
+  padding-bottom: 90px; /* hauteur du footer + respiration */
 }
 
 /* ----------------------------------------------------
