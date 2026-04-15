@@ -1187,33 +1187,44 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   SALLE DES ÉCHOS — FOND IMMERSIF
+   SALLE DES ÉCHOS — FOND IMMERSIF FIXE
 ---------------------------------------------------- */
+
+/* Conteneur principal */
 .salle-echos-privee {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* important : pas height fixe */
+  min-height: 100vh;
   overflow: hidden;
+  background: none;
+}
 
-  /* Image de fond nocturne */
-  background-image: url('/images/fond_archives.png'); /* chemin corrigé */
+/* Fond fixe universel (fonctionne mobile + desktop) */
+.salle-echos-privee::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url('/images/fond_archives.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* Ambiance */
-  filter: brightness(0.85) contrast(1.05);
-  animation: respiration-terrier 18s ease-in-out infinite;
+  filter: brightness(0.95) contrast(1.08);
+  z-index: -1;
 }
 
 /* Voile léger */
-.salle-echos-privee::before {
+.salle-echos-privee::after {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(1px);
+  z-index: 0;
 }
 
 /* Contenu interne */
@@ -1221,34 +1232,40 @@ header.header-hidden {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-height: 100vh; /* garantit que le fond reste visible */
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   color: var(--texte);
 }
 
 /* Animation respiration */
 @keyframes respiration-terrier {
-  0% { filter: brightness(0.85) contrast(1.05); }
-  50% { filter: brightness(0.95) contrast(1.1); }
-  100% { filter: brightness(0.85) contrast(1.05); }
+  0% { filter: brightness(0.95) contrast(1.08); }
+  50% { filter: brightness(1.05) contrast(1.12); }
+  100% { filter: brightness(0.95) contrast(1.08); }
 }
 
 /* ----------------------------------------------------
    POINTS LUMINEUX — ÉCHOS
 ---------------------------------------------------- */
+
 .point-echo {
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
+
   background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1) 70%);
   box-shadow: 0 0 12px rgba(255,255,255,0.6);
+
   opacity: 0.85;
   animation: pulsation-echo 3.5s ease-in-out infinite;
   transition: transform 0.4s ease, opacity 0.4s ease;
+
   z-index: 3;
 }
 
@@ -1299,29 +1316,54 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   BOUTON RETOUR ↟
+   BOUTON RETOUR — PETIT LAPIN LUMINEUX
 ---------------------------------------------------- */
+
 .retour-accueil-echos {
   position: fixed;
   top: 20px;
   left: 20px;
+
   z-index: 9999;
-  color: white;
-  font-size: 26px;
+  font-size: 32px;
   text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+
+  color: white;
+  opacity: 0.85;
+  text-shadow: 0 0 12px rgba(255,255,255,0.9);
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .retour-accueil-echos:hover {
   opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Tooltip “Retour à l’accueil” */
+.retour-accueil-echos:hover::after {
+  content: "Retour à l’accueil";
+  position: absolute;
+  top: 42px;
+  left: 0;
+
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  text-shadow: none;
 }
 
 /* ----------------------------------------------------
    NEUTRALISATION DU FOND GLOBAL
 ---------------------------------------------------- */
+
 body.salle-echos {
   background: black !important;
 }
+
 
 
