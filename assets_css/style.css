@@ -1465,3 +1465,9 @@ body.salle-echos {
   display: none;
 }
 
+.contenu-scroll {
+  overflow-x: visible !important;
+  overflow-y: auto !important;
+}
+
+
