@@ -1185,3 +1185,53 @@ header.header-hidden {
     display: none !important;
   }
 }
+
+/* ----------------------------------------------------
+   SALLE D’ARCHIVES PRIVÉE — SALLE DES ÉCHOS
+---------------------------------------------------- */
+.salle-echos-privee {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  /* Image de fond nocturne */
+  background-image: url('images/salle-echos-nocturne.jpg'); /* adapte le chemin */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Ambiance générale */
+  filter: brightness(0.85) contrast(1.05);
+  animation: respiration-terrier 18s ease-in-out infinite;
+}
+
+/* Voile léger pour détacher les points lumineux */
+.salle-echos-privee::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Contenu de la salle (points, textes, lapin, etc.) */
+.salle-echos-contenu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--texte);
+}
+
+/* Animation de respiration du fond */
+@keyframes respiration-terrier {
+  0% { filter: brightness(0.85) contrast(1.05); }
+  50% { filter: brightness(0.95) contrast(1.1); }
+  100% { filter: brightness(0.85) contrast(1.05); }
+}
