@@ -23,6 +23,57 @@ const echos = [
   {% endfor %}
 ];
 
+// ----------------------------------------------------
+// REMPLISSAGE DES MENUS ANNÉE / MOIS
+// ----------------------------------------------------
+
+function remplirMenus() {
+  const selectAnnee = document.getElementById("annee");
+  const selectMois = document.getElementById("mois");
+
+  // Extraire toutes les années disponibles
+  const annees = [...new Set(
+    echos.map(e => new Date(e.date).getFullYear())
+  )].sort((a, b) => b - a); // années décroissantes
+
+  // Remplir le menu Année
+  selectAnnee.innerHTML = '<option value="">—</option>';
+  annees.forEach(annee => {
+    const opt = document.createElement("option");
+    opt.value = annee;
+    opt.textContent = annee;
+    selectAnnee.appendChild(opt);
+  });
+
+  // Quand l'année change → remplir les mois
+  selectAnnee.addEventListener("change", () => {
+    const anneeChoisie = selectAnnee.value;
+
+    if (!anneeChoisie) {
+      selectMois.innerHTML = '<option value="">—</option>';
+      return;
+    }
+
+    const moisDisponibles = [...new Set(
+      echos
+        .filter(e => new Date(e.date).getFullYear() == anneeChoisie)
+        .map(e => new Date(e.date).getMonth() + 1)
+    )].sort((a, b) => b - a);
+
+    selectMois.innerHTML = '<option value="">—</option>';
+    moisDisponibles.forEach(mois => {
+      const opt = document.createElement("option");
+      opt.value = mois;
+      opt.textContent = mois.toString().padStart(2, "0");
+      selectMois.appendChild(opt);
+    });
+  });
+}
+
+// Appeler la fonction au chargement
+remplirMenus();
+
+
 // 2. Conteneurs
 const constellation = document.getElementById("constellation-echos");
 const barreResonances = document.querySelector(".recherches-echos");
@@ -65,7 +116,7 @@ function estEligibleTroisMois(dateStr) {
 // Filtre par année + mois + règle des 3 mois
 function filtrerParDate(annee, mois) {
   return echos.filter(echo => {
-   // if (!estEligibleTroisMois(echo.date)) return false;
+    // if (!estEligibleTroisMois(echo.date)) return false;
 
     const d = new Date(echo.date);
     const echoAnnee = d.getFullYear();
