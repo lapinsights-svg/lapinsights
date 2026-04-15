@@ -6,12 +6,15 @@
 
 <body class="{{ page.class }}">
 
-  <!-- Header desktop -->
+  <!-- Header desktop (masqué pour la Salle des Échos) -->
+  {% unless page.class == "salle-echos" %}
   <header class="site-header">
     {% include header.html %}
   </header>
+  {% endunless %}
 
-  <!-- Header mobile -->
+  <!-- Header mobile (masqué pour la Salle des Échos) -->
+  {% unless page.class == "salle-echos" %}
   <header class="mobile-header">
     <div class="mobile-header-top">
       <img src="/images/celeste.png" alt="Portrait" class="portrait-mobile">
@@ -31,6 +34,12 @@
       <a class="disabled">Dans le passé</a>
     </nav>
   </header>
+  {% endunless %}
+
+  <!-- Bouton retour à l'accueil (option B) -->
+  {% if page.class == "salle-echos" %}
+  <a href="/" class="retour-accueil-echos">↟</a>
+  {% endif %}
 
   <main class="contenu-scroll">
 
