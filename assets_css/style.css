@@ -1341,6 +1341,9 @@ header.header-hidden {
 .point-echo:hover::before {
   opacity: 1;
 }
+.point-echo.revelation::before {
+  opacity: 1 !important;
+}
 
 /* ----------------------------------------------------
    BOUTON RETOUR — PETIT LAPIN LUMINEUX
