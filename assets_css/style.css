@@ -6,6 +6,7 @@
   --texte: #f5f1ea;
   --accent: #e0b37a;
   --lapin: rgba(20, 40, 80, 0.85);
+  --header-height: 110px;
 }
 
 /* ----------------------------------------------------
@@ -94,7 +95,7 @@ header.header-hidden {
 /* Espace sous le header pour que le contenu ne passe pas dessous */
 body.flex,
 .contenu-scroll {
-  padding-top: 90px !important;
+  padding-top: var(--header-height, 110px);
 }
 
 /* ----------------------------------------------------
