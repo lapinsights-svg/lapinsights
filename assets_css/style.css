@@ -1301,4 +1301,20 @@ header.header-hidden {
   box-shadow: 0 0 25px rgba(255,255,255,1);
   transform: scale(1.8);
 }
+.retour-accueil-echos {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.retour-accueil-echos:hover {
+  opacity: 1;
+}
+
 
