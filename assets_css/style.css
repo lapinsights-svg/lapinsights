@@ -1195,24 +1195,19 @@ header.header-hidden {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: visible; /* ✔ laisse les menus déroulants s’ouvrir */
   background: none;
+  overflow: visible; /* utile, mais non critique maintenant */
 }
 
-/* Fond fixe universel (mobile + desktop) */
+/* Fond fixe universel */
 .salle-echos-privee::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
+  inset: 0;
   background-image: url('/images/fond_archives.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   filter: brightness(0.95) contrast(1.08);
   z-index: -1;
 }
@@ -1240,16 +1235,10 @@ header.header-hidden {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* ✔ La constellation commence en haut */
-  padding-top: 10rem;          /* ✔ Laisse la place pour les barres */
-  color: var(--texte);
-}
+  justify-content: flex-start;
 
-/* Animation respiration */
-@keyframes respiration-terrier {
-  0% { filter: brightness(0.95) contrast(1.08); }
-  50% { filter: brightness(1.05) contrast(1.12); }
-  100% { filter: brightness(0.95) contrast(1.08); }
+  padding-top: 10rem; /* espace pour la barre */
+  color: var(--texte);
 }
 
 /* ----------------------------------------------------
@@ -1261,14 +1250,11 @@ header.header-hidden {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-
   background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1) 70%);
   box-shadow: 0 0 12px rgba(255,255,255,0.6);
-
   opacity: 0.85;
   animation: pulsation-echo 3.5s ease-in-out infinite;
   transition: transform 0.4s ease, opacity 0.4s ease;
-
   z-index: 3;
 }
 
@@ -1326,15 +1312,12 @@ header.header-hidden {
   position: fixed;
   top: 20px;
   left: 20px;
-
   z-index: 9999;
   font-size: 32px;
   text-decoration: none;
-
   color: white;
   opacity: 0.85;
   text-shadow: 0 0 12px rgba(255,255,255,0.9);
-
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -1348,14 +1331,12 @@ header.header-hidden {
   position: absolute;
   top: 42px;
   left: 0;
-
   padding: 4px 8px;
   background: rgba(0,0,0,0.6);
   color: white;
   font-size: 12px;
   border-radius: 4px;
   white-space: nowrap;
-
   text-shadow: none;
 }
 
@@ -1377,7 +1358,6 @@ body.salle-echos {
   left: 0;
   width: 100%;
   z-index: 1000;
-  overflow: visible;
 
   background: #050505;
   padding: 1rem 0 0.5rem 0;
@@ -1407,11 +1387,10 @@ body.salle-echos {
   border: 1px solid #444;
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
-  position: relative;
-  z-index: 1100;          /* au-dessus de la barre */
+  /* z-index inutile maintenant */
 }
 
-/* Ligne Résonnance/Appel */
+/* Ligne Résonance/Appel */
 .barre-filtres {
   display: flex;
   gap: 1rem;
@@ -1465,9 +1444,5 @@ body.salle-echos {
   display: none;
 }
 
-.contenu-scroll {
-  overflow-x: visible !important;
-  overflow-y: auto !important;
-}
 
 
