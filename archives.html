@@ -9,42 +9,40 @@ class: salle-echos
 <!-- Salle des Échos -->
 <div class="salle-echos-privee">
 
-  <div class="salle-echos-contenu">
+  <!-- BLOC DE RECHERCHE GLOBAL (fixé en haut) -->
+  <div class="barre-recherche">
 
-    <!-- BLOC DE RECHERCHE GLOBAL (fixé en haut) -->
-    <div class="barre-recherche">
+    <!-- Année + Mois (toujours visibles) -->
+    <div class="barre-celeste">
+      <label for="annee">Année</label>
+      <select id="annee"></select>
 
-      <!-- Année + Mois (toujours visibles) -->
-      <div class="barre-celeste">
-        <label for="annee">Année</label>
-        <select id="annee"></select>
-
-        <label for="mois">Mois</label>
-        <select id="mois"></select>
-      </div>
-
-      <!-- Résonnance + Appeler un écho (affichés après filtrage) -->
-      <div class="barre-filtres hidden">
-        <input type="text" placeholder="Chercher une résonance…" class="champ-resonance">
-        <input type="text" placeholder="Appeler un écho…" class="champ-appel">
-      </div>
-
+      <label for="mois">Mois</label>
+      <select id="mois"></select>
     </div>
 
-    <!-- Constellation (points lumineux générés par JS) -->
+    <!-- Résonnance + Appeler un écho (affichés après filtrage) -->
+    <div class="barre-filtres hidden">
+      <input type="text" placeholder="Chercher une résonance…" class="champ-resonance">
+      <input type="text" placeholder="Appeler un écho…" class="champ-appel">
+    </div>
+
+  </div>
+
+  <!-- Constellation -->
+  <div class="salle-echos-contenu">
     <div id="constellation-echos"></div>
 
     <!-- Message pour les périodes vides -->
     <div id="message-echos" class="hidden message-echos">
       Aucun écho n’a encore traversé cette période.
     </div>
-
   </div>
 
 </div>
 
-<!-- Sons (chargés dynamiquement) -->
+<!-- Sons -->
 {% include sons-echos.html %}
 
-<!-- Script de la Salle des Échos -->
+<!-- Script -->
 <script src="/assets/js/salle-echos.js"></script>
