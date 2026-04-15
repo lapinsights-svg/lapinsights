@@ -1432,6 +1432,10 @@ body.echos {
   opacity: 1;
 }
 
+.echos-contenu {
+  padding-top: calc(1rem + 0.5rem + 50px); /* hauteur réelle de la barre */
+}
+
 /* ----------------------------------------------------
   BOUTON DE RESET POUR LA RECHERCHE
 ---------------------------------------------------- */
