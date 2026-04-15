@@ -1369,12 +1369,20 @@ body.salle-echos {
   Barre de recherche celeste
 ---------------------------------------------------- */
 .barre-celeste {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
   display: flex;
   gap: 1rem;
   align-items: center;
+
   padding: 1rem 0;
+  background: #050505; /* ou la couleur de fond de la Salle des Échos */
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 1.5rem;
+
+  /* On supprime le margin-bottom pour éviter un saut visuel */
+  margin-bottom: 0;
 }
 
 .barre-celeste label {
