@@ -21,24 +21,6 @@ class: salle-echos
       <input type="text" placeholder="Appeler un écho…" class="champ-appel">
     </div>
 
-    <!-- Liste des archives (boucle Liquid conservée) -->
-    <div class="archives-docs">
-      {% assign sorted = site.archives | sort: "date" | reverse %}
-      {% for article in sorted %}
-        <div class="article-item">
-          <h5 class="article-titre">
-            <a href="{{ article.url | relative_url }}">
-              {{ article.title }}
-            </a>
-          </h5>
-
-          {% if article.excerpt %}
-            <p class="article-extrait">{{ article.excerpt }}</p>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-
   </div>
 
 </div>
