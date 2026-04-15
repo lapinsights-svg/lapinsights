@@ -1,25 +1,55 @@
 ---
 layout: default
-title: "Salle des Échos (privée)"
+title: "Salle des Échos"
+soustitre: "Ce qui demeure, ce qui trace les saisons du territoire."
+rubrique: true
+collection: archives
 permalink: /archives/
 ---
 
+<!-- Header de rubrique (conservé) -->
+<section class="rubrique-header section-header">
+  <h2>{{ page.title }}</h2>
+  <p>{{ page.soustitre }}</p>
+
+  <div class="share-rubrique">
+    <a href="#"
+       onclick="shareArticle('{{ page.title }}', '{{ page.url | absolute_url }}'); return false;">
+       partager cette rubrique
+    </a>
+  </div>
+</section>
+
+<!-- Salle des Échos -->
 <div class="salle-echos-privee">
 
   <div class="salle-echos-contenu">
 
-    <div class="intro-echos">
-      <h1>Salle des Échos (privée)</h1>
-      <p>Un espace encore scellé, où les résonances se préparent.</p>
-    </div>
+    <!-- Constellation -->
+    <div id="constellation-echos"></div>
 
-    <div id="constellation-echos">
-      <!-- Plus tard : les points lumineux -->
-    </div>
-
+    <!-- Champs de recherche -->
     <div class="recherches-echos">
       <input type="text" placeholder="Chercher une résonance…" class="champ-resonance">
       <input type="text" placeholder="Appeler un écho…" class="champ-appel">
+    </div>
+
+    <!-- Liste des archives (boucle Liquid conservée) -->
+    <div class="archives-docs">
+      {% assign sorted = site.archives | sort: "date" | reverse %}
+      {% for article in sorted %}
+        <div class="article-item">
+          <h5 class="article-titre">
+            <a href="{{ article.url | relative_url }}">
+              {{ article.title }}
+            </a>
+          </h5>
+
+          {% if article.excerpt %}
+            <p class="article-extrait">{{ article.excerpt }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
 
   </div>
@@ -27,5 +57,4 @@ permalink: /archives/
 </div>
 
 {% include sons-echos.html %}
-<!-- Appel du fichier JavaScript -->
 <script src="/assets/js/salle-echos.js"></script>
