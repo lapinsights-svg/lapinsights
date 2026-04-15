@@ -1,62 +1,97 @@
-// ----------------------------------------------------
-// SONS — récupération des éléments audio
-// ----------------------------------------------------
-const sonGrave = document.getElementById('son-grave');
-const sonMedium = document.getElementById('son-medium');
-const sonAigu = document.getElementById('son-aigu');
-const souffle = document.getElementById('souffle-global');
+/* ----------------------------------------------------
+   SALLE DES ÉCHOS — CONSTELLATION + SONS + RECHERCHE
+---------------------------------------------------- */
 
-// ----------------------------------------------------
-// SOUFFLE GLOBAL — ambiance de fond
-// ----------------------------------------------------
-if (souffle) {
-  souffle.volume = 0.25;
-  souffle.play().catch(() => {
-    // Certains navigateurs bloquent l'autoplay : on attend une interaction
-    document.addEventListener('click', () => {
-      souffle.play();
-    }, { once: true });
+// 1. Récupération des contenus depuis Jekyll (5 collections)
+const echos = [
+  {% assign echos = site.actualites 
+    | concat: site.creations 
+    | concat: site.idees 
+    | concat: site.spiritualite
+    | concat: site.passe %}
+
+  {% for item in echos %}
+    {
+      title: "{{ item.title | escape }}",
+      url: "{{ item.url | relative_url }}",
+      slug: "{{ item.slug }}",
+      excerpt: "{{ item.excerpt | strip_newlines | escape }}",
+      sound: "/sons/{{ item.slug }}.mp3"
+    },
+  {% endfor %}
+];
+
+// 2. Conteneur de la constellation
+const constellation = document.getElementById("constellation-echos");
+
+// 3. Génération des points lumineux
+echos.forEach((echo, index) => {
+  const point = document.createElement("div");
+  point.classList.add("point-echo");
+
+  // Position aléatoire dans la salle
+  point.style.top = Math.random() * 90 + "%";
+  point.style.left = Math.random() * 90 + "%";
+
+  // Identifiant interne
+  point.dataset.slug = echo.slug;
+
+  // Clic → aller vers l’article
+  point.addEventListener("click", () => {
+    window.location.href = echo.url;
   });
+
+  // Survol → jouer le son
+  point.addEventListener("mouseenter", () => {
+    jouerSon(echo.slug);
+  });
+
+  constellation.appendChild(point);
+});
+
+// 4. Fonction pour jouer un son
+function jouerSon(slug) {
+  const audio = document.getElementById("son-" + slug);
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play();
+  }
 }
 
-// ----------------------------------------------------
-// POINTS LUMINEUX — gestion des interactions
-// ----------------------------------------------------
-function activerInteractionsEchos() {
-  const points = document.querySelectorAll('.point-echo');
+// 5. Recherche : activer les points correspondants
+function filtrerEchos(terme) {
+  const points = document.querySelectorAll(".point-echo");
 
   points.forEach(point => {
+    const slug = point.dataset.slug;
+    const echo = echos.find(e => e.slug === slug);
 
-    // Survol : lumière + son
-    point.addEventListener('mouseenter', () => {
-      point.classList.add('son-actif');
+    if (!terme) {
+      point.classList.remove("son-actif");
+      return;
+    }
 
-      if (point.classList.contains('ancien')) {
-        sonGrave.currentTime = 0;
-        sonGrave.volume = 0.5;
-        sonGrave.play();
-      }
-      else if (point.classList.contains('recent')) {
-        sonAigu.currentTime = 0;
-        sonAigu.volume = 0.4;
-        sonAigu.play();
-      }
-      else {
-        sonMedium.currentTime = 0;
-        sonMedium.volume = 0.45;
-        sonMedium.play();
-      }
-    });
+    const match =
+      echo.title.toLowerCase().includes(terme.toLowerCase()) ||
+      echo.excerpt.toLowerCase().includes(terme.toLowerCase());
 
-    // Fin du survol : on retire l’effet lumineux
-    point.addEventListener('mouseleave', () => {
-      point.classList.remove('son-actif');
-    });
-
+    if (match) {
+      point.classList.add("son-actif");
+      jouerSon(echo.slug);
+    } else {
+      point.classList.remove("son-actif");
+    }
   });
 }
 
-// ----------------------------------------------------
-// ACTIVATION AUTOMATIQUE
-// ----------------------------------------------------
-document.addEventListener('DOMContentLoaded', activerInteractionsEchos);
+// 6. Connexion aux champs de recherche
+const champResonance = document.querySelector(".champ-resonance");
+const champAppel = document.querySelector(".champ-appel");
+
+champResonance.addEventListener("input", e => {
+  filtrerEchos(e.target.value);
+});
+
+champAppel.addEventListener("input", e => {
+  filtrerEchos(e.target.value);
+});
