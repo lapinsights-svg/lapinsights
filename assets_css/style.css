@@ -1342,7 +1342,7 @@ header.header-hidden {
 
 /* Tooltip “Retour à l’accueil” */
 .retour-accueil-echos:hover::after {
-  content: "Retour à l’accueil";
+  content: "Retour en surface";
   position: absolute;
   top: 42px;
   left: 0;
