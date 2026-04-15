@@ -215,7 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
       point.style.top = Math.random() * 90 + "%";
       point.style.left = Math.random() * 90 + "%";
 
-      point.dataset.slug = echo.slug;
+     point.dataset.slug = echo.slug;
+     point.dataset.title = echo.title;
 
       point.addEventListener("click", () => {
         window.location.href = echo.url;
