@@ -56,7 +56,6 @@ main {
   text-align: left;
 }
 
----------------------------------------------------- */
 /* ----------------------------------------------------
    HEADER — FIXE, TOUJOURS VISIBLE
 ---------------------------------------------------- */
@@ -67,7 +66,7 @@ main {
   width: 100%;
   height: 90px;
 
-  z-index: 999;
+  z-index: 5000; /* très haut pour éviter d'être recouvert */
 
   display: flex;
   justify-content: space-between;
@@ -82,20 +81,20 @@ main {
   color: var(--fond);
   overflow: visible;
 
-  /* On supprime l’animation de glissement */
-  transform: none !important;
+  /* IMPORTANT : on supprime tout effet de glissement */
+  transform: translateY(0) !important;
   transition: none !important;
 }
 
-/* Désactivation complète du masquage au scroll */
+/* Neutralisation complète du masquage */
 header.header-hidden {
-  transform: none !important;
+  transform: translateY(0) !important;
 }
 
-/* Espace sous le header pour éviter que le contenu passe dessous */
+/* Espace sous le header pour que le contenu ne passe pas dessous */
 body.flex,
 .contenu-scroll {
-  padding-top: 90px;
+  padding-top: 90px !important;
 }
 
 /* ----------------------------------------------------
