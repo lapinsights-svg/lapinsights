@@ -28,9 +28,6 @@ collections:
   passe:
     output: true
     permalink: /passe/:title/
-  archives:
-    output: true
-    permalink: /archives/:title/
 
 # Layouts par défaut pour les items de chaque collection
 defaults:
@@ -61,12 +58,6 @@ defaults:
   - scope:
       path: ""
       type: passe
-    values:
-      layout: article
-
-  - scope:
-      path: ""
-      type: archives
     values:
       layout: article
 
