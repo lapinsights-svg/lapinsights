@@ -1458,6 +1458,12 @@ body.echos {
   transition: opacity 0.6s ease;
 }
 
+/* Hauteur contrôlée pour empêcher le scroll du ciel */
+#constellation-echos {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #constellation-echos.visible {
   opacity: 1;
 }
