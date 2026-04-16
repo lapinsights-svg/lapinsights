@@ -280,31 +280,22 @@ boutonReset.addEventListener("click", () => {
    11. Révélation poétique — Champ Résonance
 ---------------------------------------------------- */
 
-const champResonance = document.getElementById("champ-resonance");
-
 champResonance.addEventListener("input", () => {
   const mot = champResonance.value.trim().toLowerCase();
 
+  if (mot === "") return;
+
   document.querySelectorAll(".point-echo").forEach(point => {
     const titre = point.dataset.title.toLowerCase();
-
-    if (mot === "") {
-      point.classList.remove("revelation");
-      return;
-    }
 
     if (titre.includes(mot)) {
       const etaitDejaRevele = point.classList.contains("revelation");
 
       if (!etaitDejaRevele) {
-        jouerGrave();
-        jouerAigu();
+        jouerAigu(); // un seul son : scintillement
       }
 
       point.classList.add("revelation");
-
-    } else {
-      point.classList.remove("revelation");
     }
   });
 });
@@ -313,31 +304,22 @@ champResonance.addEventListener("input", () => {
    12. Révélation poétique — Champ Appel d’écho
 ---------------------------------------------------- */
 
-const champEcho = document.getElementById("champ-echo");
-
 champEcho.addEventListener("input", () => {
   const mot = champEcho.value.trim().toLowerCase();
 
+  if (mot === "") return;
+
   document.querySelectorAll(".point-echo").forEach(point => {
     const titre = point.dataset.title.toLowerCase();
-
-    if (mot === "") {
-      point.classList.remove("revelation");
-      return;
-    }
 
     if (titre.includes(mot)) {
       const etaitDejaRevele = point.classList.contains("revelation");
 
       if (!etaitDejaRevele) {
-        jouerGrave();
-        jouerAigu();
+        jouerAigu(); // un seul son : scintillement
       }
 
       point.classList.add("revelation");
-
-    } else {
-      point.classList.remove("revelation");
     }
   });
 });
