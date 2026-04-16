@@ -1243,30 +1243,32 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   POINTS LUMINEUX — ÉCHOS (version blanche)
+   POINTS LUMINEUX — ÉCHOS (version ajustée)
+   Base : 8px — Pulsation : 10px — Survol : 12px — Son actif : 12px
+   Halo et onde recalibrés pour correspondre aux nouvelles tailles
 ---------------------------------------------------- */
 
 .point-echo {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #ffffff;
   opacity: 0.9;
   z-index: 3;
 
-  /* Halo blanc lunaire renforcé */
+  /* Halo blanc lunaire adapté à 8px */
   box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.9),
-    0 0 18px rgba(255, 255, 255, 0.5);
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 14px rgba(255, 255, 255, 0.5);
 
-  /* Pulsation subtile nocturne */
+  /* Pulsation subtile nocturne (8px → 10px) */
   animation: pulse-echo 2.8s ease-in-out infinite;
 
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Variantes (conservent le halo blanc) */
+/* Variantes */
 .point-echo.recent {
   animation-duration: 2.2s;
 }
@@ -1276,30 +1278,30 @@ header.header-hidden {
   animation-duration: 4.5s;
 }
 
-/* Survol : intensification du halo blanc */
+/* Survol : intensification + taille 12px */
 .point-echo:hover {
-  transform: scale(1.6);
+  transform: scale(1.5); /* 8px → 12px */
   opacity: 1;
   box-shadow:
-    0 0 18px rgba(255, 255, 255, 1),
-    0 0 28px rgba(255, 255, 255, 0.8);
+    0 0 14px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 0.8);
 }
 
-/* Pulsation nocturne */
+/* Pulsation nocturne (8px → 10px) */
 @keyframes pulse-echo {
-  0%   { transform: scale(1);   opacity: 0.85; }
-  50%  { transform: scale(1.25); opacity: 1; }
-  100% { transform: scale(1);   opacity: 0.85; }
+  0%   { transform: scale(1);     opacity: 0.85; } /* 8px */
+  50%  { transform: scale(1.25);  opacity: 1;    } /* 10px */
+  100% { transform: scale(1);     opacity: 0.85; }
 }
 
-/* Onde de résonance — blanche, légère, atmosphérique */
+/* Onde de résonance — adaptée à 8px */
 .point-echo::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.25);
@@ -1311,15 +1313,15 @@ header.header-hidden {
   100% { transform: translate(-50%, -50%) scale(6); opacity: 0; }
 }
 
-/* Activation sonore : halo blanc amplifié */
+/* Activation sonore : taille 12px */
 .point-echo.son-actif {
-  transform: scale(1.8);
+  transform: scale(1.5); /* 8px → 12px */
   box-shadow:
-    0 0 25px rgba(255, 255, 255, 1),
-    0 0 35px rgba(255, 255, 255, 0.9);
-
-   /* écriture des titres des articles */
+    0 0 18px rgba(255, 255, 255, 1),
+    0 0 26px rgba(255, 255, 255, 0.9);
 }
+
+/* Titres */
 .point-echo::before {
   content: attr(data-title);
   position: absolute;
@@ -1341,6 +1343,7 @@ header.header-hidden {
 .point-echo:hover::before {
   opacity: 1;
 }
+
 .point-echo.revelation::before {
   opacity: 1 !important;
 }
@@ -1503,45 +1506,6 @@ body.echos {
 
 .hidden {
   display: none;
-}
-
-/* --------------------------------------------------------------
-   Ajustements visuels complémentaires
-   — étoiles plus fines + adaptation mobile du ciel et de la barre
-   — ne modifie pas le système existant, le complète seulement
-   -------------------------------------------------------------- */
-
-/* Taille plus subtile des étoiles sur PC */
-.etoile {
-  width: 1.5px; !important;
-  height: 1.5px; !important;
-}
-
-/* Adaptation mobile (GSM) */
-@media (max-width: 600px) {
-
-  /* Étoiles encore plus fines pour éviter l’effet “gros points” */
-  .etoile {
-    width: 1px; !important;
-    height: 1px; !important;
-  }
-
-  /* Ciel plus compact + recentrage pour garder le lapin visible */
-  #constellation-echos {
-    height: 500px; !important;
-    background-position: left center; !important;
-  }
-
-  /* Barre de recherche plus légère */
-  .barre-recherche {
-    padding: 0.5rem; !important;
-  }
-
-  /* Champ de recherche adapté au petit écran */
-  #champ-recherche {
-    width: 80%; !important;
-    font-size: 0.9rem; !important;
-  }
 }
 
 
