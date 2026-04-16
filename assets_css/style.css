@@ -1480,8 +1480,9 @@ body.echos {
 }
 
 /* ----------------------------------------------------
-  ALIGNEMENT DES TITRES
+  ALIGNEMENT DES TITRES — BARRE CÉLESTE
 ---------------------------------------------------- */
+
 /* Structure horizontale */
 .barre-celeste {
   display: flex;
@@ -1496,10 +1497,11 @@ body.echos {
 .titre-echos,
 .titre-archives {
   color: var(--texte);
-  font-size: 0.9rem;
+  font-size: 1.05rem;      /* ✔️ taille augmentée */
   font-weight: 300;
-  opacity: 0.85;
+  opacity: 0.9;            /* ✔️ présence légèrement renforcée */
   white-space: nowrap;
+  letter-spacing: 0.03em;  /* ✔️ respiration élégante */
 }
 
 /* Décalages subtils pour correspondre à ta capture */
