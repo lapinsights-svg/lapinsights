@@ -276,36 +276,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ----------------------------------------------------
-     11. Révélation poétique — Champ Résonance
-  ---------------------------------------------------- */
+/* ----------------------------------------------------
+   11. Révélation poétique — Champ Résonance
+---------------------------------------------------- */
 
-  const champResonance = document.getElementById("champ-resonance");
+const champResonance = document.getElementById("champ-resonance");
 
-  champResonance.addEventListener("input", () => {
-    const mot = champResonance.value.trim().toLowerCase();
+champResonance.addEventListener("input", () => {
+  const mot = champResonance.value.trim().toLowerCase();
 
-    document.querySelectorAll(".point-echo").forEach(point => {
-      const titre = point.dataset.title.toLowerCase();
+  document.querySelectorAll(".point-echo").forEach(point => {
+    const titre = point.dataset.title.toLowerCase();
 
-      if (mot === "") {
-        point.classList.remove("revelation");
+    if (mot === "") {
+      point.classList.remove("revelation");
 
-      } else if (titre.includes(mot)) {
+    } else if (titre.includes(mot)) {
 
-        jouerGrave();
+      const etaitDejaRevele = point.classList.contains("revelation");
 
-        if (!point.classList.contains("revelation")) {
-          jouerAigu();
-        }
-
-        point.classList.add("revelation");
-
-      } else {
-        point.classList.remove("revelation");
+      // 1. Si le point correspond au mot → résonance + scintillement
+      if (!etaitDejaRevele) {
+        jouerGrave();   // résonance profonde
+        jouerAigu();    // scintillement du point
       }
-    });
+
+      point.classList.add("revelation");
+
+    } else {
+      point.classList.remove("revelation");
+    }
   });
+});
 
   /* ----------------------------------------------------
      12. Révélation poétique — Champ Appel d’écho
