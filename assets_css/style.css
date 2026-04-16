@@ -1188,122 +1188,161 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   SALLE DES ÉCHOS — FOND NOCTURNE + CONSTELLATIONS FIXES
+   ÉCHOS — FOND IMMERSIF FIXE
 ---------------------------------------------------- */
 
-#constellation-echos {
+/* Conteneur principal */
+.echos-privee {
   position: relative;
   width: 100%;
-  height: 800px; /* Ajustable selon ton design */
-  background-color: #000; /* Noir céleste */
-  overflow: hidden;
+  min-height: 100vh;
+  background: none;
+  overflow: visible;
 }
 
-/* Le SVG occupe toute la zone */
-#fond-constellations {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* Fond fixe universel */
+.echos-privee::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/fond_archives.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.95) contrast(1.08);
+  z-index: -1;
 }
 
-/* Lignes des constellations */
-#fond-constellations .constellation polyline,
-#fond-constellations .constellation line {
-  stroke: rgba(255, 255, 255, 0.35);
-  stroke-width: 0.25;
-}
-
-/* Étoiles fixes du SVG */
-.etoile-fixe {
-  fill: white;
-  opacity: 0.8;
+/* Voile léger */
+.echos-privee::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(1px);
+  z-index: 0;
 }
 
 /* ----------------------------------------------------
-   ÉTOILES DYNAMIQUES (articles)
+   CONTENU INTERNE
+---------------------------------------------------- */
+
+.echos-contenu {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-top: 10rem;
+  color: var(--texte);
+}
+
+/* ----------------------------------------------------
+   POINTS LUMINEUX — ÉCHOS (version blanche)
 ---------------------------------------------------- */
 
 .point-echo {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: white;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0.9;
+  z-index: 3;
+
+  /* Halo blanc lunaire renforcé */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 18px rgba(255, 255, 255, 0.5);
+
+  /* Pulsation subtile nocturne */
+  animation: pulse-echo 2.8s ease-in-out infinite;
+
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Variantes (conservent le halo blanc) */
+.point-echo.recent {
+  animation-duration: 2.2s;
+}
+
+.point-echo.ancien {
+  opacity: 0.7;
+  animation-duration: 4.5s;
+}
+
+/* Survol : intensification du halo blanc */
+.point-echo:hover {
+  transform: scale(1.6);
+  opacity: 1;
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 1),
+    0 0 28px rgba(255, 255, 255, 0.8);
+}
+
+/* Pulsation nocturne */
+@keyframes pulse-echo {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  50%  { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1);   opacity: 0.85; }
+}
+
+/* Onde de résonance — blanche, légère, atmosphérique */
+.point-echo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  z-index: 10;
+  background: rgba(255, 255, 255, 0.25);
+  animation: onde-resonance 1.2s ease-out;
 }
 
-/* Survol : halo discret */
-.point-echo:hover {
-  transform: translate(-50%, -50%) scale(1.4);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+@keyframes onde-resonance {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(6); opacity: 0; }
 }
 
-/* Révélation poétique */
-.point-echo.revelation {
-  background: #ff8c00; /* Orange minéral */
-  box-shadow: 0 0 12px rgba(255, 140, 0, 0.9);
-  transform: translate(-50%, -50%) scale(1.5);
+/* Activation sonore : halo blanc amplifié */
+.point-echo.son-actif {
+  transform: scale(1.8);
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 1),
+    0 0 35px rgba(255, 255, 255, 0.9);
+
+   /* écriture des titres des articles */
+}
+.point-echo::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
 }
 
-/* ----------------------------------------------------
-   BARRE DE RECHERCHE / FILTRES
----------------------------------------------------- */
-
-.barre-recherche {
-  margin-bottom: 20px;
+.point-echo:hover::before {
+  opacity: 1;
 }
-
-.barre-celeste label {
-  color: white;
-  margin-right: 8px;
-}
-
-.barre-celeste select {
-  background: #111;
-  color: white;
-  border: 1px solid #444;
-  padding: 4px 8px;
-  margin-right: 12px;
-}
-
-.barre-filtres {
-  margin-top: 15px;
-  display: flex;
-  gap: 10px;
-}
-
-.barre-filtres input {
-  background: #111;
-  color: white;
-  border: 1px solid #444;
-  padding: 6px 10px;
-  width: 200px;
-}
-
-.btn-reset {
-  background: #222;
-  color: white;
-  border: 1px solid #444;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
-.btn-reset:hover {
-  background: #333;
-}
-
-/* ----------------------------------------------------
-   MESSAGE "Aucun écho"
----------------------------------------------------- */
-
-.message-echos {
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  opacity: 0.8;
+.point-echo.revelation::before {
+  opacity: 1 !important;
 }
 
 /* ----------------------------------------------------
@@ -1343,12 +1382,11 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   FOND GLOBAL DE LA SALLE
+   NEUTRALISATION DU FOND GLOBAL
 ---------------------------------------------------- */
 
 body.echos {
-  background: #000 !important; /* Noir céleste */
-  color: white;
+  background: black !important;
 }
 
 /* ----------------------------------------------------
@@ -1372,6 +1410,7 @@ body.echos {
   gap: 0.6rem;
 }
 
+/* Ligne Année/Mois */
 .barre-celeste {
   display: flex;
   gap: 1rem;
@@ -1391,6 +1430,7 @@ body.echos {
   border-radius: 4px;
 }
 
+/* Ligne Résonance/Appel */
 .barre-filtres {
   display: flex;
   gap: 1rem;
@@ -1419,6 +1459,10 @@ body.echos {
   opacity: 1;
 }
 
+/* ----------------------------------------------------
+   MESSAGE POUR LES PÉRIODES VIDES
+---------------------------------------------------- */
+
 .message-echos {
   text-align: center;
   margin-top: 2rem;
@@ -1430,10 +1474,6 @@ body.echos {
 
 .message-echos.visible {
   opacity: 1;
-}
-
-.echos-contenu {
-  padding-top: calc(1rem + 0.5rem + 50px); /* hauteur réelle de la barre */
 }
 
 /* ----------------------------------------------------
