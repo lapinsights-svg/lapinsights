@@ -1173,9 +1173,9 @@ header.header-hidden {
 .echos-privee {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;        /* ✔️ Hauteur fixe */
+  overflow: hidden;     /* ✔️ Empêche le scroll */
   background: none;
-  overflow: visible;
 }
 
 /* Fond fixe universel */
@@ -1209,25 +1209,19 @@ header.header-hidden {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;         /* ✔️ Remplit la salle */
+  overflow: hidden;     /* ✔️ Pas de scroll interne */
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
-  /* ❌ padding-top: 10rem;  À retirer */
   color: var(--texte);
 }
 
-.echos-contenu {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
 /* ----------------------------------------------------
-   POINTS LUMINEUX — ÉCHOS (version ajustée)
+   POINTS LUMINEUX — ÉCHOS
 ---------------------------------------------------- */
 
 .point-echo {
