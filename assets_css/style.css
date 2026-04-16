@@ -1238,8 +1238,14 @@ header.header-hidden {
   align-items: center;
   justify-content: flex-start;
 
-  padding-top: 10rem;
+  /* ❌ padding-top: 10rem;  À retirer */
   color: var(--texte);
+}
+
+.echos-contenu {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 /* ----------------------------------------------------
