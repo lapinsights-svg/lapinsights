@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ----------------------------------------------------
+/* ----------------------------------------------------
    9. Sons
 ---------------------------------------------------- */
 
@@ -280,6 +280,8 @@ boutonReset.addEventListener("click", () => {
    11. Révélation poétique — Champ Résonance
 ---------------------------------------------------- */
 
+const champResonance = document.getElementById("champ-resonance");
+
 champResonance.addEventListener("input", () => {
   const mot = champResonance.value.trim().toLowerCase();
 
@@ -295,8 +297,8 @@ champResonance.addEventListener("input", () => {
       const etaitDejaRevele = point.classList.contains("revelation");
 
       if (!etaitDejaRevele) {
-        jouerGrave();   // résonance profonde
-        jouerAigu();    // scintillement du point
+        jouerGrave();
+        jouerAigu();
       }
 
       point.classList.add("revelation");
@@ -310,6 +312,8 @@ champResonance.addEventListener("input", () => {
 /* ----------------------------------------------------
    12. Révélation poétique — Champ Appel d’écho
 ---------------------------------------------------- */
+
+const champEcho = document.getElementById("champ-echo");
 
 champEcho.addEventListener("input", () => {
   const mot = champEcho.value.trim().toLowerCase();
@@ -326,8 +330,8 @@ champEcho.addEventListener("input", () => {
       const etaitDejaRevele = point.classList.contains("revelation");
 
       if (!etaitDejaRevele) {
-        jouerGrave();   // résonance profonde
-        jouerAigu();    // scintillement du point
+        jouerGrave();
+        jouerAigu();
       }
 
       point.classList.add("revelation");
