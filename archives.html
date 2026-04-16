@@ -45,18 +45,8 @@ class: echos
 
 </div>
 
-
-<div class="echos-contenu">
-  <div id="constellation-echos"></div>
-
-  <div id="message-echos" class="hidden message-echos">
-    Aucun écho n’a encore traversé cette période.
-  </div>
-</div>
-
-</div>
-
 {% include sons-echos.html %}
+
 
 <script>
 /* ----------------------------------------------------
@@ -78,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     {% for item in echos %}
       {
-  title: "{{ item.title }}",
-  url: "{{ item.url | relative_url }}",
-  slug: "{{ item.slug }}",
-  excerpt: "{{ item.excerpt | strip_newlines | escape }}",
-  date: "{{ item.date | date: '%Y-%m-%d' }}",
-  collection: "{{ item.collection }}"
-},
+        title: "{{ item.title }}",
+        url: "{{ item.url | relative_url }}",
+        slug: "{{ item.slug }}",
+        excerpt: "{{ item.excerpt | strip_newlines | escape }}",
+        date: "{{ item.date | date: '%Y-%m-%d' }}",
+        collection: "{{ item.collection }}"
+      },
     {% endfor %}
   ];
 
@@ -100,11 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ---------------------------------------------------- */
 
   function cacher(selector) {
-    document.querySelector(selector).classList.add("hidden");
+    const el = document.querySelector(selector);
+    if (el) el.classList.add("hidden");
   }
 
   function montrer(selector) {
-    document.querySelector(selector).classList.remove("hidden");
+    const el = document.querySelector(selector);
+    if (el) el.classList.remove("hidden");
   }
 
   function viderConstellation() {
@@ -200,15 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const articlesFiltres = filtrerParDate(anneeChoisie, moisChoisi);
 
     if (articlesFiltres.length > 0) {
-  afficherConstellation(articlesFiltres);
+      afficherConstellation(articlesFiltres);
 
-  setTimeout(() => {
-    constellation.classList.add("visible");
-    jouerMedium(); // ← son medium quand la carte apparaît
-  }, 10);
+      setTimeout(() => {
+        constellation.classList.add("visible");
+        jouerMedium(); // son medium quand la carte se révèle
+      }, 10);
 
-  montrer(".barre-filtres");
-  messageEchos.classList.add("hidden");
+      montrer(".barre-filtres");
+      messageEchos.classList.add("hidden");
 
     } else {
       viderConstellation();
@@ -236,116 +228,117 @@ document.addEventListener("DOMContentLoaded", () => {
       point.style.left = Math.random() * 90 + "%";
 
       point.dataset.slug = echo.slug;
-      point.dataset.title = echo.title; // essentiel pour révélation poétique
+      point.dataset.title = echo.title;
 
       point.addEventListener("click", () => {
         window.location.href = echo.url;
       });
 
-      point.addEventListener("mouseenter", () => {
-        jouerSon(echo.slug);
-      });
+      // plus de jouerSon(echo.slug) ici
 
       constellation.appendChild(point);
     });
   }
 
-/* ----------------------------------------------------
-   9. Sons
----------------------------------------------------- */
+  /* ----------------------------------------------------
+     9. Sons
+  ---------------------------------------------------- */
 
-const sonGrave = new Audio("assets/sons/lap_grave.wav");
-const sonMedium = new Audio("assets/sons/lap_medium.wav");
-const sonAigu = new Audio("assets/sons/lap_aigu.wav");
+  const sonGrave = new Audio("assets/sons/lap_grave.wav");
+  const sonMedium = new Audio("assets/sons/lap_medium.wav");
+  const sonAigu = new Audio("assets/sons/lap_aigu.wav");
 
-function jouerGrave() {
-  sonGrave.currentTime = 0;
-  sonGrave.play();
-}
+  function jouerGrave() {
+    sonGrave.currentTime = 0;
+    sonGrave.play();
+  }
 
-function jouerMedium() {
-  sonMedium.currentTime = 0;
-  sonMedium.play();
-}
+  function jouerMedium() {
+    sonMedium.currentTime = 0;
+    sonMedium.play();
+  }
 
-function jouerAigu() {
-  sonAigu.currentTime = 0;
-  sonAigu.play();
-}
+  function jouerAigu() {
+    sonAigu.currentTime = 0;
+    sonAigu.play();
+  }
 
-/* ----------------------------------------------------
-   10. Bouton Reset (normal)
----------------------------------------------------- */
+  /* ----------------------------------------------------
+     10. Bouton Reset (normal)
+  ---------------------------------------------------- */
 
-const boutonReset = document.getElementById("reset-echos");
+  const boutonReset = document.getElementById("reset-echos");
 
-boutonReset.addEventListener("click", () => {
-  document.getElementById("champ-resonance").value = "";
-  document.getElementById("champ-echo").value = "";
+  boutonReset.addEventListener("click", () => {
+    document.getElementById("champ-resonance").value = "";
+    document.getElementById("champ-echo").value = "";
 
-  document.querySelectorAll(".point-echo").forEach(point => {
-    point.classList.remove("revelation");
-  });
-});
-
-/* ----------------------------------------------------
-   11. Révélation poétique — Champ Résonance
----------------------------------------------------- */
-
-const champResonance = document.getElementById("champ-resonance");
-
-champResonance.addEventListener("input", () => {
-  const mot = champResonance.value.trim().toLowerCase();
-
-  document.querySelectorAll(".point-echo").forEach(point => {
-    const titre = point.dataset.title.toLowerCase();
-
-    if (mot === "") {
+    document.querySelectorAll(".point-echo").forEach(point => {
       point.classList.remove("revelation");
+    });
+  });
 
-    } else if (titre.includes(mot)) {
+  /* ----------------------------------------------------
+     11. Révélation poétique — Champ Résonance
+  ---------------------------------------------------- */
 
-      jouerGrave(); // ← résonance trouvée
+  const champResonance = document.getElementById("champ-resonance");
 
-      if (!point.classList.contains("revelation")) {
-        jouerAigu(); // ← scintillement du point
+  champResonance.addEventListener("input", () => {
+    const mot = champResonance.value.trim().toLowerCase();
+
+    document.querySelectorAll(".point-echo").forEach(point => {
+      const titre = point.dataset.title.toLowerCase();
+
+      if (mot === "") {
+        point.classList.remove("revelation");
+
+      } else if (titre.includes(mot)) {
+
+        jouerGrave(); // résonance trouvée
+
+        if (!point.classList.contains("revelation")) {
+          jouerAigu(); // scintillement du point
+        }
+
+        point.classList.add("revelation");
+
+      } else {
+        point.classList.remove("revelation");
       }
-
-      point.classList.add("revelation");
-
-    } else {
-      point.classList.remove("revelation");
-    }
+    });
   });
-});
 
-/* ----------------------------------------------------
-   12. Révélation poétique — Champ Appel d’écho
----------------------------------------------------- */
+  /* ----------------------------------------------------
+     12. Révélation poétique — Champ Appel d’écho
+  ---------------------------------------------------- */
 
-const champEcho = document.getElementById("champ-echo");
+  const champEcho = document.getElementById("champ-echo");
 
-champEcho.addEventListener("input", () => {
-  const mot = champEcho.value.trim().toLowerCase();
+  champEcho.addEventListener("input", () => {
+    const mot = champEcho.value.trim().toLowerCase();
 
-  document.querySelectorAll(".point-echo").forEach(point => {
-    const titre = point.dataset.title.toLowerCase();
+    document.querySelectorAll(".point-echo").forEach(point => {
+      const titre = point.dataset.title.toLowerCase();
 
-    if (mot === "") {
-      point.classList.remove("revelation");
+      if (mot === "") {
+        point.classList.remove("revelation");
 
-    } else if (titre.includes(mot)) {
+      } else if (titre.includes(mot)) {
 
-      jouerGrave(); // ← résonance trouvée
+        jouerGrave(); // résonance trouvée
 
-      if (!point.classList.contains("revelation")) {
-        jouerAigu(); // ← scintillement du point
+        if (!point.classList.contains("revelation")) {
+          jouerAigu(); // scintillement du point
+        }
+
+        point.classList.add("revelation");
+
+      } else {
+        point.classList.remove("revelation");
       }
-
-      point.classList.add("revelation");
-
-    } else {
-      point.classList.remove("revelation");
-    }
+    });
   });
+
 });
+</script>
