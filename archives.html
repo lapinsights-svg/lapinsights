@@ -234,8 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = echo.url;
       });
 
-      // plus de jouerSon(echo.slug) ici
-
       constellation.appendChild(point);
     });
   }
@@ -244,31 +242,30 @@ document.addEventListener("DOMContentLoaded", () => {
      9. Sons
   ---------------------------------------------------- */
 
-// On récupère les <audio> déjà présents dans le HTML
-const sonGrave  = document.getElementById("son-grave");
-const sonMedium = document.getElementById("son-medium");
-const sonAigu   = document.getElementById("son-aigu");
+  const sonGrave  = document.getElementById("son-grave");
+  const sonMedium = document.getElementById("son-medium");
+  const sonAigu   = document.getElementById("son-aigu");
 
-function jouerGrave() {
-  if (!sonGrave) return;
-  sonGrave.currentTime = 0;
-  sonGrave.play();
-}
+  function jouerGrave() {
+    if (!sonGrave) return;
+    sonGrave.currentTime = 0;
+    sonGrave.play();
+  }
 
-function jouerMedium() {
-  if (!sonMedium) return;
-  sonMedium.currentTime = 0;
-  sonMedium.play();
-}
+  function jouerMedium() {
+    if (!sonMedium) return;
+    sonMedium.currentTime = 0;
+    sonMedium.play();
+  }
 
-function jouerAigu() {
-  if (!sonAigu) return;
-  sonAigu.currentTime = 0;
-  sonAigu.play();
-}
+  function jouerAigu() {
+    if (!sonAigu) return;
+    sonAigu.currentTime = 0;
+    sonAigu.play();
+  }
 
   /* ----------------------------------------------------
-     10. Bouton Reset (normal)
+     10. Bouton Reset
   ---------------------------------------------------- */
 
   const boutonReset = document.getElementById("reset-echos");
@@ -299,10 +296,10 @@ function jouerAigu() {
 
       } else if (titre.includes(mot)) {
 
-        jouerGrave(); // résonance trouvée
+        jouerGrave();
 
         if (!point.classList.contains("revelation")) {
-          jouerAigu(); // scintillement du point
+          jouerAigu();
         }
 
         point.classList.add("revelation");
@@ -330,10 +327,10 @@ function jouerAigu() {
 
       } else if (titre.includes(mot)) {
 
-        jouerGrave(); // résonance trouvée
+        jouerGrave();
 
         if (!point.classList.contains("revelation")) {
-          jouerAigu(); // scintillement du point
+          jouerAigu();
         }
 
         point.classList.add("revelation");
@@ -344,5 +341,7 @@ function jouerAigu() {
     });
   });
 
-});
+}); // ← FIN DU DOMContentLoaded
+</script>
+
 </script>
