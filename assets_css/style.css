@@ -1482,21 +1482,40 @@ body.echos {
 /* ----------------------------------------------------
   ALIGNEMENT DES TITRES
 ---------------------------------------------------- */
-/* Alignement horizontal */
-.barre-filtres {
+/* Structure horizontale */
+.barre-celeste {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Titres latéraux */
+.titre-echos,
+.titre-archives {
+  color: var(--texte);
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.85;
+  white-space: nowrap;
 }
 
 /* Décalages subtils pour correspondre à ta capture */
 .titre-echos {
-  margin-right: 2rem;
+  margin-right: 2.5rem;
 }
 
 .titre-archives {
-  margin-left: 2rem;
+  margin-left: 2.5rem;
+}
+
+/* Bloc central Année/Mois */
+.bloc-date {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 /* ----------------------------------------------------
