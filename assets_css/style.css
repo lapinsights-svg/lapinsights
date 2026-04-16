@@ -1250,8 +1250,6 @@ header.header-hidden {
 
 /* ----------------------------------------------------
    POINTS LUMINEUX — ÉCHOS (version ajustée)
-   Base : 8px — Pulsation : 10px — Survol : 12px — Son actif : 12px
-   Halo et onde recalibrés pour correspondre aux nouvelles tailles
 ---------------------------------------------------- */
 
 .point-echo {
@@ -1263,44 +1261,31 @@ header.header-hidden {
   opacity: 0.9;
   z-index: 3;
 
-  /* Halo blanc lunaire adapté à 8px */
   box-shadow:
     0 0 8px rgba(255, 255, 255, 0.9),
     0 0 14px rgba(255, 255, 255, 0.5);
 
-  /* Pulsation subtile nocturne (8px → 10px) */
   animation: pulse-echo 2.8s ease-in-out infinite;
-
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Variantes */
-.point-echo.recent {
-  animation-duration: 2.2s;
-}
+.point-echo.recent { animation-duration: 2.2s; }
+.point-echo.ancien { opacity: 0.7; animation-duration: 4.5s; }
 
-.point-echo.ancien {
-  opacity: 0.7;
-  animation-duration: 4.5s;
-}
-
-/* Survol : intensification + taille 12px */
 .point-echo:hover {
-  transform: scale(1.5); /* 8px → 12px */
+  transform: scale(1.5);
   opacity: 1;
   box-shadow:
     0 0 14px rgba(255, 255, 255, 1),
     0 0 20px rgba(255, 255, 255, 0.8);
 }
 
-/* Pulsation nocturne (8px → 10px) */
 @keyframes pulse-echo {
-  0%   { transform: scale(1);     opacity: 0.85; } /* 8px */
-  50%  { transform: scale(1.25);  opacity: 1;    } /* 10px */
+  0%   { transform: scale(1);     opacity: 0.85; }
+  50%  { transform: scale(1.25);  opacity: 1;    }
   100% { transform: scale(1);     opacity: 0.85; }
 }
 
-/* Onde de résonance — adaptée à 8px */
 .point-echo::after {
   content: "";
   position: absolute;
@@ -1319,15 +1304,13 @@ header.header-hidden {
   100% { transform: translate(-50%, -50%) scale(6); opacity: 0; }
 }
 
-/* Activation sonore : taille 12px */
 .point-echo.son-actif {
-  transform: scale(1.5); /* 8px → 12px */
+  transform: scale(1.5);
   box-shadow:
     0 0 18px rgba(255, 255, 255, 1),
     0 0 26px rgba(255, 255, 255, 0.9);
 }
 
-/* Titres */
 .point-echo::before {
   content: attr(data-title);
   position: absolute;
@@ -1346,16 +1329,13 @@ header.header-hidden {
   text-shadow: 0 0 6px rgba(0,0,0,0.8);
 }
 
-.point-echo:hover::before {
+.point-echo:hover::before,
+.point-echo.revelation::before {
   opacity: 1;
 }
 
-.point-echo.revelation::before {
-  opacity: 1 !important;
-}
-
 /* ----------------------------------------------------
-   BOUTON RETOUR — PETIT LAPIN LUMINEUX
+   PETIT LAPIN
 ---------------------------------------------------- */
 
 .retour-accueil-echos {
@@ -1387,7 +1367,6 @@ header.header-hidden {
   font-size: 12px;
   border-radius: 4px;
   white-space: nowrap;
-  text-shadow: none;
 }
 
 /* ----------------------------------------------------
@@ -1456,18 +1435,12 @@ body.echos {
 }
 
 /* ----------------------------------------------------
-   FONDU D’APPARITION / DISPARITION
+   FONDU D’APPARITION
 ---------------------------------------------------- */
 
 #constellation-echos {
   opacity: 0;
   transition: opacity 0.6s ease;
-}
-
-/* Hauteur contrôlée pour empêcher le scroll du ciel */
-#constellation-echos {
-  height: 100vh;
-  overflow: hidden;
 }
 
 #constellation-echos.visible {
@@ -1489,6 +1462,39 @@ body.echos {
 
 .message-echos.visible {
   opacity: 1;
+}
+
+/* ----------------------------------------------------
+   CONTENEUR GLOBAL — FIXÉ À 100VH
+---------------------------------------------------- */
+
+.echos-privee {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fond fixe universel */
+.echos-privee::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/fond_archives.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.95) contrast(1.08);
+  z-index: -1;
+}
+
+/* Voile léger */
+.echos-privee::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(1px);
+  z-index: 0;
 }
 
 /* ----------------------------------------------------
