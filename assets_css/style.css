@@ -919,28 +919,6 @@ textarea {
 /* ----------------------------------------------------
    DÉSACTIVATION VISUELLE ET FONCTIONNELLE DE LA PAGE ARCHIVES
 ---------------------------------------------------- */
-a[href="/archives"],
-a[href="/archives/"],
-a[href$="/archives"],
-a[href$="/archives/"] {
-  pointer-events: none !important;
-  cursor: default !important;
-  opacity: 0.5;
-}
-
-.menu-archives-dropdown a {
-  display: none !important;
-}
-
-.menu-archives .menu-button {
-  pointer-events: none !important;
-  opacity: 0.5;
-  cursor: default;
-}
-
-header .menu-archives-dropdown a {
-  display: none !important;
-}
 
 .menu-passe {
   opacity: 0.5;
