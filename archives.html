@@ -200,14 +200,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const articlesFiltres = filtrerParDate(anneeChoisie, moisChoisi);
 
     if (articlesFiltres.length > 0) {
-      afficherConstellation(articlesFiltres);
+  afficherConstellation(articlesFiltres);
 
-      setTimeout(() => {
-        constellation.classList.add("visible");
-      }, 10);
+  setTimeout(() => {
+    constellation.classList.add("visible");
+    jouerMedium(); // ← son medium quand la carte apparaît
+  }, 10);
 
-      montrer(".barre-filtres");
-      messageEchos.classList.add("hidden");
+  montrer(".barre-filtres");
+  messageEchos.classList.add("hidden");
 
     } else {
       viderConstellation();
@@ -272,64 +273,79 @@ function jouerAigu() {
   sonAigu.play();
 }
 
-  /* ----------------------------------------------------
-     10. Bouton Reset (normal)
-  ---------------------------------------------------- */
+/* ----------------------------------------------------
+   10. Bouton Reset (normal)
+---------------------------------------------------- */
 
-  const boutonReset = document.getElementById("reset-echos");
+const boutonReset = document.getElementById("reset-echos");
 
-  boutonReset.addEventListener("click", () => {
-    document.getElementById("champ-resonance").value = "";
-    document.getElementById("champ-echo").value = "";
+boutonReset.addEventListener("click", () => {
+  document.getElementById("champ-resonance").value = "";
+  document.getElementById("champ-echo").value = "";
 
-    document.querySelectorAll(".point-echo").forEach(point => {
-      point.classList.remove("revelation");
-    });
+  document.querySelectorAll(".point-echo").forEach(point => {
+    point.classList.remove("revelation");
   });
-
-  /* ----------------------------------------------------
-     11. Révélation poétique — Champ Résonance
-  ---------------------------------------------------- */
-
-  const champResonance = document.getElementById("champ-resonance");
-
-  champResonance.addEventListener("input", () => {
-    const mot = champResonance.value.trim().toLowerCase();
-
-    document.querySelectorAll(".point-echo").forEach(point => {
-      const titre = point.dataset.title.toLowerCase();
-
-      if (mot === "") {
-        point.classList.remove("revelation");
-      } else if (titre.includes(mot)) {
-        point.classList.add("revelation");
-      } else {
-        point.classList.remove("revelation");
-      }
-    });
-  });
-
-  /* ----------------------------------------------------
-     12. Révélation poétique — Champ Appel d’écho
-  ---------------------------------------------------- */
-
-  const champEcho = document.getElementById("champ-echo");
-
-  champEcho.addEventListener("input", () => {
-    const mot = champEcho.value.trim().toLowerCase();
-
-    document.querySelectorAll(".point-echo").forEach(point => {
-      const titre = point.dataset.title.toLowerCase();
-
-      if (mot === "") {
-        point.classList.remove("revelation");
-      } else if (titre.includes(mot)) {
-        point.classList.add("revelation");
-      } else {
-        point.classList.remove("revelation");
-      }
-    });
-  });
-
 });
-</script>
+
+/* ----------------------------------------------------
+   11. Révélation poétique — Champ Résonance
+---------------------------------------------------- */
+
+const champResonance = document.getElementById("champ-resonance");
+
+champResonance.addEventListener("input", () => {
+  const mot = champResonance.value.trim().toLowerCase();
+
+  document.querySelectorAll(".point-echo").forEach(point => {
+    const titre = point.dataset.title.toLowerCase();
+
+    if (mot === "") {
+      point.classList.remove("revelation");
+
+    } else if (titre.includes(mot)) {
+
+      jouerGrave(); // ← résonance trouvée
+
+      if (!point.classList.contains("revelation")) {
+        jouerAigu(); // ← scintillement du point
+      }
+
+      point.classList.add("revelation");
+
+    } else {
+      point.classList.remove("revelation");
+    }
+  });
+});
+
+/* ----------------------------------------------------
+   12. Révélation poétique — Champ Appel d’écho
+---------------------------------------------------- */
+
+const champEcho = document.getElementById("champ-echo");
+
+champEcho.addEventListener("input", () => {
+  const mot = champEcho.value.trim().toLowerCase();
+
+  document.querySelectorAll(".point-echo").forEach(point => {
+    const titre = point.dataset.title.toLowerCase();
+
+    if (mot === "") {
+      point.classList.remove("revelation");
+
+    } else if (titre.includes(mot)) {
+
+      jouerGrave(); // ← résonance trouvée
+
+      if (!point.classList.contains("revelation")) {
+        jouerAigu(); // ← scintillement du point
+      }
+
+      point.classList.add("revelation");
+
+    } else {
+      point.classList.remove("revelation");
+    }
+  });
+});
