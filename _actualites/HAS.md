@@ -5,6 +5,9 @@ resume: "Une zone grise au cœur de l’autorité scientifique."
 categories: actualites
 ---
 
+![presin](/images/presin.png)
+
+
 # Pressions, conflits, silences : ce que révèle vraiment l’affaire de la HAS
 
 En avril 2026, *Le Parisien* rapporte un fait qui aurait dû provoquer un séisme institutionnel : la Haute Autorité de Santé affirme subir des **« pressions excessives »** de la part de certains industriels du médicament. Des pressions visant à infléchir ses évaluations, à imposer un récit émotionnel plutôt que scientifique, à contourner les règles de bonne conduite. Un industriel serait même allé jusqu’à écrire **au Président de la République**, avec copie au Premier ministre et à trois ministres, pour contester une décision.
