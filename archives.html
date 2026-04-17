@@ -27,7 +27,7 @@ class: echos
     </div>
 
     <!-- BARRE ÉCHO — visible après sélection -->
-    <div class="barre-filtres">
+    <div class="barre-filtres hidden">
       <input type="text" placeholder="Appeler un écho…" class="champ-appel" id="champ-echo">
       <button id="reset-echos" class="btn-reset">Reset</button>
     </div>
@@ -75,11 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   /* ----------------------------------------------------
-     2. Conteneurs
+     2. Conteneurs principaux
   ---------------------------------------------------- */
 
   const constellation = document.getElementById("constellation-echos");
   const messageEchos = document.getElementById("message-echos");
+  const champEcho = document.getElementById("champ-echo");
+  const boutonReset = document.getElementById("reset-echos");
 
   /* ----------------------------------------------------
      3. Fonctions utilitaires
@@ -101,7 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------
-     4. État initial
+     4. État initial de la Salle
+     - Barre Écho cachée
+     - Constellation vide
+     - Message caché
   ---------------------------------------------------- */
 
   cacher(".barre-filtres");
@@ -109,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   messageEchos.classList.add("hidden");
 
   /* ----------------------------------------------------
-     5. Menus Année / Mois
+     5. Remplissage des menus Année / Mois
   ---------------------------------------------------- */
 
   function remplirMenus() {
@@ -128,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       selectAnnee.appendChild(opt);
     });
 
+    /* --- Mise à jour des mois selon l'année choisie --- */
     selectAnnee.addEventListener("change", () => {
       const anneeChoisie = selectAnnee.value;
 
@@ -155,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
   remplirMenus();
 
   /* ----------------------------------------------------
-     6. Filtrage temporel
+     6. Filtrage temporel (année + mois)
   ---------------------------------------------------- */
 
   function filtrerParDate(annee, mois) {
@@ -166,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------
-     7. Écoute des changements Année/Mois
+     7. Réaction aux changements Année / Mois
   ---------------------------------------------------- */
 
   function onChangeAnneeOuMois(callback) {
@@ -178,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const anneeChoisie = document.getElementById("annee").value;
     const moisChoisi = document.getElementById("mois").value;
 
+    /* --- Si la date n'est pas complète --- */
     if (!anneeChoisie || !moisChoisi) {
       viderConstellation();
       cacher(".barre-filtres");
@@ -187,18 +194,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const articlesFiltres = filtrerParDate(anneeChoisie, moisChoisi);
 
+    /* --- Si des articles existent pour cette période --- */
     if (articlesFiltres.length > 0) {
       afficherConstellation(articlesFiltres);
 
       setTimeout(() => {
         constellation.classList.add("visible");
-        jouerMedium(); // apparition de la constellation
+        jouerMedium(); // Son d’apparition
       }, 10);
 
       montrer(".barre-filtres");
       messageEchos.classList.add("hidden");
 
     } else {
+      /* --- Aucun écho pour cette période --- */
       viderConstellation();
       cacher(".barre-filtres");
 
@@ -210,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------
-     8. Affichage de la constellation
+     8. Affichage de la constellation (points aléatoires)
   ---------------------------------------------------- */
 
   function afficherConstellation(liste) {
@@ -220,12 +229,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const point = document.createElement("div");
       point.classList.add("point-echo");
 
+      /* --- Position aléatoire --- */
       point.style.top = Math.random() * 90 + "%";
       point.style.left = Math.random() * 90 + "%";
 
+      /* --- Métadonnées --- */
       point.dataset.slug = echo.slug;
       point.dataset.title = echo.title;
 
+      /* --- Navigation --- */
       point.addEventListener("click", () => {
         window.location.href = echo.url;
       });
@@ -235,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------
-     9. Sons
+     9. Sons (Medium = apparition / Aigu = révélation)
   ---------------------------------------------------- */
 
   const sonMedium = document.getElementById("son-medium");
@@ -254,43 +266,50 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ----------------------------------------------------
-     10. Bouton Reset
+     10. Bouton Reset (efface les révélations)
   ---------------------------------------------------- */
 
-  const boutonReset = document.getElementById("reset-echos");
-
   boutonReset.addEventListener("click", () => {
-    document.getElementById("champ-echo").value = "";
-
+    champEcho.value = "";
     document.querySelectorAll(".point-echo").forEach(point => {
       point.classList.remove("revelation");
     });
   });
 
   /* ----------------------------------------------------
-     11. Révélation poétique — Champ Écho (unique)
+     11. Révélation poétique (seuil = 3 lettres)
   ---------------------------------------------------- */
 
   champEcho.addEventListener("input", () => {
-  const mot = champEcho.value.trim().toLowerCase();
+    const mot = champEcho.value.trim().toLowerCase();
 
-  // On n'affine la carte qu'à partir de 3 lettres
-  if (mot.length < 3) return;
-
-  document.querySelectorAll(".point-echo").forEach(point => {
-    const titre = point.dataset.title.toLowerCase();
-
-    if (titre.includes(mot)) {
-      const etaitDejaRevele = point.classList.contains("revelation");
-
-      if (!etaitDejaRevele) {
-        jouerAigu();
-      }
-
-      point.classList.add("revelation");
+    /* --- Si moins de 3 lettres : on efface tout --- */
+    if (mot.length < 3) {
+      document.querySelectorAll(".point-echo").forEach(point => {
+        point.classList.remove("revelation");
+      });
+      return;
     }
+
+    /* --- Révélation des points dont le titre contient le mot --- */
+    document.querySelectorAll(".point-echo").forEach(point => {
+      const titre = point.dataset.title.toLowerCase();
+
+      if (titre.includes(mot)) {
+        const etaitDejaRevele = point.classList.contains("revelation");
+
+        if (!etaitDejaRevele) {
+          jouerAigu(); // Son de scintillement
+        }
+
+        point.classList.add("revelation");
+      }
+    });
   });
-});
+
+}); // FIN DOMContentLoaded
+</script>
+
 
 }); // FIN DOMContentLoaded
 </script>
