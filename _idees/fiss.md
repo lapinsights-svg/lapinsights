@@ -52,7 +52,8 @@ Le CEVIPOF analyse la crise de légitimité du modèle présidentiel et la mont�
 [https://www.sciencespo.fr/cevipof/](https://www.sciencespo.fr/cevipof/)
 
 L’Institut Montaigne évoque également la piste d’un renforcement du Parlement et d’une réduction du rôle présidentiel :  
-[https://www.institutmontaigne.org/publications/reforme-institutions](https://www.institutmontaigne.org/publications/reforme-institutions)
+[https://www.institutmontaigne.org/publications](https://www.institutmontaigne.org/publications)
+
 
 Dans un régime parlementaire, le président redeviendrait ce qu’il aurait toujours dû être : un arbitre, un garant, une figure institutionnelle.  
 Le gouvernement tire sa légitimité du Parlement.  
