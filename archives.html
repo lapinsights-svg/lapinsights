@@ -271,27 +271,26 @@ document.addEventListener("DOMContentLoaded", () => {
      11. Révélation poétique — Champ Écho (unique)
   ---------------------------------------------------- */
 
-  const champEcho = document.getElementById("champ-echo");
-
   champEcho.addEventListener("input", () => {
-    const mot = champEcho.value.trim().toLowerCase();
+  const mot = champEcho.value.trim().toLowerCase();
 
-    if (mot === "") return;
+  // On n'affine la carte qu'à partir de 3 lettres
+  if (mot.length < 3) return;
 
-    document.querySelectorAll(".point-echo").forEach(point => {
-      const titre = point.dataset.title.toLowerCase();
+  document.querySelectorAll(".point-echo").forEach(point => {
+    const titre = point.dataset.title.toLowerCase();
 
-      if (titre.includes(mot)) {
-        const etaitDejaRevele = point.classList.contains("revelation");
+    if (titre.includes(mot)) {
+      const etaitDejaRevele = point.classList.contains("revelation");
 
-        if (!etaitDejaRevele) {
-          jouerAigu(); // scintillement
-        }
-
-        point.classList.add("revelation");
+      if (!etaitDejaRevele) {
+        jouerAigu();
       }
-    });
+
+      point.classList.add("revelation");
+    }
   });
+});
 
 }); // FIN DOMContentLoaded
 </script>
