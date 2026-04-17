@@ -10,27 +10,29 @@ class: echos
 
   <div class="barre-recherche">
 
-    <div class="barre-celeste">
+<div class="barre-celeste">
 
-      <div class="titre-echos">Archives</div>
+  <!-- LAPIN TOUT À GAUCHE -->
+  <div class="lapin-retour">
+    <a href="/" title="Retour à l’accueil">
+      <img src="/assets/images/lapin-echos.svg" alt="Retour" class="icone-lapin">
+    </a>
+  </div>
 
-      <div class="lapin-retour">
-  <a href="/" title="Retour à l’accueil">
-    <img src="/assets/images/lapin-echos.svg" alt="Retour" class="icone-lapin">
-  </a>
+  <div class="titre-echos">Archives</div>
+
+  <div class="bloc-date">
+    <label for="annee">Année</label>
+    <select id="annee"></select>
+
+    <label for="mois">Mois</label>
+    <select id="mois"></select>
+  </div>
+
+  <div class="titre-archives">Salle des Échos</div>
+
 </div>
 
-      <div class="bloc-date">
-        <label for="annee">Année</label>
-        <select id="annee"></select>
-
-        <label for="mois">Mois</label>
-        <select id="mois"></select>
-      </div>
-
-      <div class="titre-archives">Salle des Échos</div>
-
-    </div>
 
     <!-- BARRE ÉCHO — visible après sélection -->
     <div class="barre-filtres hidden">
