@@ -1166,19 +1166,25 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
+   UTILITAIRE
+---------------------------------------------------- */
+
+.hidden {
+  display: none !important;
+}
+
+/* ----------------------------------------------------
    ÉCHOS — FOND IMMERSIF FIXE
 ---------------------------------------------------- */
 
-/* Conteneur principal */
 .echos-privee {
   position: relative;
   width: 100%;
-  height: 100vh;        /* ✔️ Hauteur fixe */
-  overflow: hidden;     /* ✔️ Empêche le scroll */
+  height: 100vh;
+  overflow: hidden;
   background: none;
 }
 
-/* Fond fixe universel */
 .echos-privee::before {
   content: "";
   position: fixed;
@@ -1191,7 +1197,6 @@ header.header-hidden {
   z-index: -1;
 }
 
-/* Voile léger */
 .echos-privee::after {
   content: "";
   position: fixed;
@@ -1202,15 +1207,15 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   CONTENU INTERNE
+   CONTENU INTERNE — PAS DE SCROLL
 ---------------------------------------------------- */
 
 .echos-contenu {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;         /* ✔️ Remplit la salle */
-  overflow: hidden;     /* ✔️ Pas de scroll interne */
+  height: calc(100vh - 140px); /* Ajuste selon ton header */
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -1221,68 +1226,71 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
+   CONSTELLATION
+---------------------------------------------------- */
+
+#constellation-echos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#constellation-echos.visible {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------
    POINTS LUMINEUX — ÉCHOS
 ---------------------------------------------------- */
 
 .point-echo {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ffffff;
   opacity: 0.9;
   z-index: 3;
 
   box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.9),
-    0 0 14px rgba(255, 255, 255, 0.5);
+    0 0 6px rgba(255, 255, 255, 0.9),
+    0 0 12px rgba(255, 255, 255, 0.5);
 
-  animation: pulse-echo 2.8s ease-in-out infinite;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.point-echo.recent { animation-duration: 2.2s; }
-.point-echo.ancien { opacity: 0.7; animation-duration: 4.5s; }
-
+/* Survol */
 .point-echo:hover {
   transform: scale(1.5);
   opacity: 1;
   box-shadow:
-    0 0 14px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 0.8);
+    0 0 12px rgba(255, 255, 255, 1),
+    0 0 18px rgba(255, 255, 255, 0.8);
 }
 
-@keyframes pulse-echo {
-  0%   { transform: scale(1);     opacity: 0.85; }
-  50%  { transform: scale(1.25);  opacity: 1;    }
-  100% { transform: scale(1);     opacity: 0.85; }
-}
-
-.point-echo::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.25);
-  animation: onde-resonance 1.2s ease-out;
-}
-
-@keyframes onde-resonance {
-  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(6); opacity: 0; }
-}
-
-.point-echo.son-actif {
-  transform: scale(1.5);
+/* Révélation */
+.point-echo.revelation {
+  transform: scale(2);
+  opacity: 1;
   box-shadow:
-    0 0 18px rgba(255, 255, 255, 1),
-    0 0 26px rgba(255, 255, 255, 0.9);
+    0 0 14px rgba(255, 255, 255, 1),
+    0 0 22px rgba(255, 255, 255, 0.9);
 }
 
+/* Pré‑résonance */
+.point-echo.pre-resonance {
+  animation: pulse-pre 0.6s ease-out;
+}
+
+@keyframes pulse-pre {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Titre au survol / révélation */
 .point-echo::before {
   content: attr(data-title);
   position: absolute;
@@ -1307,50 +1315,7 @@ header.header-hidden {
 }
 
 /* ----------------------------------------------------
-   PETIT LAPIN
----------------------------------------------------- */
-
-.retour-accueil-echos {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 9999;
-  font-size: 32px;
-  text-decoration: none;
-  color: white;
-  opacity: 0.85;
-  text-shadow: 0 0 12px rgba(255,255,255,0.9);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.retour-accueil-echos:hover {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-.retour-accueil-echos:hover::after {
-  content: "Retour en surface";
-  position: absolute;
-  top: 42px;
-  left: 0;
-  padding: 4px 8px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 12px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-/* ----------------------------------------------------
-   NEUTRALISATION DU FOND GLOBAL
----------------------------------------------------- */
-
-body.echos {
-  background: black !important;
-}
-
-/* ----------------------------------------------------
-   BLOC GLOBAL DE RECHERCHE — FIXÉ EN HAUT
+   BARRE DE RECHERCHE FIXÉE EN HAUT
 ---------------------------------------------------- */
 
 .barre-recherche {
@@ -1373,8 +1338,17 @@ body.echos {
 /* Ligne Année/Mois */
 .barre-celeste {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+}
+
+.bloc-date {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .barre-celeste label {
@@ -1390,33 +1364,70 @@ body.echos {
   border-radius: 4px;
 }
 
-/* Ligne Résonance/Appel */
-.barre-filtres {
-  display: flex;
-  gap: 1rem;
+/* Titres */
+.titre-echos,
+.titre-archives {
+  color: var(--texte);
+  font-size: 1.05rem;
+  font-weight: 300;
+  opacity: 0.9;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
 }
 
-.barre-filtres input {
+.titre-echos { margin-right: 2.5rem; }
+.titre-archives { margin-left: 2.5rem; }
+
+/* ----------------------------------------------------
+   BARRE ÉCHO + COMPTEUR
+---------------------------------------------------- */
+
+.barre-filtres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+#champ-echo {
   background: #111;
   color: #fff;
   border: 1px solid #444;
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
-  width: 200px;
+  width: 280px;
+  max-width: 60%;
   text-align: center;
 }
 
-/* ----------------------------------------------------
-   FONDU D’APPARITION
----------------------------------------------------- */
-
-#constellation-echos {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+.compteur-echo {
+  font-size: 12px;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: -6px;
+  transition: opacity 0.3s ease;
 }
 
-#constellation-echos.visible {
-  opacity: 1;
+.compteur-echo.ok {
+  opacity: 0;
+}
+
+.btn-reset {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  border-color: rgba(255,255,255,0.8);
+  color: #fff;
+  background: rgba(255,255,255,0.1);
 }
 
 /* ----------------------------------------------------
@@ -1437,187 +1448,32 @@ body.echos {
 }
 
 /* ----------------------------------------------------
-   CONTENEUR GLOBAL — FIXÉ À 100VH
+   AJUSTEMENTS MOBILE
 ---------------------------------------------------- */
-
-.echos-privee {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Fond fixe universel */
-.echos-privee::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('/images/fond_archives.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.95) contrast(1.08);
-  z-index: -1;
-}
-
-/* Voile léger */
-.echos-privee::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(1px);
-  z-index: 0;
-}
-
-/* Titres latéraux */
-.titre-echos,
-.titre-archives {
-  color: var(--texte);
-  font-size: 0.85rem;
-  font-weight: 300;
-  opacity: 0.85;
-  white-space: nowrap;
-}
-
-/* ----------------------------------------------------
-  ALIGNEMENT DES TITRES — BARRE CÉLESTE
----------------------------------------------------- */
-
-/* Structure horizontale */
-.barre-celeste {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  width: 100%;
-  padding: 0.8rem 1.2rem;
-}
-
-/* Titres latéraux */
-.titre-echos,
-.titre-archives {
-  color: var(--texte);
-  font-size: 1.05rem;      /* ✔️ taille augmentée */
-  font-weight: 300;
-  opacity: 0.9;            /* ✔️ présence légèrement renforcée */
-  white-space: nowrap;
-  letter-spacing: 0.03em;  /* ✔️ respiration élégante */
-}
-
-/* Décalages subtils pour correspondre à ta capture */
-.titre-echos {
-  margin-right: 2.5rem;
-}
-
-.titre-archives {
-  margin-left: 2.5rem;
-}
-
-/* Bloc central Année/Mois */
-.bloc-date {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-/* ----------------------------------------------------
-  BOUTON DE RESET POUR LA RECHERCHE
----------------------------------------------------- */
-
-.btn-reset {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: rgba(255,255,255,0.8);
-  padding: 4px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-}
-
-.btn-reset:hover {
-  border-color: rgba(255,255,255,0.8);
-  color: #fff;
-  background: rgba(255,255,255,0.1);
-}
-
-/* ----------------------------------------------------
-   UTILITAIRE
----------------------------------------------------- */
-
-.hidden {
-  display: none;
-}
-
-/* --------------------------------------------------------------
-   AJUSTEMENTS GSM — Points-Échos miniatures
-   Base : 2px — Pulsation : 3px — Survol : 4px — Son actif : 5px
-   Halo + onde recalibrés pour correspondre aux tailles réduites
--------------------------------------------------------------- */
 
 @media (max-width: 600px) {
 
-  /* Taille de base : 2px */
   .point-echo {
     width: 2px;
     height: 2px;
-
-    /* Halo adapté à 2px */
     box-shadow:
       0 0 3px rgba(255, 255, 255, 0.9),
       0 0 6px rgba(255, 255, 255, 0.5);
   }
 
-  /* Pulsation : 2px → 3px (scale 1.5) */
-  @keyframes pulse-echo {
-    0%   { transform: scale(1);   opacity: 0.85; } /* 2px */
-    50%  { transform: scale(1.5); opacity: 1;    } /* 3px */
-    100% { transform: scale(1);   opacity: 0.85; }
+  @keyframes pulse-pre {
+    0%   { transform: scale(1); opacity: 0.8; }
+    50%  { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
   }
 
-  /* Onde recalibrée : 2px */
-  .point-echo::after {
-    width: 2px;
-    height: 2px;
-  }
-
-  /* Survol : 4px (scale 2) */
   .point-echo:hover {
-    transform: scale(2); /* 2px → 4px */
-    box-shadow:
-      0 0 6px rgba(255, 255, 255, 1),
-      0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(2);
   }
 
-  /* Son actif : 5px (scale 2.5) */
-  .point-echo.son-actif {
-    transform: scale(2.5); /* 2px → 5px */
-    box-shadow:
-      0 0 8px rgba(255, 255, 255, 1),
-      0 0 12px rgba(255, 255, 255, 0.9);
+  .point-echo.revelation {
+    transform: scale(2.5);
   }
-}
-
-/* ----------------------------------------------------
-   Centrage parfait du champ Écho dans la barre
----------------------------------------------------- */
-
-.barre-filtres {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 0;
-}
-
-#champ-echo {
-  text-align: center;
-  width: 280px;
-  max-width: 60%;
-}
-
-#reset-echos {
-  cursor: pointer;
 }
 
 
