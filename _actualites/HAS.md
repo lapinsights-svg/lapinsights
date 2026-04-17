@@ -20,7 +20,7 @@ Et pourtant : aucune réaction étatique. Aucune enquête. Aucune audition parle
 
 Les faits sont là. Les pressions existent. Les conflits d’intérêts ont existé. Mais aucune instance indépendante n’a examiné l’ensemble du paysage.
 
-Alors, que reste‑t‑il ? Une zone grise. Un territoire où les influences se croisent, se superposent, se neutralisent — sans jamais être éclairées.
+Alors, que reste‑t‑il ? Une zone grise. Un espace où les influences se croisent, se superposent, se neutralisent — sans jamais être éclairées.
 
 ---
 
@@ -42,7 +42,7 @@ Le « name and shame » devient alors un rideau sonore : on parle fort pour évi
 
 On nous parle aujourd’hui de pressions. De récits émotionnels glissés dans les interstices. De courriers qui remontent jusqu’aux plus hautes strates de l’État, comme des nappes souterraines cherchant une fissure dans la roche.
 
-Mais derrière ce mot — *pressions* — quelque chose d’autre affleure. Un silence plus ancien. Une opacité qui ne date pas d’hier.
+Mais derrière ce mot - *pressions* — quelque chose d’autre affleure. Un silence plus ancien. Une opacité qui ne date pas d’hier.
 
 Car avant les industriels, il y eut les **conflits d’intérêts**. Avant les lettres au sommet, il y eut les experts aux attaches multiples. Avant les révélations, il y eut les zones grises que personne n’a voulu éclairer.
 
