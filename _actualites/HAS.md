@@ -15,7 +15,7 @@ En avril 2026, *Le Parisien* rapporte un fait qui aurait dû provoquer un séism
 ([Source : Le Parisien, 13 avril 2026](https://www.leparisien.fr/societe/sante/des-pressions-excessives-la-has-denonce-des-tentatives-dinfluence-de-certains-industriels-sur-la-question-des-medicaments-13-04-2026-LMUHNLEWG5BLNBHZJRSSKMJJ7E.php))
 
 
-Quelques mois plus tôt, en 2025, le Conseil d’État avait déjà contraint la HAS à plus de transparence, en l’obligeant à divulguer les noms d’experts impliqués dans la réévaluation de deux médicaments — preuve que l’opacité n’est pas un accident, mais une constante.
+Quelques mois plus tôt, en 2025, le Conseil d’État avait déjà contraint la HAS à plus de transparence, en l’obligeant à divulguer les noms d’experts impliqués dans la réévaluation de deux médicaments, preuve que l’opacité n’est pas un accident, mais une constante.
 
 (*Source : Ouest‑France, 4 août 2025*)
 
