@@ -4,6 +4,7 @@ date: 2026-04-17
 resume: "Pourquoi l’idée d’un retour au parlementarisme revient dans le débat institutionnel"
 ---
 
+![fiss](/images/idees/fiss.png)
 
 # La Cinquième République arrive au bout de sa forme
 
