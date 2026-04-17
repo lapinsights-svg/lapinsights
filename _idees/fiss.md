@@ -49,7 +49,8 @@ Elle circule dans les milieux académiques, dans les analyses institutionnelles,
 Le professeur Olivier Beaud défend explicitement la nécessité de sortir du présidentialisme.
 
 Le CEVIPOF analyse la crise de légitimité du modèle présidentiel et la montée des propositions de réforme parlementaire :  
-[https://www.sciencespo.fr/cevipof/](https://www.sciencespo.fr/cevipof/)
+[https://www.sciencespo.fr/cevipof/fr/etudes-enquetes/barometre-confiance-politique/](https://www.sciencespo.fr/cevipof/fr/etudes-enquetes/barometre-confiance-politique/)
+
 
 L’Institut Montaigne évoque également la piste d’un renforcement du Parlement et d’une réduction du rôle présidentiel :  
 [https://www.institutmontaigne.org/publications](https://www.institutmontaigne.org/publications)
