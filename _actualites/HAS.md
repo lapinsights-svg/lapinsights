@@ -2,6 +2,7 @@
 title: "Pressions, conflits, silences : ce que révèle vraiment l’affaire de la HAS"
 date: 2026-04-17
 resume: "Une zone grise au cœur de l’autorité scientifique."
+categories: actualites
 ---
 
 # Pressions, conflits, silences : ce que révèle vraiment l’affaire de la HAS
