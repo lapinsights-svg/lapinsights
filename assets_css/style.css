@@ -1247,36 +1247,36 @@ header.header-hidden {
 
 .point-echo {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 9px;   /* 6px → 9px */
+  height: 9px;  /* 6px → 9px */
   border-radius: 50%;
   background: #ffffff;
   opacity: 0.9;
   z-index: 3;
 
   box-shadow:
-    0 0 6px rgba(255, 255, 255, 0.9),
-    0 0 12px rgba(255, 255, 255, 0.5);
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 16px rgba(255, 255, 255, 0.5);
 
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 /* Survol */
 .point-echo:hover {
-  transform: scale(1.5);
-  opacity: 1;
-  box-shadow:
-    0 0 12px rgba(255, 255, 255, 1),
-    0 0 18px rgba(255, 255, 255, 0.8);
-}
-
-/* Révélation */
-.point-echo.revelation {
-  transform: scale(2);
+  transform: scale(1.7); /* 1.5 → 1.7 */
   opacity: 1;
   box-shadow:
     0 0 14px rgba(255, 255, 255, 1),
     0 0 22px rgba(255, 255, 255, 0.9);
+}
+
+/* Révélation */
+.point-echo.revelation {
+  transform: scale(2.2); /* 2 → 2.2 */
+  opacity: 1;
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 1),
+    0 0 28px rgba(255, 255, 255, 0.9);
 }
 
 /* Pré‑résonance */
