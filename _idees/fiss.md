@@ -30,7 +30,8 @@ Le président est devenu chef de l’exécutif de fait, alors que la Constitutio
 
 Cette dérive est aujourd’hui largement documentée.  
 L’École de droit de Sciences Po analyse la concentration du pouvoir présidentiel comme un problème structurel contemporain :  
-[https://www.sciencespo.fr/ecole-de-droit/fr/actualites/pouvoir-presidentiel-france.html](https://www.sciencespo.fr/ecole-de-droit/fr/actualites/pouvoir-presidentiel-france.html)
+[https://www.sciencespo.fr/ecole-de-droit/](https://www.sciencespo.fr/ecole-de-droit/)
+
 
 Le Conseil d’État souligne la nécessité de rééquilibrer les pouvoirs au profit du Parlement :  
 [https://www.conseil-etat.fr/publications/rapports-publics](https://www.conseil-etat.fr/publications/rapports-publics)
