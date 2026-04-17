@@ -96,4 +96,20 @@ Les articles reprennent :
 
 C’est la signature d’une source unique, non vérifiée.
 
-## Aucun média général
+## Aucun média généraliste ne relaie l’affaire
+
+Si un membre du Conseil d’État avait réellement été séquestré, les grands médias l’auraient relayé.  
+Ce n’est pas le cas.
+
+## Conclusion
+
+Le récit :
+
+- mélange des éléments incompatibles,  
+- ne repose sur aucune source judiciaire,  
+- circule uniquement dans un écosystème restreint,  
+- sert un climat émotionnel plutôt qu’une information.
+
+Il ne tient pas.
+
+© Céleste R. — CC BY-NC-ND
