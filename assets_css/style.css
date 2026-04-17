@@ -1487,14 +1487,14 @@ Lapin retour salle echo
   z-index: 20;
 }
 
-.icone-lapin {
-  width: 42px;
-  height: auto;
+.lapin-icone {
+  font-size: 2rem;
+  text-decoration: none;
   opacity: 0.9;
   transition: opacity 0.3s ease;
 }
 
-.icone-lapin:hover {
+.lapin-icone:hover {
   opacity: 1;
 }
 
