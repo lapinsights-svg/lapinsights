@@ -34,7 +34,8 @@ L’École de droit de Sciences Po analyse la concentration du pouvoir présiden
 
 
 Le Conseil d’État souligne la nécessité de rééquilibrer les pouvoirs au profit du Parlement :  
-[https://www.conseil-etat.fr/publications](https://www.conseil-etat.fr/publications)
+[https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://shs.cairn.info/article/RFDC_077_0099/pdf%3Flang%3Dfr&ved=2ahUKEwjR4OGE_vSTAxV8R_4FHUu4O3UQFnoECBgQAQ&usg=AOvVaw3jBgLm9OUvRTFeR542mrmA](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://shs.cairn.info/article/RFDC_077_0099/pdf%3Flang%3Dfr&ved=2ahUKEwjR4OGE_vSTAxV8R_4FHUu4O3UQFnoECBgQAQ&usg=AOvVaw3jBgLm9OUvRTFeR542mrmA)
+
 
 
 Depuis, la verticalité s’est imposée comme unique architecture.  
