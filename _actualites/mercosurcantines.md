@@ -82,4 +82,4 @@ C’est la seule voie juridique solide.
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
