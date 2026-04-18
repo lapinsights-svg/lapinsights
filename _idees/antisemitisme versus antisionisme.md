@@ -87,4 +87,4 @@ Les juristes sont clairs :
 ---
 
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
