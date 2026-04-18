@@ -778,7 +778,7 @@ textarea {
 /* ✦ Limiter la taille de l’image */
 .visuel-newsletter {
   width: 100%;
-  max-width: 450px; /* réduit pour laisser la place au texte */
+  max-width: 600px; /* réduit pour laisser la place au texte */
   border-radius: 6px;
   display: block;
 }
