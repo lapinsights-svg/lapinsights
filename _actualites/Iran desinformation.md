@@ -375,5 +375,5 @@ Pour accompagner cela, des agents sont placés sur Internet et à la télévisio
 Alors, achetez des armes (mais déclarez-les), des chips, de la bière,  
 et n’oubliez pas de soutenir Macron qui tient la barre en jubilant.
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
 
