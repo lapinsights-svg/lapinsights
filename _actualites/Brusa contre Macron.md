@@ -115,4 +115,4 @@ Encore une fois, c'est une stratégie de communication, pas une réalité juridi
 ---
 
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
