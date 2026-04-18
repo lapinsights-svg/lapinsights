@@ -185,4 +185,4 @@ temps social. Il relève davantage d'un montage narratif que d'un événement r�
 
 <br><br>
 
-<p class="signature">© Céleste R. - CC BY-NC-ND</p>
+<p class="signature">© Céleste R. 
