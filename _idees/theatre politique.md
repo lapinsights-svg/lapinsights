@@ -65,4 +65,4 @@ ils expriment souvent une perte de sens.
 
 Une dimension plus silencieuse, plus profonde, qui échappe aux enquêtes mais façonne le réel.
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
