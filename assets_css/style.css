@@ -758,24 +758,24 @@ textarea {
 /* Couleur du texte générale */
 .page-territoire {
   color: var(--lapin);
-  padding-left: 2rem;   /* éloigne le texte du bord gauche */
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
-/* Mise en page : texte à gauche, image à droite */
+/* Mise en page : texte à gauche, vidéo à droite */
 .newsletter-layout {
   display: flex;
-  flex-wrap: nowrap;        /* empêche l’image de passer en dessous */
-  gap: 2rem;                /* espace plus large entre texte et image */
-  align-items: stretch;     /* même hauteur pour les deux blocs */
+  flex-wrap: nowrap;
+  gap: 2rem;
+  align-items: stretch;
   margin-top: 2rem;
-  justify-content: center;  /* recentre l’ensemble dans la page */
+  justify-content: center;
 }
 
-/* Colonne texte — même largeur que l’image */
+/* Colonne texte — même largeur que la vidéo */
 .newsletter-texte {
-  flex: 0 0 620px;          /* largeur FIXE, plus large qu’avant */
-  background: rgba(120, 150, 190, 0.25); /* bleu clair translucide */
+  flex: 0 0 620px;
+  background: rgba(120, 150, 190, 0.25);
   padding: 2.2rem;
   border-radius: 1rem;
   backdrop-filter: blur(12px);
@@ -792,18 +792,18 @@ textarea {
   font-size: 1.08rem;
 }
 
-/* Colonne image — même largeur que le texte */
-.newsletter-image {
-  flex: 0 0 620px;          /* largeur identique */
+/* Colonne vidéo — même largeur que le texte */
+.newsletter-video {
+  flex: 0 0 620px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Image newsletter — plus grande */
-.visuel-newsletter {
+/* Vidéo newsletter — mêmes proportions que l’image */
+.newsletter-video video {
   width: 100%;
-  max-width: 620px;         /* image plus grande */
+  max-width: 620px;
   border-radius: 6px;
   display: block;
 }
