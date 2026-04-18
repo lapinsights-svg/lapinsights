@@ -1,8 +1,8 @@
 ---
-title: "Violences faites aux femmes : une justice qui demande aux victimes d’aller plus vite que leurs blessures"
+title: "Violences faites aux femmes"
 date: 2026-03-21
 categories: idees
-resume: "Analyse de la note du 27 février imposant des jugements en une journée pour les cours criminelles départementales, et des dérives structurelles de la justice française en matière de violences sexuelles."
+resume: "Une justice qui demande aux victimes d’aller plus vite que leurs blessures"
 ---
 
 
