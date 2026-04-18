@@ -118,4 +118,4 @@ L’opinion publique est influencée autant par des biais cognitifs que par des 
 Le Brexit n’est ni la cause principale des difficultés britanniques, ni un remède.
 
 ---
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
