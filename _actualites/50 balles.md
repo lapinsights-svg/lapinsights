@@ -166,5 +166,5 @@ Elle analyse la capture du droit par des logiques oligarchiques et la perte de s
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
 
