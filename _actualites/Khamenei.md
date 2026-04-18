@@ -194,4 +194,4 @@ OCCRP — Enquêtes sur les élites politiques
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
