@@ -121,4 +121,4 @@ devient lumière à travers l’ombre.
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
