@@ -769,10 +769,10 @@ textarea {
   margin-top: 2rem;
 }
 
-/* Colonne texte — largeur fixe et fond bleuté */
+/* Colonne texte — même largeur que l’image */
 .newsletter-texte {
-  flex: 1 1 520px;          /* même largeur que l’image */
-  background: rgba(120, 150, 190, 0.32); /* bleu clair translucide */
+  flex: 0 0 600px;          /* largeur FIXE pour égaliser avec l’image */
+  background: rgba(120, 150, 190, 0.28); /* bleu clair translucide */
   padding: 2rem;
   border-radius: 1rem;
   backdrop-filter: blur(12px);
@@ -791,15 +791,16 @@ textarea {
 
 /* Colonne image — même largeur que le texte */
 .newsletter-image {
-  flex: 1 1 520px;
+  flex: 0 0 600px;          /* largeur FIXE identique */
   display: flex;
   align-items: center;      /* centre verticalement l’image */
+  justify-content: center;
 }
 
-/* Image newsletter */
+/* Image newsletter — plus grande */
 .visuel-newsletter {
   width: 100%;
-  max-width: 520px;         /* même largeur que le bloc texte */
+  max-width: 600px;         /* même largeur que le bloc texte */
   border-radius: 6px;
   display: block;
 }
