@@ -705,6 +705,53 @@ textarea {
   color: var(--lapin);
 }
 
+/* ----------------------------------------------------
+   BLOC D’INTRO — PAGE D’ACCUEIL
+---------------------------------------------------- */
+.intro-block {
+  max-width: 600px;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  margin-top: 10px;
+
+  padding: 2rem 2.2rem;
+
+  background: rgba(80, 100, 130, 0.28);
+  border: 1px solid rgba(200, 220, 255, 0.25);
+  backdrop-filter: blur(14px);
+  border-radius: 1rem;
+
+  color: var(--lapin);
+  line-height: 1.55;
+  animation: fadeIn 0.6s ease both;
+}
+
+.intro-block h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.intro-block p {
+  margin-bottom: 1rem;
+  opacity: 0.95;
+  color: var(--lapin);
+}
+
+/* ✦ Ajout pour les deux pastilles côte à côte */
+.pastilles-accueil {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.pastilles-accueil .pastille-terrier {
+  white-space: nowrap;
+}
+
 /* Animation du titre */
 @keyframes tresaillement {
   0%   { transform: translateX(0); }
