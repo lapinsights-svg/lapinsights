@@ -136,4 +136,4 @@ Le reste n’est que bruit administratif.
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
