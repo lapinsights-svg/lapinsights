@@ -771,24 +771,27 @@ textarea {
 }
 
 .newsletter-texte {
-  flex: 1 1 350px;
+  background: rgba(255, 255, 255, 0.22); /* clair, translucide */
+  padding: 1.8rem 2rem;
+  border-radius: 0.9rem;
+  backdrop-filter: blur(10px);
   color: var(--lapin);
 }
 
 /* ✦ Limiter la taille de l’image */
 .visuel-newsletter {
   width: 100%;
-  max-width: 600px; /* réduit pour laisser la place au texte */
+  max-width: 650px; /* image plus grande */
   border-radius: 6px;
   display: block;
 }
 
-.newsletter-texte {
-  background: rgba(20, 30, 50, 0.35);
-  padding: 1.5rem 1.8rem;
-  border-radius: 0.8rem;
-  backdrop-filter: blur(6px);
+.newsletter-texte p {
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
 }
+
 
 /* Animation du titre */
 @keyframes tresaillement {
