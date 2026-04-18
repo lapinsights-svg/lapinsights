@@ -148,4 +148,4 @@ C’est un avertissement.
 
   ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R.
