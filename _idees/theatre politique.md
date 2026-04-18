@@ -1,8 +1,8 @@
 ---
-title: "Le théâtre de la politique française : Entre affrontements chorégraphiés et électeurs oubliés"
+title: "Le théâtre de la politique française"
 date: 2026-03-05
 categories: idees
-resume: "Analyse du jeu politique français"
+resume: "Entre affrontements chorégraphiés et électeurs oubliés"
 ---
 
 ![Theatre](/images/idees/Theatrepolitique.png)
