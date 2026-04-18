@@ -125,4 +125,4 @@ Une démocratie se mesure à sa capacité à reconnaître les illusions et à d�
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. 
