@@ -2,7 +2,7 @@
 title: "Gary Renard et la négation de la réalité"
 date: 2023-10-15
 collection: articles
-resume: "Analyse des contradictions internes du discours de Gary Renard et des mécanismes de déstabilisation cognitive."
+resume: "Analyse des contradictions internes du discours de Gary Renard"
 ---
 
 
