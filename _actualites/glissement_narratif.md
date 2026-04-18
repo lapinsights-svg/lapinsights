@@ -39,4 +39,4 @@ Et le paysage retrouve sa respiration
 
 ---
 
-© Céleste R. — CC BY-NC-ND
+Céleste R. — 
