@@ -52,6 +52,8 @@ la spiritualité peut devenir un instrument politique lorsqu’elle détourne l�
 
 ## 2. Maharishi Mahesh : la pacification comme produit d’exportation
 
+![Beatles](/images/spiritualite/Beatles.png)
+
 Bezmenov raconte comment il a été envoyé pour observer l’ashram de Maharishi Mahesh, fréquenté par des personnalités occidentales influentes.
 
 Il décrit :
