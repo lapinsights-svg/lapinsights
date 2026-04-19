@@ -4,8 +4,6 @@ categories: spiritualite
 resume: "Critique des spiritualites qui neutralisent la souverainete individuelle."
 date: 2026-04-19
 ---
-
-
 ![pacification](/images/spiritualite/pacification.png)
 
 # L’imposture des spiritualités pacifiantes
