@@ -5,12 +5,12 @@
 <head>
   {% include head.html %}
 
-  <!-- Open Graph global pour tous les articles -->
-  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
-  <meta property="og:description" content="{{ page.resume | default: site.description | escape }}">
-  <meta property="og:image" content="{{ page.og_image | default: site.og_image | absolute_url }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:type" content="article">
+ <!-- Open Graph global pour tous les articles -->
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page.resume | escape }}">
+<meta property="og:image" content="{{ page.og_image | absolute_url }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="article">
 
   <!-- Twitter Cards (optionnel mais recommandé) -->
   <meta name="twitter:card" content="summary_large_image">
