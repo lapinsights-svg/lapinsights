@@ -34,46 +34,40 @@ collections:
     output: true
     permalink: /vibrations/:title/
 
-# Layouts + Images OG par défaut
+# Layouts + Images OG par défaut (via path, sans modifier les fichiers .md)
 defaults:
   - scope:
-      path: ""
-      type: actualites
+      path: "_actualites"
     values:
       layout: article
       og_image: /images/og-actualites.png
 
   - scope:
-      path: ""
-      type: creations
+      path: "_creations"
     values:
       layout: article
       og_image: /images/og-creations.png
 
   - scope:
-      path: ""
-      type: idees
+      path: "_idees"
     values:
       layout: article
       og_image: /images/og-idees.png
 
   - scope:
-      path: ""
-      type: spiritualite
+      path: "_spiritualite"
     values:
       layout: article
       og_image: /images/og-spiritualite.png
 
   - scope:
-      path: ""
-      type: passe
+      path: "_passe"
     values:
       layout: article
       og_image: /images/og-passe.png
 
   - scope:
-      path: ""
-      type: vibrations
+      path: "_vibrations"
     values:
       layout: article
       og_image: /images/og-vibrations.png
