@@ -165,7 +165,7 @@ La question devient alors :
 Un Cours en Miracles (UCEM) est devenu l’un des manuels spirituels les plus diffusés.  
 Il prétend que « tout est illusion », que « rien ne s’est vraiment passé », que « la souffrance n’existe pas ».
 
-Tu cites un témoignage d’une étudiante :
+Témoignage d’une étudiante :
 
 > « Je ne réagis plus à rien. Tout est illusion. Je fais semblant de rire ou de pleurer. Rien ne s’est vraiment passé. »
 
