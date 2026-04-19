@@ -2,7 +2,7 @@
 title: "Imposture des spiritualites pacifiantes"
 categories: spiritualite
 resume: "Critique des spiritualites qui neutralisent la souverainete individuelle."
-date: 2026-04-19
+date: 2024-06-19
 ---
 ![pacification](/images/spiritualite/pacification.png)
 
